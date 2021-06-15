@@ -6,7 +6,7 @@ const ContactWrapper = styled.div`
 
 function Contact() {
     return (
-        <ContactWrapper>
+        <ContactWrapper id="contact">
             {}
         </ContactWrapper>
     );

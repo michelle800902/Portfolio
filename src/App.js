@@ -10,9 +10,7 @@ import Footer from './components/footer/Footer';
 // import './App.css';
 
 const AppWrapper = styled.div`
-    width: 100%;
-    height: 100%;
-    position: relative;
+    background-color: #ffffff;
 `;
 
 function App() {

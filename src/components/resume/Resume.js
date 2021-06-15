@@ -6,7 +6,7 @@ const ResumeWrapper = styled.div`
 
 function Resume() {
     return (
-        <ResumeWrapper>
+        <ResumeWrapper id="resume">
             {}
         </ResumeWrapper>
     );

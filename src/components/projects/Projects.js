@@ -6,7 +6,7 @@ const ProjectsWrapper = styled.div`
 
 function Projects() {
     return (
-        <ProjectsWrapper>
+        <ProjectsWrapper id="projects">
             {}
         </ProjectsWrapper>
     );
