@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import laptopImg from '../../assets/images/laptop.png';
 
 const HomeWrapper  = styled.div`
     width: calc(100% - 100px);
@@ -19,10 +20,11 @@ function Home() {
     return (
         <HomeWrapper id="home">
             <HomeContent>
-                {}
+                <h1>Hi All !</h1>
+                <h1>I'm Michelle Chen</h1>
             </HomeContent>
             <HomeContent>
-                {}
+                <img src={laptopImg} alt="laptopImg" width="250"/>
             </HomeContent>
         </HomeWrapper>
       );
