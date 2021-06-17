@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import laptopImg from '../../assets/images/laptop.png';
+import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 import Type from "./Type";
 
 const HomeWrapper  = styled.div`
@@ -10,20 +10,20 @@ const HomeWrapper  = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
 `;
 const HomeContent = styled.div`
     width: 50%;
     height: 100%;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    h1 {
+    h1, h2 {
         width: 100%;
         pointer-events: none;
     }
-    div, strong {
+    strong {
         color: #ED6EA4;
     }
 `;
@@ -32,12 +32,12 @@ function Home() {
     return (
         <HomeWrapper id="home">
             <HomeContent>
-                <h1>Hi All ! <span>👋🏻</span></h1>
-                <h1>I'm <strong>Michelle Chen</strong></h1>
-                <h1><Type /></h1>
+                <LaptopSVG />
             </HomeContent>
             <HomeContent>
-                <img src={laptopImg} alt="laptopImg" width="250"/>
+                <h1>Hi All !</h1>
+                <h1>I'm <strong>Michelle Chen</strong>.</h1>
+                <h2><strong><Type /></strong></h2>
             </HomeContent>
         </HomeWrapper>
       );

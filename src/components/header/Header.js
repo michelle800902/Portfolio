@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { navbarData } from '../../constants/index';
+import logoImg from '../../assets/images/logo_v2.png';
 
 const HeaderWrapper = styled.div`
     width: 100%;
@@ -9,8 +10,10 @@ const HeaderWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9);
 `;
 const Title = styled.div`
+    cursor: pointer;
 `;
 const Navbar = styled.div`
     display: flex;
@@ -24,18 +27,17 @@ const NavbarItem = styled.div`
     justify-content: center;
     a {
         text-decoration: none;
-        color: #000000;
+        color: #363636;
         &::after {
             content: "";
             display: block;
             width: 0;
-            height: 6px;
+            height: 4px;
             margin-top: 8px;
-            border-radius: 16px;
         }
         &:hover::after {
             width: 100%;
-            background: #FFABCA;
+            background: #ffe65f;
             transition: width .3s ease-out 0s;
         }
     }
@@ -45,7 +47,7 @@ function Header() {
     return (
         <HeaderWrapper>
             <Title>
-                <img src="" alt="" />
+                <img src={logoImg} alt="logoImg" width="150" height="50" />
             </Title>
             <Navbar id="navbar">
             {

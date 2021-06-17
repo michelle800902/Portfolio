@@ -7,6 +7,7 @@ import Projects from './components/projects/Projects';
 import Resume from './components/resume/Resume';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import './style.css';
 // import './App.css';
 
 const AppWrapper = styled.div`
