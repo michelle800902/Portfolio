@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.9);
 `;
-const Title = styled.div`
+const Logo = styled.div`
     cursor: pointer;
 `;
 const Navbar = styled.div`
@@ -44,11 +44,14 @@ const NavbarItem = styled.div`
 `;
 
 function Header() {
+    const onClickLogo = () => {
+        window.location.assign(window.location.origin);
+    };
     return (
         <HeaderWrapper>
-            <Title>
+            <Logo onClick={onClickLogo}>
                 <img src={logoImg} alt="logoImg" width="150" height="50" />
-            </Title>
+            </Logo>
             <Navbar id="navbar">
             {
                 navbarData.map((item) => (
