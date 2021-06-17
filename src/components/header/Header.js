@@ -5,6 +5,7 @@ import { navbarData } from '../../constants/index';
 const HeaderWrapper = styled.div`
     width: 100%;
     height: 50px;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,7 +47,7 @@ function Header() {
             <Title>
                 <img src="" alt="" />
             </Title>
-            <Navbar>
+            <Navbar id="navbar">
             {
                 navbarData.map((item) => (
                     <NavbarItem key={item.id}>
