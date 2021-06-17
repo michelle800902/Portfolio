@@ -29,13 +29,13 @@ const NavbarItem = styled.div`
             content: "";
             display: block;
             width: 0;
-            height: 3px;
+            height: 6px;
             margin-top: 8px;
             border-radius: 16px;
         }
         &:hover::after {
             width: 100%;
-            background: #9169eb;
+            background: #FFABCA;
             transition: width .3s ease-out 0s;
         }
     }
