@@ -40,5 +40,12 @@ export const projectData = [
         description: '',
         image: '',
         link: '',
+    },
+    {
+        id: 2,
+        name: 'project 3',
+        description: '',
+        image: '',
+        link: '',
     }
 ];

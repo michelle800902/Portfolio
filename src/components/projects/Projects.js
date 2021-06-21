@@ -17,6 +17,9 @@ const ProjectsTitle = styled.div`
 const ProjectsContent = styled.div`
     width: 100%;
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 1em;
 `;
 
 function Projects() {
