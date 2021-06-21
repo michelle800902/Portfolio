@@ -6,12 +6,14 @@ const CardWrapper = styled.div`
     height: 100%;
     border: 1px solid #000000;
     border-radius: 4px;
+    cursor: pointer;
 `;
 
-function Card({ name, image, link }) {
+function Card({ name, description, image, link }) {
     return (
         <CardWrapper>
             <div>{name}</div>
+            <div>{description}</div>
         </CardWrapper>
     );
 }
