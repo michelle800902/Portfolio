@@ -25,3 +25,20 @@ export const navbarData = [
         href: '#contact',
     },
 ];
+
+export const projectData = [
+    {
+        id: 0,
+        name: 'project 1',
+        description: '',
+        image: '',
+        link: '',
+    },
+    {
+        id: 1,
+        name: 'project 2',
+        description: '',
+        image: '',
+        link: '',
+    }
+];
