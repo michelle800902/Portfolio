@@ -4,9 +4,9 @@ import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 import Type from "./Type";
 
 const HomeWrapper  = styled.div`
-    width: calc(100% - 100px);
-    height: calc(100vh - 100px);
-    padding: 50px;
+    width: calc(100% - 300px);
+    height: 100vh;
+    padding: 0 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,9 +31,9 @@ const HomeContent = styled.div`
 function Home() {
     return (
         <HomeWrapper id="home">
-            <HomeContent>
+            {/* <HomeContent>
                 <LaptopSVG />
-            </HomeContent>
+            </HomeContent> */}
             <HomeContent>
                 <h1>Hi All !</h1>
                 <h1>I'm <strong>Michelle Chen</strong>.</h1>

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
 import { navbarData } from '../../constants/index';
-import logoImg from '../../assets/images/logo_v2.png';
 
 const HeaderWrapper = styled.div`
     width: 100%;
@@ -14,6 +13,16 @@ const HeaderWrapper = styled.div`
 `;
 const Logo = styled.div`
     cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000;
+    transition: transform .5s ease-in-out;
+    &:hover {
+        transform: rotate(90deg);
+    }
 `;
 const Navbar = styled.div`
     display: flex;
@@ -50,7 +59,7 @@ function Header() {
     return (
         <HeaderWrapper>
             <Logo onClick={onClickLogo}>
-                <img src={logoImg} alt="logoImg" width="150" height="50" />
+                M
             </Logo>
             <Navbar id="navbar">
             {
