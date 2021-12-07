@@ -14,7 +14,7 @@ const HomeWrapper  = styled.div`
 const HomeContent = styled.div`
     width: 50%;
     height: 100%;
-    padding: 24px;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import About from './components/about/About';
+import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
-import Resume from './components/resume/Resume';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import './style.css';
@@ -20,8 +20,8 @@ function App() {
             <Header />
             <Home />
             <About />
+            <Experience />
             <Projects />
-            <Resume />
             <Contact />
             <Footer />
         </AppWrapper>

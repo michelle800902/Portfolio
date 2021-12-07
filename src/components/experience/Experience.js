@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 
-const ResumeWrapper = styled.div`
+const ExperienceWrapper = styled.div`
     width: calc(100% - 100px);
     height: calc(100vh - 100px);
     padding: 50px;
@@ -10,12 +10,12 @@ const ResumeWrapper = styled.div`
     justify-content: center;
 `;
 
-function Resume() {
+function Experience() {
     return (
-        <ResumeWrapper id="resume">
-            <h1>Resume</h1>
-        </ResumeWrapper>
+        <ExperienceWrapper id="experience">
+            <h1>Experience</h1>
+        </ExperienceWrapper>
     );
 }
 
-export default Resume;
+export default Experience;
