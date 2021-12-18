@@ -1,14 +1,12 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import PropTypes from 'prop-types';
 
-function Type() {
+function Type(props) {
   return (
     <Typewriter
         options={{
-            strings: [
-                "Web Developer",
-                "Front-end Engineer",
-            ],
+            strings: props.strings,
             autoStart: true,
             loop: true,
             deleteSpeed: 50,
@@ -16,5 +14,9 @@ function Type() {
     />
   );
 }
+
+Type.propTypes = {
+    strings: PropTypes.array.isRequired,
+};
 
 export default Type;
