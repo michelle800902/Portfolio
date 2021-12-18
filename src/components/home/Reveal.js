@@ -6,29 +6,29 @@ import device from '../../assets/responsive/breakpoints';
 const Stage = styled.div`
     position: relative;
     z-index: 1;
-    width:100%;
+    width: 100%;
 `;
 const moveUp = init => keyframes`
-    0%{
+    0% {
         transform: translateY(${init}px);
     }
-    100%{
+    100% {
         transform: translateY(0px);
     }
 `;
 const hideWhiteBlocks = () => keyframes`
-    0%{
+    0% {
         opacity: 1;
         height: 35vh;
     }
-    100%{
+    100% {
         opacity: 0;
         height: 0vh;
     }
 `;
 const TextToReveal = styled.div`
     font-family: ${props => props.fontFam};
-    text-align:center;
+    text-align: center;
     @media ${device.tablet} {
         font-size: 100px;
         animation: ${props => (props.reveal ? moveUp(100) : 'none')} 1s cubic-bezier(0, 0.1, .12, .99) forwards;
@@ -53,7 +53,7 @@ const TextToReveal = styled.div`
 const WhiteBlock = styled.div`
     position: absolute;
     background-color: white;
-    margin-right:100%;
+    margin-right: 100%;
     width: 120%;
     height: 35vh;
     animation: ${hideWhiteBlocks} 0.5s linear forwards;
@@ -66,8 +66,8 @@ function Reveal(props) {
     useEffect(() => {
         setTimeout(() => {
             setIsReveal(true);
-        }, props.timeout);
-    }, []);
+        }, props.timeDelay);
+    }, [props]);
 
     return (
         <Stage>
