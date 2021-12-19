@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from 'styled-components';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
@@ -16,6 +16,13 @@ const AppWrapper = styled.div`
 `;
 
 function App() {
+    
+    useEffect(() => {
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+    });
+
     return (
         <AppWrapper>
             <Header />

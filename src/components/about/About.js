@@ -3,29 +3,46 @@ import styled from 'styled-components';
 import device from '../../assets/responsive/breakpoints';
 
 const AboutWrapper = styled.div`
-    width: calc(100% - 100px);
+    width: 100%;
     height: 40vh;
-    padding: 50px;
     position: relative;
     overflow: hidden;
 `;
-const AboutTitle = styled.div`
-    transform: translateX(${(props) => props.scrollPercent * 5.5}%);
+const Title = styled.div`
+    position: absolute;
+    top: 10%;
+    left: -30%;
+    transform: translateX(${(props) => props.scrollPercent * 2.5}%);
     transition: transform 0.5s ease-out;
     font-family: 'AvenirHeavy';
-    position: absolute;
     color: #eee;
-    top: 5%;
-    left: -30%;
-    font-size: 80px;
     @media ${device.laptop} {
-      font-size: 180px;
+        font-size: 180px;
     }
     @media ${device.laptopL} {
-      font-size: 200px;
+        font-size: 200px;
     }
     @media ${device.desktop} {
-      font-size: 350px;
+        font-size: 350px;
+    }
+`;
+const Description = styled.div`
+    align-items: center;
+    font-family: 'AvenirLight';
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 5%;
+    @media ${device.laptop} {
+        transform: translateY(90%);
+        font-size: 30px;
+    }
+    @media ${device.laptopL} {
+        transform: translateY(87%);
+        font-size: 38px;
+    }
+    @media ${device.desktop} {
+        transform: translateY(80%);
+        font-size: 70px;
     }
 `;
 
@@ -51,9 +68,13 @@ function About() {
 
     return (
         <AboutWrapper id="about">
-            <AboutTitle scrollPercent={scrollPercent}>
+            <Title scrollPercent={scrollPercent}>
                 ABOUT ME
-            </AboutTitle>
+            </Title>
+            <Description>
+                Front-end developer who cares deeply about user experience.
+                Serious passion for UI design and new technologies.
+            </Description>
         </AboutWrapper>
     );
 }
