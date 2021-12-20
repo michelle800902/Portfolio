@@ -64,7 +64,7 @@ function About() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    });
+    }, []);
 
     return (
         <AboutWrapper id="about">

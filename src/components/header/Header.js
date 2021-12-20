@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { navbarData } from '../../constants/index';
 
 const HeaderWrapper = styled.div`
+    position: fixed;
+    top: ${(props) => props.top}px;
     width: 100%;
     height: 50px;
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.9);
+    transition: top .3s ease-in-out;
 `;
 const Logo = styled.div`
     cursor: pointer;
@@ -53,11 +55,27 @@ const NavbarItem = styled.div`
 `;
 
 function Header() {
+    const [top, setTop] = useState(0);
+
     const onClickLogo = () => {
         window.location.assign(window.location.origin);
     };
+
+    useEffect(() => {
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function() {
+            const currentScrollPos = window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                setTop(0);
+            } else {
+                setTop(-50);
+            }
+            prevScrollPos = currentScrollPos;
+        }
+    }, []);
+
     return (
-        <HeaderWrapper>
+        <HeaderWrapper top={top}>
             <Logo onClick={onClickLogo}>
                 M
             </Logo>
