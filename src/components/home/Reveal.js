@@ -67,7 +67,7 @@ function Reveal({ text, fontFam, timeDelay }) {
         setTimeout(() => {
             setShow(true);
         }, timeDelay);
-    }, []);
+    }, [timeDelay]);
 
     return (
         <Stage>

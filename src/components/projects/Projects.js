@@ -9,23 +9,24 @@ const ProjectsWrapper = styled.div`
     height: ${props => props.totalHeight}px;
     display: flex;
     flex-flow: row nowrap;
+    background-color: #ece;
 `;
 
 function Projects() {
     const startTop = 1520;
     const windowHeight = window.innerHeight;
     const totalHeight = windowHeight * (projectData.length - 1);
+
     const [slideNumber, setSlideNumber] = useState(0);
 
     const handleScroll = (event) => {
         const { scrollTop } = event.srcElement.documentElement;
-        // console.log('--- handleScroll ---', windowHeight, scrollTop)
         if (scrollTop > startTop) {
             const currentNumber = Math.floor((scrollTop - startTop) / windowHeight) + 1;
-            if (currentNumber <= projectData.length -1) {
-                setSlideNumber(currentNumber);
-            } else {
+            if (currentNumber >= projectData.length || scrollTop > (startTop + totalHeight * 0.9)) {
                 setSlideNumber(0);
+            } else {
+                setSlideNumber(currentNumber);
             }
         } else {
             setSlideNumber(0);
@@ -37,11 +38,7 @@ function Projects() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, []);
-
-    useEffect(() => {
-        console.log('slideNumber: ', slideNumber);
-    }, [slideNumber]);
+    });
 
     return (
         <ProjectsWrapper id="projects" totalHeight={totalHeight}>

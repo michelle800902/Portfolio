@@ -141,7 +141,6 @@ function TextContent({ projectId, projectName, projectDesc, projectType, roles }
     }, [projectId]);
 
     if (refresh) {
-        console.log('refresh!!!');
         BlockTextReveal = BlockTextRevealClear;
         setTimeout(() => {
             BlockTextReveal = BlockTextRevealAnimate;
