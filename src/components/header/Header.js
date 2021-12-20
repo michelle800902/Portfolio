@@ -4,7 +4,7 @@ import { navbarData } from '../../constants/index';
 
 const HeaderWrapper = styled.div`
     position: fixed;
-    top: ${(props) => props.top}px;
+    top: ${props => props.top}px;
     width: 100%;
     height: 50px;
     display: flex;
