@@ -23,21 +23,28 @@ export const navbarData = [
 
 export const projectData = [
     {
-        id: 0,
+        id: '',
+        name: '',
+        desc: '',
+        type: '',
+        roles: [''],
+    },
+    {
+        id: '01',
         name: 'project 1',
         description: '',
         image: '',
         link: '',
     },
     {
-        id: 1,
+        id: '02',
         name: 'project 2',
         description: '',
         image: '',
         link: '',
     },
     {
-        id: 2,
+        id: '03',
         name: 'project 3',
         description: '',
         image: '',
