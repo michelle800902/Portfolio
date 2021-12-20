@@ -12,7 +12,7 @@ const Title = styled.div`
     position: absolute;
     top: 10%;
     left: -30%;
-    transform: translateX(${props => props.scrollPercent * 2.5}%);
+    transform: translateX(${props => props.scrollPercent * 1.5}%);
     transition: transform 0.5s ease-out;
     font-family: 'AvenirHeavy';
     color: #eee;
