@@ -52,7 +52,7 @@ const BlockTextRevealClear = styled.span``;
 const BlockTextRevealAnimate = styled.span`
     position: relative;
     display: ${props => (props.inline ? 'inline' : 'block')};
-    animation: ${appearText} 1s linear forwards;
+    animation: ${appearText} 0.5s linear forwards;
     animation-delay: 0.5s;
     color: #fff;
     &::after {
