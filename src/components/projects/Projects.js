@@ -12,19 +12,6 @@ const ProjectsWrapper = styled.div`
     flex-flow: row nowrap;
     border: 20px solid #ece;
 `;
-// const ProjectsTitle = styled.div`
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-// `;
-// const ProjectsContent = styled.div`
-//     width: 100%;
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     grid-column-gap: 24px;
-//     grid-row-gap: 1em;
-// `;
 
 function Projects() {
     const startTop = 1520;
@@ -59,11 +46,7 @@ function Projects() {
                 projectId={projectData[slideNumber].id}
             />
             <ImageContent />
-            {/* <ProjectsTitle>
-                <h1>Projects</h1>
-            </ProjectsTitle>
-            <ProjectsContent>
-            {
+            {/* {
                 projectData.map((project) => (
                     <Card
                         key={project.id}
@@ -73,8 +56,7 @@ function Projects() {
                         link={project.link}
                     />
                 ))
-            }
-            </ProjectsContent> */}
+            } */}
         </ProjectsWrapper>
     );
 }
