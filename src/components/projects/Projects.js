@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { projectData } from '../../constants/index';
-import Card from './Card';
 import TextContent from './TextContent';
 import ImageContent from './ImageContent';
 
 const ProjectsWrapper = styled.div`
     width: 100%;
-    height: 600px;
+    height: ${props => props.totalHeight}px;
     display: flex;
     flex-flow: row nowrap;
-    border: 20px solid #ece;
 `;
 
 function Projects() {
     const startTop = 1520;
     const windowHeight = window.innerHeight;
+    const totalHeight = windowHeight * (projectData.length - 1);
     const [slideNumber, setSlideNumber] = useState(0);
 
     const handleScroll = (event) => {
@@ -23,7 +22,11 @@ function Projects() {
         // console.log('--- handleScroll ---', windowHeight, scrollTop)
         if (scrollTop > startTop) {
             const currentNumber = Math.floor((scrollTop - startTop) / windowHeight) + 1;
-            setSlideNumber(currentNumber);
+            if (currentNumber <= projectData.length -1) {
+                setSlideNumber(currentNumber);
+            } else {
+                setSlideNumber(0);
+            }
         } else {
             setSlideNumber(0);
         }
@@ -41,22 +44,15 @@ function Projects() {
     }, [slideNumber]);
 
     return (
-        <ProjectsWrapper id="projects">
+        <ProjectsWrapper id="projects" totalHeight={totalHeight}>
             <TextContent
                 projectId={projectData[slideNumber].id}
+                projectName={projectData[slideNumber].name}
+                projectDesc={projectData[slideNumber].desc}
+                projectType={projectData[slideNumber].type}
+                roles={projectData[slideNumber].roles}
             />
             <ImageContent />
-            {/* {
-                projectData.map((project) => (
-                    <Card
-                        key={project.id}
-                        name={project.name}
-                        description={project.description}
-                        image={project.image}
-                        link={project.link}
-                    />
-                ))
-            } */}
         </ProjectsWrapper>
     );
 }

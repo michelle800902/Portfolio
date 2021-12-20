@@ -24,6 +24,69 @@ const ProjectID = styled.div`
         font-size: 58px;
     }
 `;
+const ProjectDetailsContainer = styled.div`
+    height: 100%;
+    padding: 10%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+`;
+const ProjectDetails = styled.div`
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+`;
+const ProjectName = styled.div`
+    font-family: 'AvenirHeavy';
+    @media ${device.laptop} {
+        font-size: 70px;
+    }
+    @media ${device.laptopL} {
+        font-size: 80px;
+    }
+    @media ${device.desktop} {
+        font-size: 120px;
+    }
+`;
+const MyRole = styled.div`
+    padding-top: 5%;
+    font-family: 'AvenirMedium';
+    @media ${device.laptop} {
+        font-size: 25px;
+    }
+    @media ${device.laptopL} {
+        font-size: 30px;
+    }
+    @media ${device.desktop} {
+        font-size: 50px;
+    }
+`;
+const ProjectDesc = styled.div`
+    padding-top: 2%;
+    font-family: 'AvenirBook';
+    @media ${device.laptop} {
+        font-size: 25px;
+    }
+    @media ${device.laptopL} {
+        font-size: 30px;
+    }
+    @media ${device.desktop} {
+        font-size: 50px;
+    }
+`;
+const ProjectType = styled.div`
+    padding: 5% 10%;
+    font-family: 'AvenirHeavy';
+    @media ${device.laptop} {
+        font-size: 25px;
+    }
+    @media ${device.laptopL} {
+        font-size: 30px;
+    }
+    @media ${device.desktop} {
+        font-size: 58px;
+    }
+`;
 
 const appearText = () => keyframes`
     0% {
@@ -68,7 +131,7 @@ const BlockTextRevealAnimate = styled.span`
     }
 `;
 
-function TextContent({ projectId, projectName }) {
+function TextContent({ projectId, projectName, projectDesc, projectType, roles }) {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
@@ -93,6 +156,30 @@ function TextContent({ projectId, projectName }) {
                     {projectId}
                 </BlockTextReveal>
             </ProjectID>
+            <ProjectDetailsContainer>
+                <ProjectDetails>
+                    <ProjectName>
+                        <BlockTextReveal inline>
+                            {projectName}
+                        </BlockTextReveal>
+                    </ProjectName>
+                    <MyRole>
+                        <BlockTextReveal inline>
+                            {roles[0]}
+                        </BlockTextReveal>
+                    </MyRole>
+                    <ProjectDesc>
+                        <BlockTextReveal inline={false}>
+                            {projectDesc}
+                        </BlockTextReveal>
+                    </ProjectDesc>
+                </ProjectDetails>
+            </ProjectDetailsContainer>
+            <ProjectType>
+                <BlockTextReveal inline>
+                    {projectType}
+                </BlockTextReveal>
+            </ProjectType>
         </TextContainer>
     );
 }
