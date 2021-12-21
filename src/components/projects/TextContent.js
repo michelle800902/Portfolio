@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
 import device from '../../assets/responsive/breakpoints';
 
 const TextContainer = styled.section`
@@ -131,14 +132,14 @@ const BlockTextRevealAnimate = styled.span`
     }
 `;
 
-function TextContent({ projectId, projectName, projectDesc, projectType, roles }) {
+function TextContent(props) {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        if (projectId) {
+        if (props.projectId) {
             setRefresh(true);
         }
-    }, [projectId]);
+    }, [props.projectId]);
 
     if (refresh) {
         BlockTextReveal = BlockTextRevealClear;
@@ -152,35 +153,43 @@ function TextContent({ projectId, projectName, projectDesc, projectType, roles }
         <TextContainer>
             <ProjectID>
                 <BlockTextReveal inline>
-                    {projectId}
+                    {props.projectId}
                 </BlockTextReveal>
             </ProjectID>
             <ProjectDetailsContainer>
                 <ProjectDetails>
                     <ProjectName>
                         <BlockTextReveal inline>
-                            {projectName}
+                            {props.projectName}
                         </BlockTextReveal>
                     </ProjectName>
                     <MyRole>
                         <BlockTextReveal inline>
-                            {roles[0]}
+                            {props.roles[0]}
                         </BlockTextReveal>
                     </MyRole>
                     <ProjectDesc>
                         <BlockTextReveal inline={false}>
-                            {projectDesc}
+                            {props.projectDesc}
                         </BlockTextReveal>
                     </ProjectDesc>
                 </ProjectDetails>
             </ProjectDetailsContainer>
             <ProjectType>
                 <BlockTextReveal inline>
-                    {projectType}
+                    {props.projectType}
                 </BlockTextReveal>
             </ProjectType>
         </TextContainer>
     );
+}
+
+TextContent.propTypes = {
+    projectId: PropTypes.string.isRequired,
+    projectName: PropTypes.string.isRequired,
+    projectDesc: PropTypes.string.isRequired,
+    projectType: PropTypes.string.isRequired,
+    roles: PropTypes.array.isRequired,
 }
 
 export default TextContent;
