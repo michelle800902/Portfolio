@@ -27,7 +27,7 @@ export const projectData = [
         name: '',
         desc: '',
         type: '',
-        roles: [''],
+        roles: [],
         link: '',
     },
     {
