@@ -7,7 +7,7 @@ const TextContainer = styled.section`
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
@@ -16,18 +16,18 @@ const ProjectID = styled.div`
     padding: 10%;
     font-family: 'AvenirHeavy';
     @media ${device.laptop} {
-        font-size: 25px;
+        font-size: 24px;
     }
     @media ${device.laptopL} {
-        font-size: 30px;
+        font-size: 32px;
     }
     @media ${device.desktop} {
-        font-size: 58px;
+        font-size: 48px;
     }
 `;
 const ProjectDetailsContainer = styled.div`
     height: 100%;
-    padding: 10%;
+    padding: 0 10%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -40,52 +40,52 @@ const ProjectDetails = styled.div`
 const ProjectName = styled.div`
     font-family: 'AvenirHeavy';
     @media ${device.laptop} {
-        font-size: 70px;
+        font-size: 60px;
     }
     @media ${device.laptopL} {
         font-size: 80px;
     }
     @media ${device.desktop} {
-        font-size: 120px;
+        font-size: 100px;
     }
 `;
 const MyRole = styled.div`
     padding-top: 5%;
     font-family: 'AvenirMedium';
     @media ${device.laptop} {
-        font-size: 25px;
+        font-size: 24px;
     }
     @media ${device.laptopL} {
-        font-size: 30px;
+        font-size: 28px;
     }
     @media ${device.desktop} {
-        font-size: 50px;
+        font-size: 32px;
     }
 `;
 const ProjectDesc = styled.div`
     padding-top: 2%;
     font-family: 'AvenirBook';
     @media ${device.laptop} {
-        font-size: 25px;
+        font-size: 24px;
     }
     @media ${device.laptopL} {
-        font-size: 30px;
+        font-size: 28px;
     }
     @media ${device.desktop} {
-        font-size: 50px;
+        font-size: 32px;
     }
 `;
 const ProjectType = styled.div`
     padding: 5% 10%;
     font-family: 'AvenirHeavy';
     @media ${device.laptop} {
-        font-size: 25px;
+        font-size: 24px;
     }
     @media ${device.laptopL} {
-        font-size: 30px;
+        font-size: 32px;
     }
     @media ${device.desktop} {
-        font-size: 58px;
+        font-size: 48px;
     }
 `;
 
@@ -136,10 +136,10 @@ function TextContent(props) {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        if (props.projectId) {
+        if (props.id) {
             setRefresh(true);
         }
-    }, [props.projectId]);
+    }, [props.id]);
 
     if (refresh) {
         BlockTextReveal = BlockTextRevealClear;
@@ -153,31 +153,31 @@ function TextContent(props) {
         <TextContainer>
             <ProjectID>
                 <BlockTextReveal inline>
-                    {props.projectId}
+                    {props.id}
                 </BlockTextReveal>
             </ProjectID>
             <ProjectDetailsContainer>
                 <ProjectDetails>
                     <ProjectName>
                         <BlockTextReveal inline>
-                            {props.projectName}
+                            {props.name}
                         </BlockTextReveal>
                     </ProjectName>
                     <MyRole>
                         <BlockTextReveal inline>
-                            {props.roles[0]}
+                            {props.role}
                         </BlockTextReveal>
                     </MyRole>
                     <ProjectDesc>
                         <BlockTextReveal inline={false}>
-                            {props.projectDesc}
+                            {props.desc}
                         </BlockTextReveal>
                     </ProjectDesc>
                 </ProjectDetails>
             </ProjectDetailsContainer>
             <ProjectType>
                 <BlockTextReveal inline>
-                    {props.projectType}
+                    {props.type}
                 </BlockTextReveal>
             </ProjectType>
         </TextContainer>
@@ -185,11 +185,13 @@ function TextContent(props) {
 }
 
 TextContent.propTypes = {
-    projectId: PropTypes.string.isRequired,
-    projectName: PropTypes.string.isRequired,
-    projectDesc: PropTypes.string.isRequired,
-    projectType: PropTypes.string.isRequired,
-    roles: PropTypes.array.isRequired,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    tech: PropTypes.array.isRequired,
+    link: PropTypes.string.isRequired,
 }
 
 export default TextContent;

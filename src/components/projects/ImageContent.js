@@ -5,8 +5,7 @@ import Images from './Images';
 
 const ImageContainer = styled.div`
     width: 50%;
-    height: 900vh;
-    margin-left: 50%;
+    margin-left: 60%;
     display: flex;
     flex-flow: column nowrap;
 `;
@@ -38,7 +37,7 @@ function ImageContent() {
         window.addEventListener('scroll', handleScroll);
         return () => {
             setScrollHeight(Math.round(window.document.documentElement.scrollHeight));
-            setScreenHeight(Math.round(window.document.documentElement.clientHeight))
+            setScreenHeight(Math.round(window.document.documentElement.clientHeight));
             window.removeEventListener('scroll', handleScroll);
         }
     });
