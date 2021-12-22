@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
+import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 
 const ContactWrapper = styled.div`
     width: calc(100% - 100px);
@@ -14,8 +14,8 @@ const ContactWrapper = styled.div`
 function Contact() {
     return (
         <ContactWrapper id="contact">
-            {/* <LaptopSVG /> */}
             <h1>Contact</h1>
+            <LaptopSVG width={200} height={200} />
         </ContactWrapper>
     );
 }

@@ -1,8 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import { ReactComponent as LinkSVG } from '../../assets/images/link.svg';
 import device from '../../assets/responsive/breakpoints';
 
+const fadeIn = () => keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
+const appearText = () => keyframes`
+    0% {
+        color: #fff;
+    }
+    100% {
+        color: #333;
+    }
+`;
+const showBlock = () => keyframes`
+    0% {
+        left: 0;
+        width: 0%
+    }
+    50% {
+        left: 0%;
+        width: 100%
+    }
+    100% {
+        left: 100%;
+        width: 0%
+    }
+`;
 const TextContainer = styled.section`
     position: fixed;
     top: 0;
@@ -11,11 +42,11 @@ const TextContainer = styled.section`
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    pointer-events: none;
 `;
 const ProjectID = styled.div`
     padding: 10% 10% 5% 10%;
     font-family: 'AvenirHeavy';
+    pointer-events: none;
     @media ${device.laptop} {
         font-size: 24px;
     }
@@ -47,6 +78,7 @@ const ProjectName = styled.div`
 const MyRole = styled.div`
     padding-top: 5%;
     font-family: 'AvenirMedium';
+    pointer-events: none;
     @media ${device.laptop} {
         font-size: 24px;
     }
@@ -60,6 +92,7 @@ const MyRole = styled.div`
 const ProjectDesc = styled.div`
     padding-top: 2%;
     font-family: 'AvenirBook';
+    pointer-events: none;
     @media ${device.laptop} {
         font-size: 24px;
     }
@@ -70,11 +103,19 @@ const ProjectDesc = styled.div`
         font-size: 32px;
     }
 `;
-const TechList = styled.div`
-    padding-top: 5%;
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
+const ProjectType = styled.div`
+    padding: 5% 10%;
+    font-family: 'AvenirHeavy';
+    pointer-events: none;
+    @media ${device.laptop} {
+        font-size: 24px;
+    }
+    @media ${device.laptopL} {
+        font-size: 32px;
+    }
+    @media ${device.desktop} {
+        font-size: 48px;
+    }
 `;
 const TechTag = styled.div`
     width: fit-content;
@@ -87,41 +128,17 @@ const TechTag = styled.div`
     border: 1.5px solid #333;
     color: #333;
 `;
-const ProjectType = styled.div`
-    padding: 5% 10%;
-    font-family: 'AvenirHeavy';
-    @media ${device.laptop} {
-        font-size: 24px;
-    }
-    @media ${device.laptopL} {
-        font-size: 32px;
-    }
-    @media ${device.desktop} {
-        font-size: 48px;
-    }
-`;
-
-const appearText = () => keyframes`
-    0% {
-        color: #fff;
-    }
-    100% {
-        color: #333;
-    }
-`;
-const showBlock = () => keyframes`
-    0% {
-        left: 0;
-        width: 0%
-    }
-    50% {
-        left: 0%;
-        width: 100%
-    }
-    100% {
-        left: 100%;
-        width: 0%
-    }
+let TechListFadeIn = styled.div``;
+const TechListFadeInClear = styled.div``;
+const TechListFadeInAnimate = styled.div`
+    padding-top: 5%;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    opacity: 0;
+    animation: ${fadeIn} 1s linear forwards;
+    animation-delay: 0.5s;
+    pointer-events: none;
 `;
 let BlockTextReveal = styled.span``;
 const BlockTextRevealClear = styled.span``;
@@ -145,23 +162,26 @@ const BlockTextRevealAnimate = styled.span`
 `;
 
 function TextContent(props) {
-    const [refresh, setRefresh] = useState(false);
+    const [refresh, setRefresh] = useState(true);
+    const [hoverOnName, setHoverOnName] = useState(false);
 
     useEffect(() => {
         if (props.id) {
-            setRefresh(true);
+            setRefresh(false);
         }
     }, [props.id]);
 
-    if (refresh) {
+    if (!refresh) {
         BlockTextReveal = BlockTextRevealClear;
+        TechListFadeIn = TechListFadeInClear;
         setTimeout(() => {
             BlockTextReveal = BlockTextRevealAnimate;
-            setRefresh(false);
+            TechListFadeIn = TechListFadeInAnimate;
+            setRefresh(true);
         });
     }
 
-    return (
+    return refresh && (
         <TextContainer>
             <ProjectID>
                 <BlockTextReveal inline>
@@ -170,8 +190,22 @@ function TextContent(props) {
             </ProjectID>
             <ProjectDetails>
                 <ProjectName>
-                    <BlockTextReveal inline>
+                    <BlockTextReveal
+                        inline
+                        onMouseEnter={() => setHoverOnName(true)}
+                        onMouseLeave={() => setHoverOnName(false)}
+                        style={{ cursor: 'pointer' }}
+                    >
                         {props.name}
+                        {
+                            props.name && hoverOnName
+                            ? <LinkSVG
+                                width={28}
+                                height={28}
+                                style={{ marginLeft: '8px' }}
+                            />
+                            : null
+                        } 
                     </BlockTextReveal>
                 </ProjectName>
                 <MyRole>
@@ -184,11 +218,11 @@ function TextContent(props) {
                         {props.desc}
                     </BlockTextReveal>
                 </ProjectDesc>
-                <TechList>
+                <TechListFadeIn>
                     {props.tech.map((techStr, i) => (
                         <TechTag key={i}>{techStr}</TechTag>
                     ))}
-                </TechList>
+                </TechListFadeIn>
             </ProjectDetails>
             <ProjectType>
                 <BlockTextReveal inline>
