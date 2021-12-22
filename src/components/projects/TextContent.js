@@ -14,7 +14,7 @@ const fadeIn = () => keyframes`
 `;
 const appearText = () => keyframes`
     0% {
-        color: #fff;
+        color: transparent;
     }
     100% {
         color: #333;
@@ -147,7 +147,7 @@ const BlockTextRevealAnimate = styled.span`
     display: ${props => (props.inline ? 'inline' : 'block')};
     animation: ${appearText} 0.5s linear forwards;
     animation-delay: 0.5s;
-    color: #fff;
+    color: transparent;
     &::after {
         content: '';
         top: 0;
