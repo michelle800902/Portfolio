@@ -11,9 +11,10 @@ const TextContainer = styled.section`
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
+    pointer-events: none;
 `;
 const ProjectID = styled.div`
-    padding: 10%;
+    padding: 10% 10% 5% 10%;
     font-family: 'AvenirHeavy';
     @media ${device.laptop} {
         font-size: 24px;
@@ -25,15 +26,9 @@ const ProjectID = styled.div`
         font-size: 48px;
     }
 `;
-const ProjectDetailsContainer = styled.div`
+const ProjectDetails = styled.div`
     height: 100%;
     padding: 0 10%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-`;
-const ProjectDetails = styled.div`
-    width: 100%;
     display: flex;
     flex-flow: column nowrap;
 `;
@@ -74,6 +69,23 @@ const ProjectDesc = styled.div`
     @media ${device.desktop} {
         font-size: 32px;
     }
+`;
+const TechList = styled.div`
+    padding-top: 5%;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+`;
+const TechTag = styled.div`
+    width: fit-content;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 4px;
+    margin: 0px 8px 8px 0px;
+    white-space: nowrap;
+    border-radius: 3px;
+    border: 1.5px solid #333;
+    color: #333;
 `;
 const ProjectType = styled.div`
     padding: 5% 10%;
@@ -156,25 +168,28 @@ function TextContent(props) {
                     {props.id}
                 </BlockTextReveal>
             </ProjectID>
-            <ProjectDetailsContainer>
-                <ProjectDetails>
-                    <ProjectName>
-                        <BlockTextReveal inline>
-                            {props.name}
-                        </BlockTextReveal>
-                    </ProjectName>
-                    <MyRole>
-                        <BlockTextReveal inline>
-                            {props.role}
-                        </BlockTextReveal>
-                    </MyRole>
-                    <ProjectDesc>
-                        <BlockTextReveal inline={false}>
-                            {props.desc}
-                        </BlockTextReveal>
-                    </ProjectDesc>
-                </ProjectDetails>
-            </ProjectDetailsContainer>
+            <ProjectDetails>
+                <ProjectName>
+                    <BlockTextReveal inline>
+                        {props.name}
+                    </BlockTextReveal>
+                </ProjectName>
+                <MyRole>
+                    <BlockTextReveal inline>
+                        {props.role}
+                    </BlockTextReveal>
+                </MyRole>
+                <ProjectDesc>
+                    <BlockTextReveal inline={false}>
+                        {props.desc}
+                    </BlockTextReveal>
+                </ProjectDesc>
+                <TechList>
+                    {props.tech.map((techStr, i) => (
+                        <TechTag key={i}>{techStr}</TechTag>
+                    ))}
+                </TechList>
+            </ProjectDetails>
             <ProjectType>
                 <BlockTextReveal inline>
                     {props.type}
