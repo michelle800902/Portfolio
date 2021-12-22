@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.a0c1dd83.chunk.css",
-    "main.js": "/Portfolio/static/js/main.e15ad568.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.e15ad568.chunk.js.map",
-    "runtime-main.js": "/Portfolio/static/js/runtime-main.92cad977.js",
-    "runtime-main.js.map": "/Portfolio/static/js/runtime-main.92cad977.js.map",
-    "static/js/2.3a501f41.chunk.js": "/Portfolio/static/js/2.3a501f41.chunk.js",
-    "static/js/2.3a501f41.chunk.js.map": "/Portfolio/static/js/2.3a501f41.chunk.js.map",
-    "static/js/3.ac8c7b9a.chunk.js": "/Portfolio/static/js/3.ac8c7b9a.chunk.js",
-    "static/js/3.ac8c7b9a.chunk.js.map": "/Portfolio/static/js/3.ac8c7b9a.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.747268d1.chunk.css",
+    "main.js": "/Portfolio/static/js/main.8d209ecd.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.8d209ecd.chunk.js.map",
+    "runtime-main.js": "/Portfolio/static/js/runtime-main.8bbcae1c.js",
+    "runtime-main.js.map": "/Portfolio/static/js/runtime-main.8bbcae1c.js.map",
+    "static/js/2.2269806a.chunk.js": "/Portfolio/static/js/2.2269806a.chunk.js",
+    "static/js/2.2269806a.chunk.js.map": "/Portfolio/static/js/2.2269806a.chunk.js.map",
+    "static/js/3.9758c7f6.chunk.js": "/Portfolio/static/js/3.9758c7f6.chunk.js",
+    "static/js/3.9758c7f6.chunk.js.map": "/Portfolio/static/js/3.9758c7f6.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "static/css/main.a0c1dd83.chunk.css.map": "/Portfolio/static/css/main.a0c1dd83.chunk.css.map",
-    "static/js/2.3a501f41.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.3a501f41.chunk.js.LICENSE.txt",
-    "static/media/laptop.bab92e54.svg": "/Portfolio/static/media/laptop.bab92e54.svg",
-    "static/media/logo_v2.a133f480.png": "/Portfolio/static/media/logo_v2.a133f480.png"
+    "static/css/main.747268d1.chunk.css.map": "/Portfolio/static/css/main.747268d1.chunk.css.map",
+    "static/js/2.2269806a.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.2269806a.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Portfolio/static/media/Valencia.982aa301.ttf",
+    "static/media/Iphone.26bfe896.png": "/Portfolio/static/media/Iphone.26bfe896.png",
+    "static/media/Tablet.d32d886e.png": "/Portfolio/static/media/Tablet.d32d886e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.92cad977.js",
-    "static/js/2.3a501f41.chunk.js",
-    "static/css/main.a0c1dd83.chunk.css",
-    "static/js/main.e15ad568.chunk.js"
+    "static/js/runtime-main.8bbcae1c.js",
+    "static/js/2.2269806a.chunk.js",
+    "static/css/main.747268d1.chunk.css",
+    "static/js/main.8d209ecd.chunk.js"
   ]
 }
