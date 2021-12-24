@@ -48,8 +48,8 @@ export const projectData = [
         type: '',
         role: '',
         tech: [],
-        imgSrc: [],
         link: '',
+        imgs: [],
     },
     {
         id: '01',
@@ -58,8 +58,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Front-end Engineer @ Groundhog Technologies',
         tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox'],
-        imgSrc: [P1Img1, P1Img2, P1Img3],
         link: '',
+        imgs: [P1Img1, P1Img2, P1Img3],
     },
     {
         id: '02',
@@ -68,8 +68,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
-        imgSrc: [P2Img1, P2Img2],
         link: '123',
+        imgs: [P2Img1, P2Img2],
     },
     {
         id: '03',
@@ -78,8 +78,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
-        imgSrc: [P3Img1, P3Img2],
         link: '123',
+        imgs: [P3Img1, P3Img2],
     },
     {
         id: '04',
@@ -88,8 +88,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3'],
-        imgSrc: [P4Img1, P4Img2],
         link: '123',
+        imgs: [P4Img1, P4Img2],
     },
     {
         id: '05',
@@ -98,8 +98,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3', 'jQuery', 'PHP', 'SQL', 'LeafLet'],
-        imgSrc: [P5Img1],
         link: '123',
+        imgs: [P5Img1],
     },
     {
         id: '06',
@@ -108,8 +108,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
         tech: ['JavaScript', 'Python', 'Django', 'D3'],
-        imgSrc: [P6Img1, P6Img2, P6Img3],
         link: '123',
+        imgs: [P6Img1, P6Img2, P6Img3],
     },
     {
         id: '07',
@@ -118,8 +118,8 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
         tech: ['JavaScript', 'Python', 'Django', 'PostgresDB'],
-        imgSrc: [P7Img1, P7Img2, P7Img3],
         link: '123',
+        imgs: [P7Img1, P7Img2, P7Img3],
     },
     {
         id: '08',
@@ -128,8 +128,8 @@ export const projectData = [
         type: '3D Game',
         role: 'Postgraduate @ NCCU CS',
         tech: ['C#', 'Unity'],
-        imgSrc: [P8Img1, P8Img2],
         link: '123',
+        imgs: [P8Img1, P8Img2],
     },
     {
         id: '',
@@ -138,7 +138,7 @@ export const projectData = [
         type: '',
         role: '',
         tech: [],
-        imgSrc: [],
         link: '',
+        imgs: [],
     },
 ];

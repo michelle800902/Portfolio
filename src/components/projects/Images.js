@@ -57,18 +57,18 @@ function Images(props) {
     return (
         <>
         {
-            props.srcArr.map(renderImage)
+            props.imgs.map(renderImage)
         }
-            {/* <ImageContainer src={props.srcArr[0]} height={38} right={4} bottom={-82} scroll={scrollPercent * 24} zIndex={1} alt="img_1" />
-            <ImageContainer src={props.srcArr[1]} height={42} right={1} bottom={-48} scroll={scrollPercent * 12} zIndex={3} alt="img_2" />
-            <ImageContainer src={props.srcArr[2]} height={36} right={8} bottom={-24} scroll={scrollPercent * 6} zIndex={2} alt="img_3" /> */}
+            {/* <ImageContainer src={props.imgs[0]} height={38} right={4} bottom={-82} scroll={scrollPercent * 24} zIndex={1} alt="img_1" />
+            <ImageContainer src={props.imgs[1]} height={42} right={1} bottom={-48} scroll={scrollPercent * 12} zIndex={3} alt="img_2" />
+            <ImageContainer src={props.imgs[2]} height={36} right={8} bottom={-24} scroll={scrollPercent * 6} zIndex={2} alt="img_3" /> */}
         </>
     )
 }
 
 Images.propTypes = {
     projectIndex: PropTypes.number.isRequired,
-    srcArr: PropTypes.array.isRequired,
+    imgs: PropTypes.array.isRequired,
     boxHeight: PropTypes.number.isRequired,
     screenHeight: PropTypes.number.isRequired,
     scrollHeight: PropTypes.number.isRequired,

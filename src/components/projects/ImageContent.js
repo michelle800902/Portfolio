@@ -43,11 +43,12 @@ function ImageContent() {
     });
 
     const renderProjectImages = (data, i) => {
-        return data.imgSrc.length ? (
+        const { imgs } = data;
+        return imgs.length ? (
             <ImagesBox key={i}>
                 <Images
                     projectIndex={i}
-                    srcArr={data.imgSrc}
+                    imgs={imgs}
                     boxHeight={boxHeight}
                     screenHeight={screenHeight}
                     scrollHeight={scrollHeight}
