@@ -1,3 +1,22 @@
+import P1Img1 from '../assets/images/projects/01_CovMo/reporting.png';
+import P1Img2 from '../assets/images/projects/01_CovMo/geo.png';
+import P1Img3 from '../assets/images/projects/01_CovMo/callwindow.png';
+import P2Img1 from '../assets/images/projects/02_ETL_Scheduling/graph.png';
+import P2Img2 from '../assets/images/projects/02_ETL_Scheduling/dashboard.png';
+import P3Img1 from '../assets/images/projects/03_Intention_Mining/cluster.png';
+import P3Img2 from '../assets/images/projects/03_Intention_Mining/network.png';
+import P4Img1 from '../assets/images/projects/04_Medical_Knowledge/network.png';
+import P4Img2 from '../assets/images/projects/04_Medical_Knowledge/chord.png';
+import P5Img1 from '../assets/images/projects/05_Healthcare_Map/map.png';
+import P6Img1 from '../assets/images/projects/06_Epidemic_Map/map1.png';
+import P6Img2 from '../assets/images/projects/06_Epidemic_Map/map2.png';
+import P6Img3 from '../assets/images/projects/06_Epidemic_Map/map3.png';
+import P7Img1 from '../assets/images/projects/07_Fashion_Style/home.png';
+import P7Img2 from '../assets/images/projects/07_Fashion_Style/option.png';
+import P7Img3 from '../assets/images/projects/07_Fashion_Style/dressup.png';
+import P8Img1 from '../assets/images/projects/08_Space_Shooter/scene.png';
+import P8Img2 from '../assets/images/projects/08_Space_Shooter/win.png';
+
 export const navbarData = [
     {
         id: 'about',
@@ -29,6 +48,7 @@ export const projectData = [
         type: '',
         role: '',
         tech: [],
+        imgSrc: [],
         link: '',
     },
     {
@@ -38,6 +58,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Front-end Engineer @ Groundhog Technologies',
         tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox'],
+        imgSrc: [P1Img1, P1Img2, P1Img3],
         link: '',
     },
     {
@@ -47,6 +68,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
+        imgSrc: [P2Img1, P2Img2],
         link: '123',
     },
     {
@@ -56,6 +78,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
+        imgSrc: [P3Img1, P3Img2],
         link: '123',
     },
     {
@@ -65,6 +88,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3'],
+        imgSrc: [P4Img1, P4Img2],
         link: '123',
     },
     {
@@ -74,6 +98,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3', 'jQuery', 'PHP', 'SQL', 'LeafLet'],
+        imgSrc: [P5Img1],
         link: '123',
     },
     {
@@ -83,6 +108,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
         tech: ['JavaScript', 'Python', 'Django', 'D3'],
+        imgSrc: [P6Img1, P6Img2, P6Img3],
         link: '123',
     },
     {
@@ -92,6 +118,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
         tech: ['JavaScript', 'Python', 'Django', 'PostgresDB'],
+        imgSrc: [P7Img1, P7Img2, P7Img3],
         link: '123',
     },
     {
@@ -101,6 +128,7 @@ export const projectData = [
         type: '3D Game',
         role: 'Postgraduate @ NCCU CS',
         tech: ['C#', 'Unity'],
+        imgSrc: [P8Img1, P8Img2],
         link: '123',
     },
     {
@@ -110,6 +138,7 @@ export const projectData = [
         type: '',
         role: '',
         tech: [],
+        imgSrc: [],
         link: '',
     },
 ];

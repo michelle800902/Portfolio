@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { projectData } from '../../constants/index';
 import Images from './Images';
 
-const ImageContainer = styled.div`
+const ImagesContainer = styled.div`
     width: 50%;
     margin-left: 60%;
     display: flex;
     flex-flow: column nowrap;
 `;
-const ImageBox = styled.div`
+const ImagesBox = styled.div`
     height: 100vh;
     margin-top: 40vh;
     position: relative;
@@ -42,18 +42,27 @@ function ImageContent() {
         }
     });
 
-    return (
-        <ImageContainer>
-            <ImageBox>
+    const renderProjectImages = (data, i) => {
+        return data.imgSrc.length ? (
+            <ImagesBox key={i}>
                 <Images
-                    projectIndex={1}
+                    projectIndex={i}
+                    srcArr={data.imgSrc}
                     boxHeight={boxHeight}
                     screenHeight={screenHeight}
                     scrollHeight={scrollHeight}
                     scrollPercent={scrollPercent}
                 />
-            </ImageBox>
-        </ImageContainer>
+            </ImagesBox>
+        ) : null;
+    }
+
+    return (
+        <ImagesContainer>
+            {
+                projectData.map(renderProjectImages)
+            }
+        </ImagesContainer>
     );
 }
 
