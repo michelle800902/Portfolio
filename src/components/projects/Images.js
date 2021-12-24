@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import TabletImg from '../../assets/images/project1/Tablet.png';
-import IphoneImg from '../../assets/images/project1/Iphone.png';
+// import TabletImg from '../../assets/images/project1/Tablet.png';
+// import IphoneImg from '../../assets/images/project1/Iphone.png';
 
 const Tablet = styled.img`
     right: 0vw;
@@ -33,8 +33,8 @@ function Images(props) {
 
     return (
         <>
-            <Tablet src={TabletImg} scroll={scrollPercent} alt="cmgOrNotTablet" />
-            <Iphone src={IphoneImg} scroll={scrollPercent} alt="cmgOrNotIphone" />
+            {/* <Tablet src={TabletImg} scroll={scrollPercent} alt="cmgOrNotTablet" />
+            <Iphone src={IphoneImg} scroll={scrollPercent} alt="cmgOrNotIphone" /> */}
         </>
     )
 }
