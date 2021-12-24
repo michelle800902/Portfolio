@@ -1,45 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import TabletImg from '../../assets/images/project1/Tablet.png';
-// import IphoneImg from '../../assets/images/project1/Iphone.png';
+import ImgOne from '../../assets/images/projects/01_CovMo/geo.png';
+import ImgTwo from '../../assets/images/projects/01_CovMo/reporting.png';
+import ImgThree from '../../assets/images/projects/01_CovMo/callwindow.png';
 
-const Tablet = styled.img`
-    right: 0vw;
-    bottom: -40vh;
-    height: 80vh; 
+const ImageOneContainer = styled.img`
+    right: 3vw;
+    bottom: -10vh;
+    height: 40vh; 
     position: absolute;
-    filter: blur(0.6px);
-    transform: translate(0px,-${props => props.scroll * 4}%);
-    transition: transform 0.2s ease-out;
+    // filter: blur(0.6px);
+    transform: translate(0px, -${props => props.scroll * 5}%);
+    transition: transform 0.4s ease-out;
+    border-radius: 6px;
 `;
-const Iphone = styled.img`
-    left: 0vw;
-    bottom: -70vh;
-    height: 80vh;
+const ImageTwoContainer = styled.img`
+    right: 0vw;
+    bottom: -20vh;
+    height: 40vh;
     position: absolute;
-    transform: translate(0px,-${props => props.scroll * 2}%) scale(0.94);
+    transform: translate(0px, -${props => props.scroll * 2}%) scale(0.94);
     transition: transform 0.2s ease-out;
+    border-radius: 6px;
 `;
 
 function Images(props) {
-    const index = 1;
-
     let scrollPercent = props.scrollPercent;
-    const heighttoBeReducedinVH = ((props.boxHeight * index) - 100);
+    const heighttoBeReducedinVH = ((props.boxHeight * props.projectIndex) - 100);
     const scrollOffset = (props.screenHeight * heighttoBeReducedinVH) / 100;
-    const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) + index - 1;
+    const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) + props.projectIndex - 1;
     scrollPercent -= scrollOffsetInPercent;
 
     return (
         <>
-            {/* <Tablet src={TabletImg} scroll={scrollPercent} alt="cmgOrNotTablet" />
-            <Iphone src={IphoneImg} scroll={scrollPercent} alt="cmgOrNotIphone" /> */}
+            <ImageOneContainer src={ImgOne} scroll={scrollPercent} alt="img_one" />
+            <ImageTwoContainer src={ImgTwo} scroll={scrollPercent} alt="img_two" />
         </>
     )
 }
 
 Images.propTypes = {
+    projectIndex: PropTypes.number.isRequired,
     boxHeight: PropTypes.number.isRequired,
     screenHeight: PropTypes.number.isRequired,
     scrollHeight: PropTypes.number.isRequired,

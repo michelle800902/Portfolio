@@ -46,6 +46,7 @@ function ImageContent() {
         <ImageContainer>
             <ImageBox>
                 <Images
+                    projectIndex={1}
                     boxHeight={boxHeight}
                     screenHeight={screenHeight}
                     scrollHeight={scrollHeight}
