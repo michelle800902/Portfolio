@@ -194,11 +194,14 @@ function TextContent(props) {
                         inline
                         onMouseEnter={() => setHoverOnName(true)}
                         onMouseLeave={() => setHoverOnName(false)}
-                        style={{ cursor: 'pointer' }}
+                        style={{
+                            whiteSpace: 'nowrap',
+                            cursor: props.link ? 'pointer' : 'default',
+                        }}
                     >
                         {props.name}
                         {
-                            props.name && hoverOnName
+                            props.link && hoverOnName
                             ? <LinkSVG
                                 width={28}
                                 height={28}
