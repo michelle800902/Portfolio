@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import GeoImg from '../../assets/images/projects/01_CovMo/geo.png';
-// import ReportingImg from '../../assets/images/projects/01_CovMo/reporting.png';
-// import CallwindowImg from '../../assets/images/projects/01_CovMo/callwindow.png';
 
-const ImageContainer = styled.img.attrs(({ scroll }) => ({
+const ImageWrapper = styled.img.attrs(({ scroll }) => ({
     style: {
         transform: `translate(0px, -${scroll}%)`,
     },
 }))`
     position: absolute;
     border-radius: 6px;
-    transition: transform 1s ease-out;
+    transition: transform 0.2s ease-out;
     right: ${props => props.right}vw;
     bottom: ${props => props.bottom}vh;
     height: ${props => props.height}vh;
@@ -27,13 +24,12 @@ function Images(props) {
 
     let scrollParam = 24;
     let scrollPercent = props.scrollPercent;
-    
     const calcScrollPercent = () => {
         const heighttoBeReducedinVH = ((props.boxHeight * props.projectIndex) - 100);
         const scrollOffset = (props.screenHeight * heighttoBeReducedinVH) / 100;
-        const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) + props.projectIndex;
+        const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight);
         scrollPercent -= scrollOffsetInPercent;
-    }
+    };
     calcScrollPercent();
 
     const renderImage = (src, i) => {
@@ -41,7 +37,7 @@ function Images(props) {
             scrollParam /= 2;
         }
         return (
-            <ImageContainer
+            <ImageWrapper
                 key={i}
                 src={src}
                 right={rightArr[i]}
@@ -57,11 +53,13 @@ function Images(props) {
     return (
         <>
         {
-            props.imgs.map(renderImage)
+            // props.imgs.map(renderImage)
         }
-            {/* <ImageContainer src={props.imgs[0]} height={38} right={4} bottom={-82} scroll={scrollPercent * 24} zIndex={1} alt="img_1" />
-            <ImageContainer src={props.imgs[1]} height={42} right={1} bottom={-48} scroll={scrollPercent * 12} zIndex={3} alt="img_2" />
-            <ImageContainer src={props.imgs[2]} height={36} right={8} bottom={-24} scroll={scrollPercent * 6} zIndex={2} alt="img_3" /> */}
+            {/* 
+            <ImageContainer height={38} right={4} bottom={-82} scroll={scrollPercent * 24} zIndex={1} alt="img_1" />
+            <ImageContainer height={42} right={1} bottom={-48} scroll={scrollPercent * 12} zIndex={3} alt="img_2" />
+            <ImageContainer height={36} right={8} bottom={-24} scroll={scrollPercent * 6}  zIndex={2} alt="img_3" />
+            */}
         </>
     )
 }

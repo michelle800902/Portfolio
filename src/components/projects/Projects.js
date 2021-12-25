@@ -13,7 +13,7 @@ const ProjectsWrapper = styled.div`
 `;
 
 function Projects() {
-    const startTop = 1500;
+    const startTop = 1400;
     const windowHeight = window.innerHeight;
     const totalHeight = windowHeight * (projectData.length - 1);
 
@@ -23,9 +23,9 @@ function Projects() {
         const { scrollTop } = event.srcElement.documentElement;
         if (scrollTop > startTop) {
             const currentNumber = Math.floor((scrollTop - startTop) / windowHeight) + 1;
-            if (currentNumber >= projectData.length || scrollTop > (startTop + totalHeight)) {
+            if (scrollTop > (startTop + totalHeight) - (windowHeight * 0.5)) {
                 setSlideNumber(0);
-            } else {
+            } else if (currentNumber < projectData.length - 1) {
                 setSlideNumber(currentNumber);
             }
         } else {
@@ -38,7 +38,7 @@ function Projects() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, []);
+    });
 
     return (
         <ProjectsWrapper id="projects" totalHeight={totalHeight}>

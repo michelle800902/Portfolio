@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import { projectData } from '../../constants/index';
 import Images from './Images';
 
-const ImagesContainer = styled.div`
-    width: 50%;
+const ImageContainer = styled.div`
+    width: 40%;
     margin-left: 60%;
     display: flex;
     flex-flow: column nowrap;
 `;
 const ImagesBox = styled.div`
     height: 100vh;
-    margin-top: 40vh;
+    margin-top: 15%;
     position: relative;
+    outline: 1px dashed #000;
 `;
 
 function ImageContent() {
@@ -27,7 +28,7 @@ function ImageContent() {
         const sd = Math.max(body.scrollTop, documentElement.scrollTop);
         const sp = (sd / (documentElement.scrollHeight - documentElement.clientHeight) * 100);
         const minlimit = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
-        const maxlimit = (documentElement.clientHeight * 1040) / documentElement.scrollHeight;
+        const maxlimit = (documentElement.clientHeight * 1000) / documentElement.scrollHeight;
         if (sp >= minlimit && sp <= maxlimit) {
             setScrollPercent(sp);
         }
@@ -45,7 +46,8 @@ function ImageContent() {
     const renderProjectImages = (data, i) => {
         const { imgs } = data;
         return imgs.length ? (
-            <ImagesBox key={i}>
+            <ImagesBox id={`box_${i}`} key={i}>
+                0{i}
                 <Images
                     projectIndex={i}
                     imgs={imgs}
@@ -59,11 +61,11 @@ function ImageContent() {
     }
 
     return (
-        <ImagesContainer>
+        <ImageContainer>
             {
                 projectData.map(renderProjectImages)
             }
-        </ImagesContainer>
+        </ImageContainer>
     );
 }
 
