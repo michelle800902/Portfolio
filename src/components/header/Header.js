@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg'
+import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
 import { navbarData } from '../../constants/index';
+import ThemeToggle from './ThemeToggle';
 
 const HeaderWrapper = styled.div`
     position: fixed;
@@ -103,6 +104,7 @@ function Header() {
                 ))
             }
             </Navbar>
+            <ThemeToggle />
         </HeaderWrapper>
     );
 }
