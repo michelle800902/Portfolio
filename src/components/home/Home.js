@@ -15,6 +15,7 @@ const HomeWrapper  = styled.div`
 const Description = styled.div`
     font-size: 32px;
     font-weight: bold;
+    font-family: 'AvenirHeavy';
     color: #aaa;
 `;
 

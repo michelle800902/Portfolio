@@ -12,6 +12,7 @@ const HeaderWrapper = styled.div`
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.9);
     transition: top .3s ease-in-out;
+    z-index: 10;
 `;
 const Logo = styled.div`
     cursor: pointer;
@@ -38,6 +39,7 @@ const NavbarItem = styled.div`
     justify-content: center;
     a {
         text-decoration: none;
+        font-family: 'AvenirRoman';
         color: #363636;
         &::after {
             content: "";

@@ -125,8 +125,9 @@ const TechTag = styled.div`
     margin: 0px 8px 8px 0px;
     white-space: nowrap;
     border-radius: 3px;
-    border: 1.5px solid #333;
+    border: 1px solid #333;
     color: #333;
+    font-family: 'AvenirBook';
 `;
 let TechListFadeIn = styled.div``;
 const TechListFadeInClear = styled.div``;
