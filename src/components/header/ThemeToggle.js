@@ -3,28 +3,28 @@ import styled, { keyframes } from 'styled-components';
 
 const switchOff = () => keyframes`
     0% {
-        left: 2px;
+        left: 0px;
     }
     60% {
-        left: 2px;
-        width: 40px;
+        left: 0px;
+        width: 30px;
     }
     100% {
-        left: 34px;
-        width: 20px;
+        left: 26px;
+        width: 18px;
     }
 `;
 const switchOn = () => keyframes`
     0% {
-        left: 34px;
-        width: 20px;
+        left: 26px;
+        width: 18px;
     }
     60% {
         left: 10px;
-        width: 40px;
+        width: 30px;
     }
     100% {
-        left: 2px;
+        left: 0px;
     }
 `;
 const ThemeToggleWrapper = styled.div`
@@ -39,14 +39,15 @@ const Toggle = styled.div`
 /** Sun & Moon element **/
 /** Gray dots on the moon **/
 const ToggleLabel = styled.label`
-    width: 60px;
-    height: 30px;
+    width: 50px;
+    height: 25px;
     background: #96dcee;
-    border-radius: 30px;
+    border-radius: 25px;
     border: 3px solid #72cce3;
     display: flex;
     position: relative;
     transition: all 350ms ease-in;
+    cursor: pointer;
 
     &::before {
         animation-name: ${switchOn};
@@ -54,11 +55,11 @@ const ToggleLabel = styled.label`
         animation-fill-mode: forwards;
         transition: all 350ms ease-in;
         content: "";
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         border: 3px solid #f5eb71;
-        top: 2px;
-        left: 2px;
+        top: 0px;
+        left: 0px;
         position: absolute;
         border-radius: 20px;
         background: #fffaa8;
@@ -69,8 +70,8 @@ const ToggleLabel = styled.label`
         position: absolute;
         content: "";
         box-shadow: #e8e8ea -12px 0 0 2px, #e8e8ea -16px 6px 0 0.5px;
-        left: 56px;
-        top: 10px;
+        left: 48px;
+        top: 6px;
         width: 2px;
         height: 2px;
         background: transparent;
@@ -79,12 +80,12 @@ const ToggleLabel = styled.label`
     }
 `;
 const ToggleSpan = styled.span`
-    width: 10px;
+    width: 6px;
     height: 2px;
     border-radius: 2px;
     position: relative;
     background: #fff;
-    left: 48px;
+    left: 42px;
     top: 12px;
     transition: all 150ms ease-in;
 
@@ -92,18 +93,18 @@ const ToggleSpan = styled.span`
         content: '';
         position: absolute;
         top: -5px;
-        width: 20px;
+        width: 12px;
         height: 2px;
         border-radius: 2px;
         background: #fff;
-        left: -20px;
+        left: -16px;
         transition: all 150ms ease-in;
     }
     &::after {
         content: '';
         position: absolute;
         top: 5px;
-        width: 18px;
+        width: 12px;
         height: 2px;
         border-radius: 2px;
         background: #fff;
@@ -132,7 +133,7 @@ const ToggleCheckbox = styled.input`
         opacity: 1;
     }
     &:checked + ${ToggleLabel} ${ToggleSpan} {
-        left: 28px;
+        left: 20px;
         width: 2px;
     }
     &:checked + ${ToggleLabel} ${ToggleSpan}:before {

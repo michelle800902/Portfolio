@@ -40,6 +40,7 @@ const Navbar = styled.div`
 `;
 const NavbarItem = styled.div`
     height: 100%;
+    margin-top: 8px;
     padding: 0 16px;
     display: flex;
     align-items: center;
