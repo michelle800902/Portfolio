@@ -17,6 +17,9 @@ const HeaderWrapper = styled.div`
     transition: top .3s ease-in-out;
     z-index: 10;
 `;
+const HeaderRight = styled.div`
+    display: flex;
+`;
 const Logo = styled.div`
     cursor: pointer;
     display: flex;
@@ -35,12 +38,13 @@ const Title = styled.div`
     opacity: 0.5;
 `;
 const Navbar = styled.div`
+    padding: 0 16px;
     display: flex;
     justify-content: flex-end;
 `;
 const NavbarItem = styled.div`
     height: 100%;
-    margin-top: 8px;
+    margin-top: 4px;
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -94,18 +98,20 @@ function Header() {
                 <LogoSVG width={50} height={50} />
                 <Title>Portfolio</Title>
             </Logo>
-            <Navbar id="navbar">
-            {
-                navbarData.map((item) => (
-                    <NavbarItem key={item.id}>
-                        <a href={item.href}>
-                            {item.name}
-                        </a>
-                    </NavbarItem>
-                ))
-            }
-            </Navbar>
-            <ThemeToggle />
+            <HeaderRight>
+                <Navbar id="navbar">
+                {
+                    navbarData.map((item) => (
+                        <NavbarItem key={item.id}>
+                            <a href={item.href}>
+                                {item.name}
+                            </a>
+                        </NavbarItem>
+                    ))
+                }
+                </Navbar>
+                <ThemeToggle />
+            </HeaderRight>
         </HeaderWrapper>
     );
 }
