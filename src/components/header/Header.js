@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg'
 import { navbarData } from '../../constants/index';
 
 const HeaderWrapper = styled.div`
     position: fixed;
     top: ${props => props.top}px;
-    width: 100%;
-    height: 50px;
+    height: ${props => props.height}px;
+    width: calc(100% - 6%);
+    padding: 0 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,16 +18,20 @@ const HeaderWrapper = styled.div`
 `;
 const Logo = styled.div`
     cursor: pointer;
-    width: 30px;
-    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #000;
-    transition: transform .5s ease-in-out;
+    transition: transform .3s ease-in-out;
     &:hover {
-        transform: rotate(90deg);
+        transform: scale(1.2);
     }
+`;
+const Title = styled.div`
+    padding: 0 8px;
+    font-size: 42px;
+    font-family: 'Valencia';
+    color: #ED6EA4;
+    opacity: 0.5;
 `;
 const Navbar = styled.div`
     display: flex;
@@ -37,26 +43,30 @@ const NavbarItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    &:hover {
+        font-weight: bold;
+    }
     a {
         text-decoration: none;
         font-family: 'AvenirRoman';
-        color: #363636;
+        color: #333;
         &::after {
             content: "";
             display: block;
             width: 0;
             height: 4px;
-            margin-top: 8px;
+            margin-top: 4px;
         }
         &:hover::after {
             width: 100%;
-            background: #ffe65f;
+            background: #ED6EA4;
             transition: width .3s ease-out 0s;
         }
     }
 `;
 
 function Header() {
+    const height = 60;
     const [top, setTop] = useState(0);
 
     const onClickLogo = () => {
@@ -70,16 +80,17 @@ function Header() {
             if (prevScrollPos > currentScrollPos) {
                 setTop(0);
             } else {
-                setTop(-50);
+                setTop(-1 * height);
             }
             prevScrollPos = currentScrollPos;
         }
     }, []);
 
     return (
-        <HeaderWrapper top={top}>
+        <HeaderWrapper height={height} top={top}>
             <Logo onClick={onClickLogo}>
-                M
+                <LogoSVG width={50} height={50} />
+                <Title>Portfolio</Title>
             </Logo>
             <Navbar id="navbar">
             {
