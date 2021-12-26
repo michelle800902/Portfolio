@@ -9,7 +9,6 @@ const ProjectsWrapper = styled.div`
     height: ${props => props.totalHeight}px;
     display: flex;
     flex-flow: row nowrap;
-    background-color: #ece;
 `;
 
 function Projects() {

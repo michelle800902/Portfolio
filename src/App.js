@@ -12,7 +12,7 @@ import './assets/index.css';
 // import './App.css';
 
 const AppWrapper = styled.div`
-    background-color: #fff;
+    background-color: #f2d9f2;
 `;
 
 function App() {

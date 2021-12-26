@@ -34,7 +34,7 @@ const Title = styled.div`
     padding: 0 8px;
     font-size: 42px;
     font-family: 'Valencia';
-    color: #ED6EA4;
+    color: #ed6ea4;
     opacity: 0.5;
 `;
 const Navbar = styled.div`
@@ -65,7 +65,7 @@ const NavbarItem = styled.div`
         }
         &:hover::after {
             width: 100%;
-            background: #ED6EA4;
+            background: #ed6ea4;
             transition: width .3s ease-out 0s;
         }
     }
