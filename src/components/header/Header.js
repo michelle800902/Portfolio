@@ -25,9 +25,9 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform .3s ease-in-out;
+    transition: transform .5s ease-in-out;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 `;
 const Title = styled.div`

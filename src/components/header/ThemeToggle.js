@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { ReactComponent as SunSVG } from '../../assets/images/sun.svg';
+import { ReactComponent as MoonSVG } from '../../assets/images/moon.svg';
 
 const switchOff = () => keyframes`
     0% {
@@ -148,14 +150,36 @@ const ToggleCheckbox = styled.input`
         top: 5px;
     }
 `;
+const Theme = styled.div`
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 function ThemeToggle() {
+    const [isLight, setIsLight] = useState(true);
+
+    const onClickToggle = () => {
+        setIsLight(!isLight);
+    };
+
     return (
         <ThemeToggleWrapper>
             <Toggle>
                 <ToggleCheckbox type="checkbox" id="toggle" />
-                <ToggleLabel htmlFor="toggle"><ToggleSpan /></ToggleLabel>
+                <ToggleLabel htmlFor="toggle" onClick={onClickToggle}>
+                    <ToggleSpan />
+                </ToggleLabel>
             </Toggle>
+            <Theme>
+                {
+                    isLight
+                    ? <SunSVG width={50} height={50} />
+                    : <MoonSVG width={36} height={36} />
+                }
+            </Theme>
         </ThemeToggleWrapper>
     );
 }
