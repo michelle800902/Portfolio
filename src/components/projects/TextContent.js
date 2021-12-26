@@ -34,7 +34,7 @@ const showBlock = () => keyframes`
         width: 0%
     }
 `;
-const TextContainer = styled.section`
+const TextContentWrapper = styled.section`
     position: fixed;
     top: 0;
     left: 0;
@@ -182,7 +182,7 @@ function TextContent(props) {
     }
 
     return refresh && (
-        <TextContainer>
+        <TextContentWrapper>
             <ProjectID>
                 <BlockTextReveal inline>
                     {props.id}
@@ -232,7 +232,7 @@ function TextContent(props) {
                     {props.type}
                 </BlockTextReveal>
             </ProjectType>
-        </TextContainer>
+        </TextContentWrapper>
     );
 }
 

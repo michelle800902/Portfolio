@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const ImageWrapper = styled.img.attrs(({ scroll }) => ({
+const ImagesWrapper = styled.div``;
+const Image = styled.img.attrs(({ scroll }) => ({
     style: {
-        transform: `translate(0px, -${scroll}%)`,
+        transform: `translateY(-${scroll}%)`,
     },
 }))`
     position: absolute;
@@ -18,16 +19,16 @@ const ImageWrapper = styled.img.attrs(({ scroll }) => ({
 
 function Images(props) {
     const rightArr = [3, 1, 6];
-    const bottomArr = [-82, -48, -24];
+    const bottomArr = [-80, -50, -30];
     const heightArr = [38, 42, 36];
     const zIndexArr = [1, 3, 2];
-
+    
     let scrollParam = 24;
     let scrollPercent = props.scrollPercent;
     const calcScrollPercent = () => {
-        const heighttoBeReducedinVH = ((props.boxHeight * props.projectIndex) - 100);
+        const heighttoBeReducedinVH = (props.boxHeight * props.projectIndex) - 100;
         const scrollOffset = (props.screenHeight * heighttoBeReducedinVH) / 100;
-        const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight);
+        const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) - ((props.projectIndex - 1) * 2);
         scrollPercent -= scrollOffsetInPercent;
     };
     calcScrollPercent();
@@ -37,7 +38,7 @@ function Images(props) {
             scrollParam /= 2;
         }
         return (
-            <ImageWrapper
+            <Image
                 key={i}
                 src={src}
                 right={rightArr[i]}
@@ -51,16 +52,11 @@ function Images(props) {
     };
 
     return (
-        <>
-        {
-            // props.imgs.map(renderImage)
-        }
-            {/* 
-            <ImageContainer height={38} right={4} bottom={-82} scroll={scrollPercent * 24} zIndex={1} alt="img_1" />
-            <ImageContainer height={42} right={1} bottom={-48} scroll={scrollPercent * 12} zIndex={3} alt="img_2" />
-            <ImageContainer height={36} right={8} bottom={-24} scroll={scrollPercent * 6}  zIndex={2} alt="img_3" />
-            */}
-        </>
+        <ImagesWrapper>
+            {
+                props.imgs.map(renderImage)
+            }
+        </ImagesWrapper>
     )
 }
 
