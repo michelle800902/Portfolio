@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJsSquare, faNode, faReact, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faPython, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import device from '../../assets/responsive/breakpoints';
 
 const AboutWrapper = styled.div`
     width: 100%;
-    height: 40vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 `;
@@ -15,7 +17,8 @@ const Title = styled.div`
     transform: translateX(${props => props.scrollPercent * 5}%);
     transition: transform 0.5s ease-out;
     font-family: 'AvenirHeavy';
-    color: #eee;
+    color: #fff;
+    opacity: 0.9;
     @media ${device.laptop} {
         font-size: 180px;
     }
@@ -27,11 +30,10 @@ const Title = styled.div`
     }
 `;
 const Description = styled.div`
-    align-items: center;
-    font-family: 'AvenirLight';
-    text-align: left;
+    display: grid;
     margin-left: 30%;
     margin-right: 5%;
+    font-family: 'AvenirLight';
     @media ${device.laptop} {
         transform: translateY(90%);
         font-size: 30px;
@@ -43,6 +45,19 @@ const Description = styled.div`
     @media ${device.desktop} {
         transform: translateY(80%);
         font-size: 70px;
+    }
+`;
+const DescriptionSpan = styled.span`
+    width: 100%;
+    margin: 6px 0;
+`;
+const SkillSet = styled.div`
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    svg {
+        margin-right: 24px;
     }
 `;
 
@@ -72,8 +87,24 @@ function About() {
                 ABOUT ME
             </Title>
             <Description>
-                Front-end developer who cares deeply about user experience.
-                Serious passion for UI design and new technologies.
+                <DescriptionSpan>
+                    Front-end Engineer who has 3+ years of experience in large-scale data product development.
+                </DescriptionSpan>
+                <DescriptionSpan>
+                    Self-motivated problem solver that passionates about software technologies and keeps learning new skills.
+                </DescriptionSpan>
+                <SkillSet>
+                    <FontAwesomeIcon icon={faJsSquare} size="2x" />
+                    <FontAwesomeIcon icon={faNode} size="2x" />
+                    <FontAwesomeIcon icon={faReact} size="2x" />
+                    <FontAwesomeIcon icon={faVuejs} size="2x" />
+                    <FontAwesomeIcon icon={faHtml5} size="2x" />
+                    <FontAwesomeIcon icon={faCss3Alt} size="2x" />
+                    <FontAwesomeIcon icon={faSass} size="2x" />
+                    <FontAwesomeIcon icon={faBootstrap} size="2x" />
+                    <FontAwesomeIcon icon={faPython} size="2x" />
+                    <FontAwesomeIcon icon={faGitAlt} size="2x" />
+                </SkillSet>
             </Description>
         </AboutWrapper>
     );
