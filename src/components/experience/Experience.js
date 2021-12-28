@@ -23,6 +23,7 @@ function Experience() {
                 date={data.date}
                 iconStyle={{ background: '#ccc', color: '#fff', textAlign: 'center' }}
                 icon={<></>}
+                intersectionObserverProps={{ rootMargin: '0px 0px 40px 0px' }}
             >
                 <h3 className="vertical-timeline-element-title">{data.title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{data.company}</h4>
