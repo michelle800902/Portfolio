@@ -5,6 +5,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 import device from '../../assets/responsive/breakpoints';
+import './wave.css';
 
 const ContactWrapper = styled.div`
     width: 100%;

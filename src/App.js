@@ -7,9 +7,7 @@ import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
-import './style.css';
 import './assets/index.css';
-// import './App.css';
 
 const AppWrapper = styled.div`
     background-color: #f2d9f2;
