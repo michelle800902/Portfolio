@@ -12,7 +12,7 @@ const AboutWrapper = styled.div`
 `;
 const Title = styled.div`
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: -30%;
     transform: translateX(${props => props.scrollPercent * 5}%);
     transition: transform 0.5s ease-out;
