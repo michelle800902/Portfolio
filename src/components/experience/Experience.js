@@ -8,21 +8,39 @@ const ExperienceWrapper = styled.div`
     width: 100%;
     height: 200vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #ece;
 `;
+const Title = styled.div`
+    font-family: 'AvenirHeavy';
+    font-size: 60px;
+    color: #fff;
+    opacity: 0.9;
+`;
+const CompanyIcon = styled.div`
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff;
+`;
+const IconImg = styled.img`
+    width: 40px;
+    height: 40px;
+`;
 
 function Experience() {
-
     const renderTimelineElement = (data, i) => {
         return (
             <VerticalTimelineElement
                 key={i}
                 className="vertical-timeline-element--work"
                 date={data.date}
-                iconStyle={{ background: '#ccc', color: '#fff', textAlign: 'center' }}
-                icon={<></>}
+                icon={<CompanyIcon><IconImg src={data.icon} /></CompanyIcon>}
                 intersectionObserverProps={{ rootMargin: '0px 0px 40px 0px' }}
             >
                 <h3 className="vertical-timeline-element-title">{data.title}</h3>
@@ -34,6 +52,7 @@ function Experience() {
 
     return (
         <ExperienceWrapper id="experience">
+            <Title>Experience</Title>
             <VerticalTimeline>
                 {
                     experienceData.map(renderTimelineElement)

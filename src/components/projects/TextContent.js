@@ -182,7 +182,7 @@ function TextContent(props) {
         });
     }
 
-    return refresh && (
+    return refresh && props.id && (
         <TextContentWrapper>
             <ProjectID>
                 <BlockTextReveal inline>

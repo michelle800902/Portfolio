@@ -1,3 +1,8 @@
+import GroundhogImg from '../assets/images/experience/groundhog.png';
+import CathayImg from '../assets/images/experience/cathay.png';
+import DeltaImg from '../assets/images/experience/delta.png';
+import NCCUImg from '../assets/images/experience/nccu.png';
+import TTUImg from '../assets/images/experience/ttu.png';
 import P1Img1 from '../assets/images/projects/01_CovMo/reporting.png';
 import P1Img2 from '../assets/images/projects/01_CovMo/geo.png';
 import P1Img3 from '../assets/images/projects/01_CovMo/callwindow.png';
@@ -46,35 +51,35 @@ export const experienceData = [
         title: 'Frontend Engineer',
         company: 'Groundhog Technologies | Taipei, Taiwan',
         desc: 'Participated in the new generation of flagship product development and co-worked with 10+ cross-team colleagues including engineers, product managers, designers.',
-        icon: '',
+        icon: GroundhogImg,
     },
     {
         date: 'Apr 2018 - Sep 2018',
         title: 'Data Engineer',
         company: 'Cathay Financial Holdings | Taipei, Taiwan',
         desc: 'Collaborated with data scientists, data engineers to invent various information visualization tools for internal users.',
-        icon: '',
+        icon: CathayImg,
     },
     {
         date: 'Jul 2016 - Jun 2017',
         title: 'Web Developer Intern',
         company: 'Delta Electronics | Taipei, Taiwan',
         desc: 'Contributed an information retrieval system for searching millions of healthcare data and provided self-designed UI/UX.',
-        icon: '',
+        icon: DeltaImg,
     },
     {
         date: '2014 - 2018',
         title: 'MS in Computer Science',
         company: 'National Chengchi University | Taipei, Taiwan',
         desc: 'Data Mining & Multimedia Lab',
-        icon: '',
+        icon: NCCUImg,
     },
     {
         date: '2009 - 2013',
         title: 'BS in Computer Science & Engineering',
         company: 'Tatung University | Taipei, Taiwan',
         desc: 'Interactive System Lab',
-        icon: '',
+        icon: TTUImg,
     },
 ];
 
