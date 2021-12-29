@@ -19,7 +19,7 @@ const Image = styled.img.attrs(({ scroll }) => ({
 
 function Images(props) {
     const rightArr = [3, 1, 6];
-    const bottomArr = [-80, -50, -30];
+    const bottomArr = [-200, -120, -60];
     const heightArr = [38, 42, 36];
     const zIndexArr = [1, 3, 2];
     

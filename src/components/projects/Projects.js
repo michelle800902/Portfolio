@@ -14,7 +14,7 @@ const ProjectsWrapper = styled.div`
 function Projects() {
     const windowHeight = window.innerHeight;
     const totalHeight = windowHeight * (projectData.length - 1);
-    const startTop = windowHeight * 4; // 1400
+    const startTop = windowHeight * 4;
 
     const [slideNumber, setSlideNumber] = useState(0);
 
