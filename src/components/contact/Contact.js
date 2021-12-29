@@ -88,10 +88,10 @@ function Contact() {
             <Description>
                 Hello! Please get in touch with me if any new opportunities. I'd love to hear from you!
                 <ContactItems>
-                    <LaptopSVG width={240} height={240} />
-                    <FontAwesomeIcon icon={faGithub} size="4x" />
-                    <FontAwesomeIcon icon={faLinkedin} size="4x" />
-                    <FontAwesomeIcon icon={faEnvelope} size="4x" />
+                    <LaptopSVG width={200} height={200} />
+                    <FontAwesomeIcon icon={faGithub} size="2x" />
+                    <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                    <FontAwesomeIcon icon={faEnvelope} size="2x" />
                 </ContactItems>
             </Description>
         </ContactWrapper>
