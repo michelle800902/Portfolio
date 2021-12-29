@@ -52,7 +52,7 @@ function Experience() {
 
     return (
         <ExperienceWrapper id="experience">
-            <Title>Experience</Title>
+            <Title>EXPERIENCE</Title>
             <VerticalTimeline>
                 {
                     experienceData.map(renderTimelineElement)
