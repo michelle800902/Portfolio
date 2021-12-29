@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
-import { ReactComponent as LinkSVG } from '../../assets/images/link.svg';
 import device from '../../assets/responsive/breakpoints';
 
 const fadeIn = () => keyframes`
@@ -201,15 +200,6 @@ function TextContent(props) {
                         }}
                     >
                         {props.name}
-                        {
-                            props.link && hoverOnName
-                            ? <LinkSVG
-                                width={28}
-                                height={28}
-                                style={{ marginLeft: '8px' }}
-                            />
-                            : null
-                        } 
                     </BlockTextReveal>
                 </ProjectName>
                 <MyRole>
