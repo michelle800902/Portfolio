@@ -26,22 +26,22 @@ export const navbarData = [
     {
         id: 'about',
         name: 'ABOUT',
-        href: '#about',
+        href: '/Portfolio/#about',
     },
     {
         id: 'experience',
         name: 'EXPERIENCE',
-        href: '#experience',
+        href: '/Portfolio/#experience',
     },
     {
         id: 'projects',
         name: 'PROJECTS',
-        href: '#projects',
+        href: '/Portfolio/#projects',
     },
     {
         id: 'contact',
         name: 'CONTACT',
-        href: '#contact',
+        href: '/Portfolio/#contact',
     },
 ];
 

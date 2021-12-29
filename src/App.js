@@ -16,7 +16,12 @@ const AppWrapper = styled.div`
 `;
 
 function App() {
-    
+    useEffect(() => {
+        if (window.location.hash) {
+            window.location.assign(window.location.href);
+        }
+    }, []);
+
     useEffect(() => {
         if ('scrollRestoration' in window.history) {
             window.history.scrollRestoration = 'manual';

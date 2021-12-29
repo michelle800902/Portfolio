@@ -76,7 +76,8 @@ function Header() {
     const [top, setTop] = useState(0);
 
     const onClickLogo = () => {
-        window.location.assign(window.location.origin);
+        const { origin, pathname } = window.location;
+        window.location.assign(`${origin}${pathname}`);
     };
 
     useEffect(() => {
