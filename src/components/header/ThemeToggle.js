@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ReactComponent as SunSVG } from '../../assets/images/sun.svg';
 import { ReactComponent as MoonSVG } from '../../assets/images/moon.svg';
@@ -86,7 +86,7 @@ const ToggleSpan = styled.span`
     height: 2px;
     border-radius: 2px;
     position: relative;
-    background: #fff;
+    background: var(--white);
     left: 42px;
     top: 12px;
     transition: all 150ms ease-in;
@@ -98,7 +98,7 @@ const ToggleSpan = styled.span`
         width: 12px;
         height: 2px;
         border-radius: 2px;
-        background: #fff;
+        background: var(--white);
         left: -16px;
         transition: all 150ms ease-in;
     }
@@ -109,7 +109,7 @@ const ToggleSpan = styled.span`
         width: 12px;
         height: 2px;
         border-radius: 2px;
-        background: #fff;
+        background: var(--white);
         left: -10px;
         transition: all 150ms ease-in;
     }
@@ -124,7 +124,7 @@ const ToggleCheckbox = styled.input`
         border-color: #5d6baa;
     }
     &:checked + ${ToggleLabel}:before {
-        background: #fff;
+        background: var(--white);
         border-color: #e8e8ea;
         animation-name: ${switchOff};
         animation-duration: 350ms;
@@ -158,24 +158,18 @@ const Theme = styled.div`
     justify-content: center;
 `;
 
-function ThemeToggle() {
-    const [isLight, setIsLight] = useState(true);
-
-    const onClickToggle = () => {
-        setIsLight(!isLight);
-    };
-
+function ThemeToggle({ isLightTheme, onSwitchTheme }) {
     return (
         <ThemeToggleWrapper>
             <Toggle>
                 <ToggleCheckbox type="checkbox" id="toggle" />
-                <ToggleLabel htmlFor="toggle" onClick={onClickToggle}>
+                <ToggleLabel htmlFor="toggle" onClick={onSwitchTheme}>
                     <ToggleSpan />
                 </ToggleLabel>
             </Toggle>
             <Theme>
                 {
-                    isLight
+                    isLightTheme
                     ? <SunSVG width={50} height={50} />
                     : <MoonSVG width={36} height={36} />
                 }

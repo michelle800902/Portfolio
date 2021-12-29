@@ -9,6 +9,7 @@ const AboutWrapper = styled.div`
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: var(--background-two);
 `;
 const Title = styled.div`
     position: absolute;
@@ -17,7 +18,7 @@ const Title = styled.div`
     transform: translateX(${props => props.scrollPercent * 5}%);
     transition: transform 0.5s ease-out;
     font-family: 'AvenirHeavy';
-    color: #fff;
+    color: var(--white);
     opacity: 0.9;
     @media ${device.laptop} {
         font-size: 180px;

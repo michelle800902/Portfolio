@@ -10,7 +10,7 @@ import Footer from './components/footer/Footer';
 import './assets/index.css';
 
 const AppWrapper = styled.div`
-    background-color: #f2d9f2;
+    background-color: var(--background-one);
 `;
 
 function App() {

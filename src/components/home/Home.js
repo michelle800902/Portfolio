@@ -16,7 +16,7 @@ const Description = styled.div`
     font-size: 32px;
     font-weight: bold;
     font-family: 'AvenirHeavy';
-    color: #aaa;
+    color: var(--gray);
 `;
 
 function Home() {

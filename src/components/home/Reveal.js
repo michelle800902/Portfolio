@@ -52,7 +52,7 @@ const TextToReveal = styled.div`
 `;
 const WhiteBlock = styled.div`
     position: absolute;
-    background-color: #f2d9f2;
+    background-color: var(--background-one);
     margin-right: 100%;
     width: 120%;
     height: 35vh;

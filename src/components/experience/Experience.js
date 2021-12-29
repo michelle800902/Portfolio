@@ -11,12 +11,12 @@ const ExperienceWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #ece;
+    background-color: var(--background-two);
 `;
 const Title = styled.div`
     font-family: 'AvenirHeavy';
     font-size: 60px;
-    color: #fff;
+    color: var(--white);
     opacity: 0.9;
 `;
 const CompanyIcon = styled.div`
@@ -26,7 +26,7 @@ const CompanyIcon = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--white);
 `;
 const IconImg = styled.img`
     width: 40px;

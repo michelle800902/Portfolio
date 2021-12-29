@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
 import { navbarData } from '../../constants/index';
 import ThemeToggle from './ThemeToggle';
+import GlobalStyle from '../../GlobalStyle';
 
 const HeaderWrapper = styled.div`
     position: fixed;
@@ -13,7 +14,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--header);
     transition: top .3s ease-in-out;
     z-index: 10;
 `;
@@ -34,7 +35,7 @@ const Title = styled.div`
     padding: 0 8px;
     font-size: 42px;
     font-family: 'Valencia';
-    color: #ed6ea4;
+    color: var(--pink);
     opacity: 0.5;
 `;
 const Navbar = styled.div`
@@ -55,7 +56,7 @@ const NavbarItem = styled.div`
     a {
         text-decoration: none;
         font-family: 'AvenirRoman';
-        color: #333;
+        color: var(--dark-one);
         &::after {
             content: "";
             display: block;
@@ -65,7 +66,7 @@ const NavbarItem = styled.div`
         }
         &:hover::after {
             width: 100%;
-            background: #ed6ea4;
+            background: var(--pink);
             transition: width .3s ease-out 0s;
         }
     }
@@ -74,11 +75,7 @@ const NavbarItem = styled.div`
 function Header() {
     const height = 60;
     const [top, setTop] = useState(0);
-
-    const onClickLogo = () => {
-        const { origin, pathname } = window.location;
-        window.location.assign(`${origin}${pathname}`);
-    };
+    const [isLightTheme, setIsLightTheme] = useState(true);
 
     useEffect(() => {
         let prevScrollPos = window.pageYOffset;
@@ -92,6 +89,15 @@ function Header() {
             prevScrollPos = currentScrollPos;
         }
     }, []);
+
+    const onClickLogo = () => {
+        const { origin, pathname } = window.location;
+        window.location.assign(`${origin}${pathname}`);
+    };
+
+    const onSwitchTheme = () => {
+        setIsLightTheme(!isLightTheme);
+    }
 
     return (
         <HeaderWrapper height={height} top={top}>
@@ -111,7 +117,13 @@ function Header() {
                     ))
                 }
                 </Navbar>
-                <ThemeToggle />
+                <ThemeToggle
+                    isLightTheme={isLightTheme}
+                    onSwitchTheme={onSwitchTheme}
+                />
+                <GlobalStyle
+                    theme={isLightTheme ? 'light' : 'dark'}
+                />
             </HeaderRight>
         </HeaderWrapper>
     );
