@@ -24,6 +24,11 @@ import P8Img2 from '../assets/images/projects/08_Space_Shooter/win.png';
 
 export const navbarData = [
     {
+        id: 'home',
+        name: 'HOME',
+        href: '/Portfolio/#home',
+    },
+    {
         id: 'about',
         name: 'ABOUT',
         href: '/Portfolio/#about',

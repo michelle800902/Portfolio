@@ -91,8 +91,7 @@ function Header() {
     }, []);
 
     const onClickLogo = () => {
-        const { origin, pathname } = window.location;
-        window.location.assign(`${origin}${pathname}`);
+        window.location.assign(window.location.origin);
     };
 
     const onSwitchTheme = () => {
