@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import About from './components/about/About';
@@ -9,7 +9,16 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import './assets/index.css';
 
+const fadeIn = () => keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 const AppWrapper = styled.div`
+    animation: ${fadeIn} 1s ease-in-out;
     background-color: var(--background-one);
 `;
 
