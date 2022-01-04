@@ -5,6 +5,14 @@ import { navbarData } from '../../constants/index';
 import ThemeToggle from './ThemeToggle';
 import GlobalStyle from '../../GlobalStyle';
 
+const HiddenHeader = styled.div`
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: ${props => props.height}px;
+    background-color: transparent;
+    z-index: 10;
+`;
 const HeaderWrapper = styled.div`
     position: fixed;
     top: ${props => props.top}px;
@@ -50,6 +58,7 @@ const NavbarItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: ${props => props.focus ? 'bold' : 'unset'};
     &:hover {
         font-weight: bold;
     }
@@ -75,6 +84,7 @@ const NavbarItem = styled.div`
 function Header() {
     const height = 60;
     const [top, setTop] = useState(0);
+    const [focusedId, setFocusedId] = useState('');
     const [isLightTheme, setIsLightTheme] = useState(true);
 
     useEffect(() => {
@@ -90,41 +100,56 @@ function Header() {
         }
     }, []);
 
+    const onMouseEnterHeader = (e) => {
+        setTop(0);
+    };
+
     const onClickLogo = () => {
         window.location.assign(window.location.origin);
     };
 
+    const onClickNavbarItem = (itemId) => {
+        setFocusedId(itemId);
+    };
+
     const onSwitchTheme = () => {
         setIsLightTheme(!isLightTheme);
-    }
+    };
 
     return (
-        <HeaderWrapper height={height} top={top}>
-            <Logo onClick={onClickLogo}>
-                <LogoSVG width={50} height={50} />
-                <Title>Portfolio</Title>
-            </Logo>
-            <HeaderRight>
-                <Navbar id="navbar">
-                {
-                    navbarData.map((item) => (
-                        <NavbarItem key={item.id}>
-                            <a href={item.href}>
-                                {item.name}
-                            </a>
-                        </NavbarItem>
-                    ))
-                }
-                </Navbar>
-                <ThemeToggle
-                    isLightTheme={isLightTheme}
-                    onSwitchTheme={onSwitchTheme}
-                />
-                <GlobalStyle
-                    theme={isLightTheme ? 'light' : 'dark'}
-                />
-            </HeaderRight>
-        </HeaderWrapper>
+        <>
+            <HiddenHeader height={height} onMouseEnter={onMouseEnterHeader} />
+            <HeaderWrapper height={height} top={top}>
+                <Logo onClick={onClickLogo}>
+                    <LogoSVG width={50} height={50} />
+                    <Title>Portfolio</Title>
+                </Logo>
+                <HeaderRight>
+                    <Navbar id="navbar">
+                    {
+                        navbarData.map((item) => (
+                            <NavbarItem
+                                key={item.id}
+                                focus={focusedId === item.id}
+                                onClick={() => onClickNavbarItem(item.id)}
+                            >
+                                <a href={item.href}>
+                                    {item.name}
+                                </a>
+                            </NavbarItem>
+                        ))
+                    }
+                    </Navbar>
+                    <ThemeToggle
+                        isLightTheme={isLightTheme}
+                        onSwitchTheme={onSwitchTheme}
+                    />
+                    <GlobalStyle
+                        theme={isLightTheme ? 'light' : 'dark'}
+                    />
+                </HeaderRight>
+            </HeaderWrapper>
+        </>
     );
 }
 
