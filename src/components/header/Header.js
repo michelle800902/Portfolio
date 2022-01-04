@@ -100,7 +100,7 @@ function Header() {
         }
     }, []);
 
-    const onMouseEnterHeader = (e) => {
+    const onMouseEnterHeader = () => {
         setTop(0);
     };
 
@@ -133,20 +133,13 @@ function Header() {
                                 focus={focusedId === item.id}
                                 onClick={() => onClickNavbarItem(item.id)}
                             >
-                                <a href={item.href}>
-                                    {item.name}
-                                </a>
+                                <a href={item.href}>{item.name}</a>
                             </NavbarItem>
                         ))
                     }
                     </Navbar>
-                    <ThemeToggle
-                        isLightTheme={isLightTheme}
-                        onSwitchTheme={onSwitchTheme}
-                    />
-                    <GlobalStyle
-                        theme={isLightTheme ? 'light' : 'dark'}
-                    />
+                    <ThemeToggle isLightTheme={isLightTheme} onSwitchTheme={onSwitchTheme} />
+                    <GlobalStyle theme={isLightTheme ? 'light' : 'dark'} />
                 </HeaderRight>
             </HeaderWrapper>
         </>
