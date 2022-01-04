@@ -22,7 +22,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--header);
+    background-color: var(--header-backColor);
     transition: top .3s ease-in-out;
     z-index: 10;
 `;
@@ -65,7 +65,7 @@ const NavbarItem = styled.div`
     a {
         text-decoration: none;
         font-family: 'AvenirRoman';
-        color: var(--dark-one);
+        color: var(--header-textColor);
         &::after {
             content: "";
             display: block;

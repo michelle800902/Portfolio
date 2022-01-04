@@ -7,7 +7,8 @@ const FooterWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--footer);
+    background-color: var(--footer-backColor);
+    color: var(--footer-textColor);
 `;
 
 function Footer() {

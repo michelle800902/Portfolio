@@ -25,15 +25,19 @@ const GlobalStyle = createGlobalStyle`
                     return `
                         --background-one: #f2d9f2;
                         --background-two: #eeccee;
-                        --header: rgba(255, 255, 255, 0.9);
-                        --footer: rgba(255, 255, 255, 0.9);
+                        --header-backColor: rgba(255, 255, 255, 0.9);
+                        --footer-backColor: rgba(255, 255, 255, 0.9);
+                        --header-textColor: var(--dark-one);
+                        --footer-textColor: var(--dark-one);
                     `;
                 case 'dark':
                     return `
                         --background-one: #404e8c;
                         --background-two: #38447a;
-                        --header: rgba(255, 255, 255, 0.9);
-                        --footer: rgba(255, 255, 255, 0.9);
+                        --header-backColor: rgba(38, 38, 38, 0.8);
+                        --footer-backColor: rgba(38, 38, 38, 0.8);
+                        --header-textColor: var(--white);
+                        --footer-textColor: var(--white);
                     `;
             }
             
