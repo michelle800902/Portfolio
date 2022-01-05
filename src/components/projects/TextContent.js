@@ -16,7 +16,7 @@ const appearText = () => keyframes`
         color: transparent;
     }
     100% {
-        color: var(--dark-one);
+        color: var(--text-color);
     }
 `;
 const showBlock = () => keyframes`
@@ -124,8 +124,8 @@ const TechTag = styled.div`
     margin: 0px 8px 8px 0px;
     white-space: nowrap;
     border-radius: 3px;
-    border: 1px solid var(--dark-one);
-    color: var(--dark-one);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
     font-family: 'AvenirBook';
 `;
 let TechListFadeIn = styled.div``;
@@ -155,7 +155,7 @@ const BlockTextRevealAnimate = styled.span`
         position: absolute;
         width: 0%;
         height: 100%;
-        background: var(--dark-two);
+        background: var(--block-color);
         animation: ${showBlock} 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
         animation-delay: 0s;
     }

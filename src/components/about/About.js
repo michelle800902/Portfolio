@@ -18,8 +18,7 @@ const Title = styled.div`
     transform: translateX(${props => props.scrollPercent * 5}%);
     transition: transform 0.5s ease-out;
     font-family: 'AvenirHeavy';
-    color: var(--white);
-    opacity: 0.9;
+    color: var(--title-color);
     @media ${device.laptop} {
         font-size: 180px;
     }
@@ -35,6 +34,7 @@ const Description = styled.div`
     margin-left: 30%;
     margin-right: 5%;
     font-family: 'AvenirLight';
+    color: var(--text-color);
     @media ${device.laptop} {
         transform: translateY(90%);
         font-size: 30px;

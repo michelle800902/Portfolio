@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         /* Global colors */
         --white: #ffffff;
         --black: #000000;
-        --dark-one: #333333;
+        --dark-one: #404040;
         --dark-two: #222222;
         --gray: #aaaaaa;
         --pink: #ed6ea4;
@@ -25,22 +25,27 @@ const GlobalStyle = createGlobalStyle`
                     return `
                         --background-one: #f2d9f2;
                         --background-two: #eeccee;
-                        --header-backColor: rgba(255, 255, 255, 0.9);
-                        --footer-backColor: rgba(255, 255, 255, 0.9);
-                        --header-textColor: var(--dark-one);
-                        --footer-textColor: var(--dark-one);
+                        --title-color: rgba(255, 255, 255, 0.5);
+                        --text-color: var(--dark-one);
+                        --block-color: var(--dark-two);
+                        --header-background-color: rgba(255, 255, 255, 0.9);
+                        --footer-background-color: rgba(255, 255, 255, 0.9);
+                        --header-text-color: var(--black);
+                        --footer-text-color: var(--black);
                     `;
                 case 'dark':
                     return `
                         --background-one: #404e8c;
                         --background-two: #38447a;
-                        --header-backColor: rgba(38, 38, 38, 0.8);
-                        --footer-backColor: rgba(38, 38, 38, 0.8);
-                        --header-textColor: var(--white);
-                        --footer-textColor: var(--white);
+                        --title-color: rgba(38, 38, 38, 0.5);
+                        --text-color: #8892b0;
+                        --block-color: #a3aac2;
+                        --header-background-color: rgba(38, 38, 38, 0.8);
+                        --footer-background-color: rgba(38, 38, 38, 0.8);
+                        --header-text-color: var(--white);
+                        --footer-text-color: var(--white);
                     `;
             }
-            
         }}
     }
 `;

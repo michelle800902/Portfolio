@@ -11,13 +11,11 @@ const ExperienceWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--background-two);
 `;
 const Title = styled.div`
     font-family: 'AvenirHeavy';
-    font-size: 60px;
-    color: var(--white);
-    opacity: 0.9;
+    font-size: 72px;
+    color: var(--title-color);
 `;
 const CompanyIcon = styled.div`
     width: 60px;
