@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import device from '../../assets/responsive/breakpoints';
 
 const fadeIn = () => keyframes`
@@ -63,6 +65,7 @@ const ProjectDetails = styled.div`
     flex-flow: column nowrap;
 `;
 const ProjectName = styled.div`
+    display: flex;
     font-family: 'AvenirHeavy';
     @media ${device.laptop} {
         font-size: 60px;
@@ -160,6 +163,14 @@ const BlockTextRevealAnimate = styled.span`
         animation-delay: 0s;
     }
 `;
+const LinkButton = styled.div`
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--pink);
+`;
 
 function TextContent(props) {
     const [refresh, setRefresh] = useState(true);
@@ -201,6 +212,14 @@ function TextContent(props) {
                     >
                         {props.name}
                     </BlockTextReveal>
+                    {
+                        hoverOnName
+                        && (
+                            <LinkButton>
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </LinkButton>
+                        )
+                    }
                 </ProjectName>
                 <MyRole>
                     <BlockTextReveal inline>
