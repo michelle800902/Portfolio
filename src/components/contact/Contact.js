@@ -12,7 +12,6 @@ const ContactWrapper = styled.div`
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-color: var(--background-two);
 `;
 const Title = styled.div`
     position: absolute;
