@@ -12,6 +12,9 @@ const HomeWrapper  = styled.div`
     justify-content: center;
     pointer-events: none;
 `;
+const Title = styled.div`
+    padding: 16px 0;
+`;
 const Description = styled.div`
     font-size: 32px;
     font-weight: bold;
@@ -22,11 +25,13 @@ const Description = styled.div`
 function Home() {
     return (
         <HomeWrapper id="home">
-            <Reveal
-                text="Michelle Chen"
-                fontFam="Valencia"
-                timeDelay={500}
-            />
+            <Title>
+                <Reveal
+                    text="Michelle Chen"
+                    fontFam="Valencia"
+                    timeDelay={500}
+                />
+            </Title>
             <Description>
                 <Type
                     strings={[
