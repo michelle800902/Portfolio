@@ -110,7 +110,7 @@ const Sidebar = styled.div`
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--header-background-color);
-    transition: 0.5s;
+    transition: 0.3s;
     @media ${device.tablet} {
         display: none;
     }
@@ -131,6 +131,7 @@ function Header() {
                 setTop(0);
             } else {
                 setTop(-1 * height);
+                setIsOpenSidebar(false);
             }
             prevScrollPos = currentScrollPos;
         }
