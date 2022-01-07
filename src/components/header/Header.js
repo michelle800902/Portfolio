@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import device from '../../assets/responsive/breakpoints';
 import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
 import { navbarData } from '../../constants/index';
@@ -29,12 +29,6 @@ const HeaderWrapper = styled.div`
     transition: top .3s ease-in-out;
     z-index: 10;
 `;
-const HeaderRight = styled.div`
-    display: none;
-    @media ${device.tablet} {
-        display: flex;
-    }
-`;
 const Logo = styled.div`
     display: flex;
     align-items: center;
@@ -52,14 +46,20 @@ const Title = styled.div`
     color: var(--pink);
     opacity: 0.5;
 `;
+const Toolbar = styled.div`
+    display: none;
+    @media ${device.tablet} {
+        display: flex;
+    }
+`;
 const Navbar = styled.div`
     padding: 0 16px;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: ${props => props.direction};
 `;
 const NavbarItem = styled.div`
     height: 100%;
-    margin-top: 4px;
+    margin-top: ${props => props.direction === 'row' ? '4px' : '24px'};
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ const NavbarItem = styled.div`
         }
     }
 `;
-const SideBarIcon = styled.div`
+const SidebarBtn = styled.div`
     width: 50px;
     font-size: 24px;
     align-items: center;
@@ -94,6 +94,23 @@ const SideBarIcon = styled.div`
     color: var(--pink);
     cursor: pointer;
     display: flex;
+    z-index: 10;
+    @media ${device.tablet} {
+        display: none;
+    }
+`;
+const Sidebar = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: ${props => props.isOpen ? '200px' : 0};
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--header-background-color);
+    transition: 0.5s;
     @media ${device.tablet} {
         display: none;
     }
@@ -102,8 +119,9 @@ const SideBarIcon = styled.div`
 function Header() {
     const height = 60;
     const [top, setTop] = useState(0);
-    const [focusedId, setFocusedId] = useState('');
     const [isLightTheme, setIsLightTheme] = useState(true);
+    const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+    const [focusedItemId, setFocusedItemId] = useState('');
 
     useEffect(() => {
         let prevScrollPos = window.pageYOffset;
@@ -126,12 +144,38 @@ function Header() {
         window.location.assign(window.location.origin);
     };
 
+    const onClickSidebarIcon = () => {
+        setIsOpenSidebar(!isOpenSidebar);
+    };
+
     const onClickNavbarItem = (itemId) => {
-        setFocusedId(itemId);
+        setFocusedItemId(itemId);
     };
 
     const onSwitchTheme = () => {
         setIsLightTheme(!isLightTheme);
+    };
+
+    const renderNavbarAndThemeToggle = (direction) => {
+        return (
+            <>
+                <Navbar id="navbar" direction={direction}>
+                {
+                    navbarData.map((item) => (
+                        <NavbarItem
+                            key={item.id}
+                            direction={direction}
+                            focus={focusedItemId === item.id}
+                            onClick={() => onClickNavbarItem(item.id)}
+                        >
+                            <a href={item.href}>{item.name}</a>
+                        </NavbarItem>
+                    ))
+                }
+                </Navbar>
+                <ThemeToggle isLightTheme={isLightTheme} onSwitchTheme={onSwitchTheme} />
+            </>
+        )
     };
 
     return (
@@ -142,25 +186,15 @@ function Header() {
                     <LogoSVG width={50} height={50} />
                     <Title>Portfolio</Title>
                 </Logo>
-                <HeaderRight>
-                    <Navbar id="navbar">
-                    {
-                        navbarData.map((item) => (
-                            <NavbarItem
-                                key={item.id}
-                                focus={focusedId === item.id}
-                                onClick={() => onClickNavbarItem(item.id)}
-                            >
-                                <a href={item.href}>{item.name}</a>
-                            </NavbarItem>
-                        ))
-                    }
-                    </Navbar>
-                    <ThemeToggle isLightTheme={isLightTheme} onSwitchTheme={onSwitchTheme} />
-                </HeaderRight>
-                <SideBarIcon>
-                    <FontAwesomeIcon icon={faBars} />
-                </SideBarIcon>
+                <Toolbar>
+                    {renderNavbarAndThemeToggle('row')}
+                </Toolbar>
+                <SidebarBtn onClick={onClickSidebarIcon}>
+                    <FontAwesomeIcon icon={isOpenSidebar ? faXmark : faBars} />
+                </SidebarBtn>
+                <Sidebar isOpen={isOpenSidebar}>
+                    {isOpenSidebar && renderNavbarAndThemeToggle('column')}
+                </Sidebar>
             </HeaderWrapper>
             <GlobalStyle theme={isLightTheme ? 'light' : 'dark'} />
         </>
