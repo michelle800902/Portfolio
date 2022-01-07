@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import device from '../../assets/responsive/breakpoints';
 import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
 import { navbarData } from '../../constants/index';
-import ThemeToggle from './ThemeToggle';
 import GlobalStyle from '../../GlobalStyle';
+import ThemeToggle from './ThemeToggle';
 
 const HiddenHeader = styled.div`
     position: fixed;
@@ -17,8 +20,8 @@ const HeaderWrapper = styled.div`
     position: fixed;
     top: ${props => props.top}px;
     height: ${props => props.height}px;
-    width: calc(100% - 6%);
-    padding: 0 3%;
+    width: calc(100% - 32px);
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,14 +30,17 @@ const HeaderWrapper = styled.div`
     z-index: 10;
 `;
 const HeaderRight = styled.div`
-    display: flex;
+    display: none;
+    @media ${device.tablet} {
+        display: flex;
+    }
 `;
 const Logo = styled.div`
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform .5s ease-in-out;
+    cursor: pointer;
     &:hover {
         transform: scale(1.1);
     }
@@ -78,6 +84,18 @@ const NavbarItem = styled.div`
             background: var(--pink);
             transition: width .3s ease-out 0s;
         }
+    }
+`;
+const SideBarIcon = styled.div`
+    width: 50px;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink);
+    cursor: pointer;
+    display: flex;
+    @media ${device.tablet} {
+        display: none;
     }
 `;
 
@@ -139,9 +157,12 @@ function Header() {
                     }
                     </Navbar>
                     <ThemeToggle isLightTheme={isLightTheme} onSwitchTheme={onSwitchTheme} />
-                    <GlobalStyle theme={isLightTheme ? 'light' : 'dark'} />
                 </HeaderRight>
+                <SideBarIcon>
+                    <FontAwesomeIcon icon={faBars} />
+                </SideBarIcon>
             </HeaderWrapper>
+            <GlobalStyle theme={isLightTheme ? 'light' : 'dark'} />
         </>
     );
 }
