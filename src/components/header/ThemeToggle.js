@@ -158,12 +158,17 @@ const Theme = styled.div`
     justify-content: center;
 `;
 
-function ThemeToggle({ isLightTheme, onSwitchTheme }) {
+function ThemeToggle({ isLightTheme, onChangeTheme }) {
     return (
         <ThemeToggleWrapper>
             <Toggle>
-                <ToggleCheckbox type="checkbox" id="toggle" />
-                <ToggleLabel htmlFor="toggle" onClick={onSwitchTheme}>
+                <ToggleCheckbox
+                    id="toggle"
+                    type="checkbox"
+                    checked={!isLightTheme}
+                    onChange={onChangeTheme}
+                />
+                <ToggleLabel htmlFor="toggle">
                     <ToggleSpan />
                 </ToggleLabel>
             </Toggle>

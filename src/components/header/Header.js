@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import device from '../../assets/responsive/breakpoints';
-import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
 import { navbarData } from '../../constants/index';
+import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
+import device from '../../assets/responsive/breakpoints';
 import GlobalStyle from '../../GlobalStyle';
 import ThemeToggle from './ThemeToggle';
 
@@ -153,28 +153,31 @@ function Header() {
         setFocusedItemId(itemId);
     };
 
-    const onSwitchTheme = () => {
+    const onChangeTheme = () => {
         setIsLightTheme(!isLightTheme);
     };
 
     const renderNavbarAndThemeToggle = (direction) => {
         return (
             <>
-                <Navbar id="navbar" direction={direction}>
-                {
-                    navbarData.map((item) => (
-                        <NavbarItem
-                            key={item.id}
-                            direction={direction}
-                            focus={focusedItemId === item.id}
-                            onClick={() => onClickNavbarItem(item.id)}
-                        >
-                            <a href={item.href}>{item.name}</a>
-                        </NavbarItem>
-                    ))
-                }
+                <Navbar id={`navbar-${direction}`} direction={direction}>
+                    {
+                        navbarData.map((item) => (
+                            <NavbarItem
+                                key={item.id}
+                                direction={direction}
+                                focus={focusedItemId === item.id}
+                                onClick={() => onClickNavbarItem(item.id)}
+                            >
+                                <a href={item.href}>{item.name}</a>
+                            </NavbarItem>
+                        ))
+                    }
                 </Navbar>
-                <ThemeToggle isLightTheme={isLightTheme} onSwitchTheme={onSwitchTheme} />
+                <ThemeToggle
+                    isLightTheme={isLightTheme}
+                    onChangeTheme={onChangeTheme}
+                />
             </>
         )
     };
@@ -188,13 +191,17 @@ function Header() {
                     <Title>Portfolio</Title>
                 </Logo>
                 <Toolbar>
-                    {renderNavbarAndThemeToggle('row')}
+                    {
+                        renderNavbarAndThemeToggle('row')
+                    }
                 </Toolbar>
                 <SidebarBtn onClick={onClickSidebarIcon}>
                     <FontAwesomeIcon icon={isOpenSidebar ? faXmark : faBars} />
                 </SidebarBtn>
                 <Sidebar isOpen={isOpenSidebar}>
-                    {isOpenSidebar && renderNavbarAndThemeToggle('column')}
+                    {
+                        isOpenSidebar && renderNavbarAndThemeToggle('column')
+                    }
                 </Sidebar>
             </HeaderWrapper>
             <GlobalStyle theme={isLightTheme ? 'light' : 'dark'} />
