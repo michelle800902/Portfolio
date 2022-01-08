@@ -13,14 +13,21 @@ const AboutWrapper = styled.div`
 `;
 const Title = styled.div`
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: -30%;
-    transform: translateX(${props => props.scrollPercent * 5}%);
+    transform: translateX(${props => props.scrollPercent * 6}%);
     transition: transform 0.5s ease-out;
+    font-size: 60px;
     font-family: 'AvenirHeavy';
     color: var(--title-color);
+    @media ${device.mobileL} {
+        font-size: 80px;
+    }
+    @media ${device.tablet} {
+        font-size: 100px;
+    }
     @media ${device.laptop} {
-        font-size: 180px;
+        font-size: 150px;
     }
     @media ${device.laptopL} {
         font-size: 200px;
@@ -31,21 +38,31 @@ const Title = styled.div`
 `;
 const Description = styled.div`
     display: grid;
-    margin-left: 30%;
-    margin-right: 5%;
+    padding-left: 25%;
+    padding-right: 5%;
+    transform: translateY(60%);
+    font-size: 16px;
     font-family: 'AvenirLight';
     color: var(--text-color);
+    @media ${device.mobileL} {
+        transform: translateY(70%);
+        font-size: 20px;
+    }
+    @media ${device.tablet} {
+        transform: translateY(80%);
+        font-size: 24px;
+    }
     @media ${device.laptop} {
         transform: translateY(90%);
-        font-size: 30px;
+        font-size: 28px;
     }
     @media ${device.laptopL} {
-        transform: translateY(87%);
-        font-size: 38px;
+        transform: translateY(95%);
+        font-size: 32px;
     }
     @media ${device.desktop} {
-        transform: translateY(80%);
-        font-size: 70px;
+        transform: translateY(100%);
+        font-size: 60px;
     }
 `;
 const DescriptionSpan = styled.span`
@@ -55,8 +72,7 @@ const DescriptionSpan = styled.span`
 const SkillSet = styled.div`
     width: 100%;
     margin-top: 24px;
-    display: flex;
-    align-items: center;
+    display: block;
     svg {
         margin-right: 24px;
     }

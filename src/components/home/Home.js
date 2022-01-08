@@ -33,8 +33,11 @@ const Description = styled.div`
     @media ${device.laptop} {
         font-size: 30px;
     }
-    @media ${device.desktop} {
+    @media ${device.laptopL} {
         font-size: 32px;
+    }
+    @media ${device.desktop} {
+        font-size: 50px;
     }
 `;
 
