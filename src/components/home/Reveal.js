@@ -29,6 +29,19 @@ const hideWhiteBlocks = () => keyframes`
 const TextToReveal = styled.div`
     font-family: ${props => props.fontFam};
     text-align: center;
+    font-size: 50px;
+    animation: ${props => (props.show ? moveUp(50) : 'none')} 1s cubic-bezier(0, 0.1, .12, .99) forwards;
+    transform: translateY(${50 * 1.4}px);
+    @media ${device.mobileM} {
+        font-size: 60px;
+        animation: ${props => (props.show ? moveUp(60) : 'none')} 1s cubic-bezier(0, 0.1, .12, .99) forwards;
+        transform: translateY(${60 * 1.4}px);
+    }
+    @media ${device.mobileL} {
+        font-size: 80px;
+        animation: ${props => (props.show ? moveUp(80) : 'none')} 1s cubic-bezier(0, 0.1, .12, .99) forwards;
+        transform: translateY(${80 * 1.4}px);
+    }
     @media ${device.tablet} {
         font-size: 100px;
         animation: ${props => (props.show ? moveUp(100) : 'none')} 1s cubic-bezier(0, 0.1, .12, .99) forwards;

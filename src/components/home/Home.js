@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import device from '../../assets/responsive/breakpoints';
 import Reveal from "./Reveal";
 import Type from "./Type";
 
@@ -16,10 +17,25 @@ const Title = styled.div`
     padding: 16px 0;
 `;
 const Description = styled.div`
-    font-size: 32px;
+    font-size: 16px;
     font-weight: bold;
     font-family: 'AvenirHeavy';
     color: var(--gray);
+    @media ${device.mobileM} {
+        font-size: 20px;
+    }
+    @media ${device.mobileL} {
+        font-size: 24px;
+    }
+    @media ${device.tablet} {
+        font-size: 28px;
+    }
+    @media ${device.laptop} {
+        font-size: 30px;
+    }
+    @media ${device.desktop} {
+        font-size: 32px;
+    }
 `;
 
 function Home() {
