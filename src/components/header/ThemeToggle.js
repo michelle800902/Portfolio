@@ -43,9 +43,9 @@ const Toggle = styled.div`
 const ToggleLabel = styled.label`
     width: 50px;
     height: 25px;
-    background: #96dcee;
+    background: #99ccff;
     border-radius: 25px;
-    border: 3px solid #72cce3;
+    border: 3px solid #99ccff;
     display: flex;
     position: relative;
     transition: all 350ms ease-in;
@@ -121,7 +121,7 @@ const ToggleCheckbox = styled.input`
 
     &:checked + ${ToggleLabel} {
         background: #6b7abb;
-        border-color: #5d6baa;
+        border-color: #6b7abb;
     }
     &:checked + ${ToggleLabel}:before {
         background: var(--white);

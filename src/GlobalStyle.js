@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
         --black: #000000;
         --dark-one: #404040;
         --dark-two: #222222;
-        --gray: #aaaaaa;
+        --gray: #999999;
         --pink: #ed6ea4;
 
         /* Theme */
@@ -23,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
                 default:
                 case 'light':
                     return `
-                        --background-one: #f2d9f2;
-                        --background-two: #eeccee;
+                        --background-one: #c2d0ef;
+                        --background-two: #aec0ea;
                         --title-color: rgba(255, 255, 255, 0.5);
                         --text-color: var(--dark-one);
                         --block-color: var(--dark-two);
