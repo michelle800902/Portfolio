@@ -7,6 +7,7 @@ const FooterWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
     background-color: var(--footer-background-color);
     color: var(--footer-text-color);
 `;
