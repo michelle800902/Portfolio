@@ -20,8 +20,8 @@ const HeaderWrapper = styled.div`
     position: fixed;
     top: ${props => props.top}px;
     height: ${props => props.height}px;
-    width: calc(100% - 32px);
-    padding: 0 16px;
+    width: calc(100% - 48px);
+    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
