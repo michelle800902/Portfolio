@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const ImagesWrapper = styled.div`
     width: 100%;
     height: 100%;
+border: 1px solid black;
 `;
 const Image = styled.img.attrs(({ scroll }) => ({
     style: {
@@ -29,10 +30,10 @@ function Images(props) {
 
     useEffect(() => {
         if (props.screenHeight && props.contentWidth) {
-            const divisor = (1000 / props.contentWidth) * 3.5;
+            const divisor = (1000 / props.contentWidth) * 5;
             const midHeight = -(props.screenHeight / divisor);
-            const midWidth = props.contentWidth / 14;
-            setBottomArr([midHeight - (props.contentWidth / divisor), midHeight, midHeight + (props.contentWidth / (divisor + 2))]);
+            const midWidth = props.contentWidth / 15;
+            setBottomArr([midHeight - (props.contentWidth / 10), midHeight, midHeight + (props.contentWidth / 12)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
         }
     }, [props.screenHeight, props.contentWidth]);
