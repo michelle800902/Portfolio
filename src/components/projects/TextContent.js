@@ -39,13 +39,17 @@ const TextContentWrapper = styled.section`
     position: fixed;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
+    @media ${device.tablet} {
+        width: 60%;
+    }
 `;
 const ProjectID = styled.div`
-    padding: 10% 10% 5% 10%;
+    padding: 15% 10% 5% 10%;
+    font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;
     @media ${device.laptop} {
@@ -66,6 +70,7 @@ const ProjectDetails = styled.div`
 `;
 const ProjectName = styled.div`
     display: flex;
+    font-size: 40px;
     font-family: 'AvenirHeavy';
     @media ${device.laptop} {
         font-size: 60px;
@@ -77,8 +82,9 @@ const ProjectName = styled.div`
         font-size: 100px;
     }
 `;
-const MyRole = styled.div`
+const ProjectRole = styled.div`
     padding-top: 5%;
+    font-size: 20px;
     font-family: 'AvenirMedium';
     pointer-events: none;
     @media ${device.laptop} {
@@ -93,6 +99,7 @@ const MyRole = styled.div`
 `;
 const ProjectDesc = styled.div`
     padding-top: 2%;
+    font-size: 20px;
     font-family: 'AvenirBook';
     pointer-events: none;
     @media ${device.laptop} {
@@ -107,6 +114,7 @@ const ProjectDesc = styled.div`
 `;
 const ProjectType = styled.div`
     padding: 5% 10%;
+    font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;
     @media ${device.laptop} {
@@ -223,11 +231,11 @@ function TextContent(props) {
                         )
                     }
                 </ProjectName>
-                <MyRole>
+                <ProjectRole>
                     <BlockTextReveal inline>
                         {props.role}
                     </BlockTextReveal>
-                </MyRole>
+                </ProjectRole>
                 <ProjectDesc>
                     <BlockTextReveal inline={false}>
                         {props.desc}

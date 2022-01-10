@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import device from '../../assets/responsive/breakpoints';
 import { projectData } from '../../constants/index';
 import Images from './Images';
 
 const ImageContentWrapper = styled.div`
     width: 40%;
     margin-left: 60%;
-    display: flex;
-    flex-flow: column nowrap;
+    display: none;
+    @media ${device.tablet} {
+        display: flex;
+        flex-flow: column nowrap;
+    }
 `;
 const ImagesBox = styled.div`
     height: 100vh;
@@ -17,7 +21,7 @@ const ImagesBox = styled.div`
 
 function ImageContent() {
     const boxHeight = 140;
-    const [contentWidth, setContentWidth] = useState();
+    const [contentWidth, setContentWidth] = useState(0);
     const [screenHeight, setScreenHeight] = useState(0);
     const [scrollHeight, setScrollHeight] = useState(0);
     const [scrollPercent, setScrollPercent] = useState(0);
