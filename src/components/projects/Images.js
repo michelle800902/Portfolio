@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const ImagesWrapper = styled.div`
     width: 100%;
     height: 100%;
-border: 1px solid black;
 `;
 const Image = styled.img.attrs(({ scroll }) => ({
     style: {
