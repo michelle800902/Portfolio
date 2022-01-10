@@ -15,9 +15,26 @@ const ProjectsWrapper = styled.div`
 function Projects() {
     const windowHeight = window.innerHeight;
     const totalHeight = windowHeight * (projectData.length - 1);
-    const startTop = windowHeight * 4;
 
+    const [startTop, setStartTop] = useState(0);
     const [slideNumber, setSlideNumber] = useState(0);
+
+    const getStartTop = () => {
+        const homeDOM = document.getElementById('home');
+        const aboutDOM = document.getElementById('about');
+        const experienceDOM = document.getElementById('experience');
+        if (homeDOM && aboutDOM && experienceDOM) {
+            const homeHeight = homeDOM.offsetHeight;
+            const aboutHeight = aboutDOM.offsetHeight;
+            const experienceHeight = experienceDOM.offsetHeight;
+            return (homeHeight + aboutHeight + experienceHeight) * 0.95;
+        }
+        return 0;
+    };
+
+    const handleResize = () => {
+        setStartTop(getStartTop());
+    };
 
     const handleScroll = (event) => {
         const { scrollTop } = event.srcElement.documentElement;
@@ -34,9 +51,15 @@ function Projects() {
     };
 
     useEffect(() => {
+        setStartTop(getStartTop());
+    }, []);
+
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         }
     });
 

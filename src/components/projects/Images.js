@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const ImagesWrapper = styled.div``;
+const ImagesWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+`;
 const Image = styled.img.attrs(({ scroll }) => ({
     style: {
         transform: `translateY(-${scroll}%)`,
@@ -18,10 +21,22 @@ const Image = styled.img.attrs(({ scroll }) => ({
 `;
 
 function Images(props) {
-    const rightArr = [3, 1, 6];
-    const bottomArr = [-200, -120, -60];
-    const heightArr = [38, 42, 36];
+    const rightArr = [4, 2, 6];
     const zIndexArr = [1, 3, 2];
+
+    const [bottomArr, setBottomArr] = useState([-200, -120, -60]);
+    const [heightArr, setHeightArr] = useState([38, 42, 36]);
+
+    useEffect(() => {
+        if (props.screenHeight && props.contentWidth) {
+            const divisor = (1000 / props.contentWidth) * 3;
+            const midHeight = -(props.screenHeight / (divisor));
+            setBottomArr([midHeight - (props.contentWidth / 6), midHeight, midHeight + (props.contentWidth / 10)]);
+        
+            const midWidth = props.contentWidth / 12.5;
+            setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
+        }
+    }, [props.screenHeight, props.contentWidth]);
     
     let scrollParam = 24;
     let scrollPercent = props.scrollPercent;

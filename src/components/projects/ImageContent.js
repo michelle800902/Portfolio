@@ -17,9 +17,18 @@ const ImagesBox = styled.div`
 
 function ImageContent() {
     const boxHeight = 140;
+    const [contentWidth, setContentWidth] = useState();
     const [screenHeight, setScreenHeight] = useState(0);
     const [scrollHeight, setScrollHeight] = useState(0);
     const [scrollPercent, setScrollPercent] = useState(0);
+
+    const getContentWidth = () => {
+        const imageContentDOM = document.getElementById('image-content');
+        if (imageContentDOM) {
+            return imageContentDOM.offsetWidth;
+        }
+        return 0;
+    };
 
     const handleScroll = () => {
         const { body, documentElement } = window.document;
@@ -32,12 +41,22 @@ function ImageContent() {
         }
     };
 
+    const handleResize = () => {
+        setContentWidth(getContentWidth());
+    };
+
+    useEffect(() => {
+        setContentWidth(getContentWidth());
+    }, []);
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
         return () => {
             setScrollHeight(Math.round(window.document.documentElement.scrollHeight));
             setScreenHeight(Math.round(window.document.documentElement.clientHeight));
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         }
     });
 
@@ -48,6 +67,7 @@ function ImageContent() {
                 <Images
                     projectIndex={i}
                     imgs={imgs}
+                    contentWidth={contentWidth}
                     boxHeight={boxHeight}
                     screenHeight={screenHeight}
                     scrollHeight={scrollHeight}
@@ -58,7 +78,7 @@ function ImageContent() {
     }
 
     return (
-        <ImageContentWrapper>
+        <ImageContentWrapper id="image-content">
             {
                 projectData.map(renderProjectImages)
             }
