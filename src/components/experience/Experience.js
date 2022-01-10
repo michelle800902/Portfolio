@@ -33,6 +33,11 @@ const Title = styled.div`
         font-size: 100px;
     }
 `;
+const TimelineWrapper = styled.div`
+    width: 90%;
+    height: 100%;
+    padding: 5%;
+`;
 const CompanyIcon = styled.div`
     width: ${props => props.width}px;
     height: ${props => props.height}px;
@@ -102,11 +107,13 @@ function Experience() {
     return (
         <ExperienceWrapper id="experience">
             <Title>EXPERIENCE</Title>
-            <VerticalTimeline>
-                {
-                    experienceData.map(renderTimelineElement)
-                }
-            </VerticalTimeline>
+            <TimelineWrapper>
+                <VerticalTimeline>
+                    {
+                        experienceData.map(renderTimelineElement)
+                    }
+                </VerticalTimeline>
+            </TimelineWrapper>
         </ExperienceWrapper>
     );
 }

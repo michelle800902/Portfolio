@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
         --black: #000000;
         --dark-one: #404040;
         --dark-two: #222222;
-        --gray: #999999;
+        --gray: #8c8c8c;
         --pink: #ed6ea4;
 
         /* Theme */
