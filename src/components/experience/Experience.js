@@ -34,9 +34,9 @@ const Title = styled.div`
     }
 `;
 const TimelineWrapper = styled.div`
-    width: 90%;
+    width: 80%;
     height: 100%;
-    padding: 5%;
+    padding: 5% 10%;
 `;
 const CompanyIcon = styled.div`
     width: ${props => props.width}px;
