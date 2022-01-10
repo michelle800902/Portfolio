@@ -106,7 +106,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Front-end Engineer @ Groundhog Technologies',
         tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox'],
-        link: '',
+        link: 'https://www.ghtinc.com/covmo/',
         imgs: [P1Img1, P1Img2, P1Img3],
     },
     {
@@ -116,7 +116,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
-        link: '123',
+        link: '',
         imgs: [P2Img1, P2Img2],
     },
     {
@@ -126,7 +126,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
-        link: '123',
+        link: '',
         imgs: [P3Img1, P3Img2],
     },
     {
@@ -136,7 +136,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3'],
-        link: '123',
+        link: '',
         imgs: [P4Img1, P4Img2],
     },
     {
@@ -146,7 +146,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3', 'jQuery', 'PHP', 'SQL', 'LeafLet'],
-        link: '123',
+        link: '',
         imgs: [P5Img1],
     },
     {
@@ -156,7 +156,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
         tech: ['JavaScript', 'Python', 'Django', 'D3'],
-        link: '123',
+        link: '',
         imgs: [P6Img1, P6Img2, P6Img3],
     },
     {
@@ -166,7 +166,7 @@ export const projectData = [
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
         tech: ['JavaScript', 'Python', 'Django', 'PostgresDB'],
-        link: '123',
+        link: '',
         imgs: [P7Img1, P7Img2, P7Img3],
     },
     {
@@ -176,7 +176,7 @@ export const projectData = [
         type: '3D Game',
         role: 'Postgraduate @ NCCU CS',
         tech: ['C#', 'Unity'],
-        link: '123',
+        link: 'http://www.cs.nccu.edu.tw/~g10320/',
         imgs: [P8Img1, P8Img2],
     },
     {
