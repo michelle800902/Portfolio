@@ -29,10 +29,10 @@ function Images(props) {
 
     useEffect(() => {
         if (props.screenHeight && props.contentWidth) {
-            const divisor = (1000 / props.contentWidth) * 5;
+            const divisor = (1000 / props.contentWidth) * 4;
             const midHeight = -(props.screenHeight / divisor);
             const midWidth = props.contentWidth / 15;
-            setBottomArr([midHeight - (props.contentWidth / 10), midHeight, midHeight + (props.contentWidth / 12)]);
+            setBottomArr([midHeight - (props.contentWidth / 9), midHeight, midHeight + (props.contentWidth / 10)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
         }
     }, [props.screenHeight, props.contentWidth]);
@@ -59,7 +59,7 @@ function Images(props) {
                 bottom={bottomArr[i]}
                 height={heightArr[i]}
                 zIndex={zIndexArr[i]}
-                scroll={scrollPercent * scrollParam}
+                scroll={scrollPercent * scrollParam} 
                 alt={`project${props.projectIndex}_${i}`}
             />
         );
