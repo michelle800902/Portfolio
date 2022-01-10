@@ -211,6 +211,10 @@ function TextContent(props) {
         });
     }
 
+    const onClickLink = () => {
+        window.open(props.link);
+    };
+
     return refresh && props.id && (
         <TextContentWrapper>
             <ProjectID>
@@ -224,6 +228,7 @@ function TextContent(props) {
                         inline
                         onMouseEnter={() => setHoverOnName(true)}
                         onMouseLeave={() => setHoverOnName(false)}
+                        onClick={onClickLink}
                         style={{
                             whiteSpace: 'nowrap',
                             cursor: props.link ? 'pointer' : 'default',
