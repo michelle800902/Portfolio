@@ -178,8 +178,17 @@ const LinkButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
     color: var(--pink);
+    font-size: 24px;
+    @media ${device.laptop} {
+        font-size: 28px;
+    }
+    @media ${device.laptopL} {
+        font-size: 32px;
+    }
+    @media ${device.desktop} {
+        font-size: 48px;
+    }
 `;
 
 function TextContent(props) {
@@ -223,7 +232,7 @@ function TextContent(props) {
                         {props.name}
                     </BlockTextReveal>
                     {
-                        hoverOnName
+                        hoverOnName && props.link 
                         && (
                             <LinkButton>
                                 <FontAwesomeIcon icon={faArrowRight} />
