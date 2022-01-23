@@ -26,27 +26,27 @@ export const navbarData = [
     {
         id: 'home',
         name: 'HOME',
-        href: '/Portfolio/#home',
+        href: '/portfolio/#home',
     },
     {
         id: 'about',
         name: 'ABOUT',
-        href: '/Portfolio/#about',
+        href: '/portfolio/#about',
     },
     {
         id: 'experience',
         name: 'EXPERIENCE',
-        href: '/Portfolio/#experience',
+        href: '/portfolio/#experience',
     },
     {
         id: 'projects',
         name: 'PROJECTS',
-        href: '/Portfolio/#projects',
+        href: '/portfolio/#projects',
     },
     {
         id: 'contact',
         name: 'CONTACT',
-        href: '/Portfolio/#contact',
+        href: '/portfolio/#contact',
     },
 ];
 
