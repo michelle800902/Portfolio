@@ -15,7 +15,6 @@ const ImageContentWrapper = styled.div`
 `;
 const ImagesBox = styled.div`
     height: 100vh;
-    margin-top: 15%;
     position: relative;
 `;
 

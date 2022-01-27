@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { projectData } from '../../constants/index';
+import { projectData } from '../../data/index';
 import TextContent from './TextContent';
 import ImageContent from './ImageContent';
 

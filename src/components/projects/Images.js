@@ -13,7 +13,6 @@ const Image = styled.img.attrs(({ scroll }) => ({
 }))`
     position: absolute;
     border-radius: 6px;
-    filter: blur(1px);
     transition: transform 0.2s ease-out;
     right: ${props => props.right}vw;
     bottom: ${props => props.bottom}vh;
@@ -33,7 +32,7 @@ function Images(props) {
             const divisor = (1000 / props.contentWidth) * 4;
             const midHeight = -(props.screenHeight / divisor);
             const midWidth = props.contentWidth / 15;
-            setBottomArr([midHeight - (props.contentWidth / 8), midHeight, midHeight + (props.contentWidth / 12)]);
+            setBottomArr([midHeight - (props.contentWidth / 8), midHeight, midHeight + (props.contentWidth / 10)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
         }
     }, [props.screenHeight, props.contentWidth]);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { navbarData } from '../../constants/index';
+import { navbarData } from '../../data/index';
 import { ReactComponent as LogoSVG } from '../../assets/images/planet.svg';
 import device from '../../assets/responsive/breakpoints';
 import GlobalStyle from '../../GlobalStyle';
