@@ -32,7 +32,7 @@ function Images(props) {
             const divisor = (1000 / props.contentWidth) * 4;
             const midHeight = -(props.screenHeight / divisor);
             const midWidth = props.contentWidth / 15;
-            setBottomArr([midHeight - (props.contentWidth / 8), midHeight, midHeight + (props.contentWidth / 10)]);
+            setBottomArr([midHeight - (props.contentWidth / 8), midHeight, midHeight + (props.contentWidth / 12)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
         }
     }, [props.screenHeight, props.contentWidth]);
