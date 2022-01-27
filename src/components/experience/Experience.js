@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import device from '../../assets/responsive/breakpoints';
-import { experienceData } from '../../constants/index';
+import { experienceData } from '../../data/index';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import device from '../../assets/responsive/breakpoints';
-import { projectData } from '../../constants/index';
+import { projectData } from '../../data/index';
 import Images from './Images';
 
 const ImageContentWrapper = styled.div`
