@@ -13,6 +13,7 @@ const Image = styled.img.attrs(({ scroll }) => ({
 }))`
     position: absolute;
     border-radius: 6px;
+    filter: blur(1px);
     transition: transform 0.2s ease-out;
     right: ${props => props.right}vw;
     bottom: ${props => props.bottom}vh;

@@ -101,7 +101,7 @@ export const projectData = [
     },
     {
         id: '01',
-        name: 'CovMo',
+        name: 'CovMo™',
         desc: 'A large-scale telecom data analytics platform to provide geo-location, network optimization solutions, and mobility insights.',
         type: 'WEB APP',
         role: 'Front-end Engineer @ Groundhog Technologies',
