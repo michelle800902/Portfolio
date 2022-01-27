@@ -55,7 +55,7 @@ export const experienceData = [
         date: 'Dec 2018 - Sep 2021',
         title: 'Frontend Engineer',
         company: 'Groundhog Technologies | Taipei, Taiwan',
-        desc: 'Participated in the new generation of flagship product development and co-worked with 10+ cross-team colleagues including engineers, product managers, designers.',
+        desc: 'Developed the frontend of the new generation flagship product and co-worked with cross-functional teams.',
         icon: GroundhogImg,
     },
     {
@@ -69,7 +69,7 @@ export const experienceData = [
         date: 'Jul 2016 - Jun 2017',
         title: 'Web Developer Intern',
         company: 'Delta Electronics | Taipei, Taiwan',
-        desc: 'Contributed an information retrieval system for searching millions of healthcare data and provided self-designed UI/UX.',
+        desc: 'Contributed an information retrieval system for searching millions of health insurance data and designed the customized user interface.',
         icon: DeltaImg,
     },
     {
