@@ -201,10 +201,12 @@ function TextContent(props) {
         }
     }, [props.id]);
 
+    let timer;
     if (!refresh) {
         BlockTextReveal = BlockTextRevealClear;
         TechListFadeIn = TechListFadeInClear;
-        setTimeout(() => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
             BlockTextReveal = BlockTextRevealAnimate;
             TechListFadeIn = TechListFadeInAnimate;
             setRefresh(true);
