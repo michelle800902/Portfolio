@@ -3,24 +3,26 @@ import CathayImg from '../assets/images/experience/cathay.png';
 import DeltaImg from '../assets/images/experience/delta.png';
 import NCCUImg from '../assets/images/experience/nccu.png';
 import TTUImg from '../assets/images/experience/ttu.png';
-import P1Img1 from '../assets/images/projects/01_CovMo/reporting.png';
+import P1Img1 from '../assets/images/projects/01_CovMo/callwindow.png';
 import P1Img2 from '../assets/images/projects/01_CovMo/geo.png';
-import P1Img3 from '../assets/images/projects/01_CovMo/callwindow.png';
+import P1Img3 from '../assets/images/projects/01_CovMo/reporting.png';
 import P2Img1 from '../assets/images/projects/02_ETL_Scheduling/graph.png';
 import P2Img2 from '../assets/images/projects/02_ETL_Scheduling/dashboard.png';
 import P3Img1 from '../assets/images/projects/03_Intention_Mining/cluster.png';
 import P3Img2 from '../assets/images/projects/03_Intention_Mining/network.png';
 import P4Img1 from '../assets/images/projects/04_Medical_Knowledge/network.png';
 import P4Img2 from '../assets/images/projects/04_Medical_Knowledge/chord.png';
-import P5Img1 from '../assets/images/projects/05_Healthcare_Map/map.png';
+import P5Img1 from '../assets/images/projects/05_Healthcare_Map/map1.png';
+import P5Img2 from '../assets/images/projects/05_Healthcare_Map/map2.png';
 import P6Img1 from '../assets/images/projects/06_Epidemic_Map/map1.png';
 import P6Img2 from '../assets/images/projects/06_Epidemic_Map/map2.png';
 import P6Img3 from '../assets/images/projects/06_Epidemic_Map/map3.png';
 import P7Img1 from '../assets/images/projects/07_Fashion_Style/home.png';
 import P7Img2 from '../assets/images/projects/07_Fashion_Style/option.png';
 import P7Img3 from '../assets/images/projects/07_Fashion_Style/dressup.png';
-import P8Img1 from '../assets/images/projects/08_Space_Shooter/scene.png';
-import P8Img2 from '../assets/images/projects/08_Space_Shooter/win.png';
+import P8Img1 from '../assets/images/projects/08_Space_Shooter/entry.png';
+import P8Img2 from '../assets/images/projects/08_Space_Shooter/scene.png';
+import P8Img3 from '../assets/images/projects/08_Space_Shooter/win.png';
 
 export const navbarData = [
     {
@@ -147,7 +149,7 @@ export const projectData = [
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3', 'jQuery', 'PHP', 'SQL', 'LeafLet'],
         link: '',
-        imgs: [P5Img1],
+        imgs: [P5Img1, P5Img2],
     },
     {
         id: '06',
@@ -177,7 +179,7 @@ export const projectData = [
         role: 'Postgraduate @ NCCU CS',
         tech: ['C#', 'Unity'],
         link: 'http://www.cs.nccu.edu.tw/~g10320/',
-        imgs: [P8Img1, P8Img2],
+        imgs: [P8Img1, P8Img2, P8Img3],
     },
     {
         id: '',

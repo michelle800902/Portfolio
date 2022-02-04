@@ -74,7 +74,7 @@ function Projects() {
                 tech={projectData[slideNumber].tech}
                 link={projectData[slideNumber].link}
             />
-            {/* <ImageContent /> */}
+            <ImageContent />
         </ProjectsWrapper>
     );
 }
