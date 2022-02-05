@@ -74,6 +74,7 @@ function Projects() {
                 role={projectData[slideNumber].role}
                 tech={projectData[slideNumber].tech}
                 link={projectData[slideNumber].link}
+                imgs={projectData[slideNumber].imgs}
             />
         </ProjectsWrapper>
     );

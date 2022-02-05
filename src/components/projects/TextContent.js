@@ -35,7 +35,7 @@ const showBlock = () => keyframes`
         width: 0%
     }
 `;
-const TextContentWrapper = styled.section`
+const TextContentWrapper = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@ const TextContentWrapper = styled.section`
     }
 `;
 const ProjectID = styled.div`
-    padding: 80px 10% 5% 10%;
+    padding: 80px 10% 20px 10%;
     font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;
@@ -83,7 +83,7 @@ const ProjectName = styled.div`
     }
 `;
 const ProjectRole = styled.div`
-    padding-top: 5%;
+    padding: 8px 0;
     font-size: 20px;
     font-family: 'AvenirMedium';
     pointer-events: none;
@@ -98,7 +98,7 @@ const ProjectRole = styled.div`
     }
 `;
 const ProjectDesc = styled.div`
-    padding-top: 2%;
+    padding: 8px 0;
     font-size: 20px;
     font-family: 'AvenirBook';
     pointer-events: none;
@@ -113,7 +113,7 @@ const ProjectDesc = styled.div`
     }
 `;
 const ProjectType = styled.div`
-    padding: 5% 10%;
+    padding: 20px 10%;
     font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;
@@ -144,7 +144,7 @@ const TechTag = styled.div`
 let TechListFadeIn = styled.div``;
 const TechListFadeInClear = styled.div``;
 const TechListFadeInAnimate = styled.div`
-    padding-top: 5%;
+    padding: 16px 0;
     display: flex;
     flex-flow: wrap;
     align-items: center;
@@ -189,6 +189,24 @@ const LinkButton = styled.div`
     @media ${device.desktop} {
         font-size: 48px;
     }
+`;
+const ProjectImages = styled.div`
+    display: grid;
+    grid-row-gap: 8px;
+    grid-column-gap: 8px;
+    grid-template-columns: repeat(${props => props.num}, 1fr);
+    opacity: 0;
+    animation: ${fadeIn} 1s linear forwards;
+    animation-delay: 0.5s;
+    @media ${device.laptop} {
+        display: none;
+    }
+`;
+const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
 `;
 
 function TextContent(props) {
@@ -262,6 +280,17 @@ function TextContent(props) {
                         <TechTag key={i}>{techStr}</TechTag>
                     ))}
                 </TechListFadeIn>
+                <ProjectImages num={props.imgs.length}>
+                    {
+                        props.imgs.map((src, i) => (
+                            <Image
+                                key={`img_${props.id}_${i}`}
+                                alt={`img_${props.id}_${i}`}
+                                src={src}
+                            />
+                        ))
+                    }
+                </ProjectImages>
             </ProjectDetails>
             <ProjectType>
                 <BlockTextReveal inline>
@@ -280,6 +309,7 @@ TextContent.propTypes = {
     role: PropTypes.string.isRequired,
     tech: PropTypes.array.isRequired,
     link: PropTypes.string.isRequired,
+    imgs: PropTypes.array.isRequired,
 }
 
 export default TextContent;
