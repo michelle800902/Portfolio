@@ -123,19 +123,19 @@ function Header() {
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
     const [focusedItemId, setFocusedItemId] = useState('');
 
-    useEffect(() => {
-        let prevScrollPos = window.pageYOffset;
-        window.onscroll = function() {
-            const currentScrollPos = window.pageYOffset;
-            if (prevScrollPos > currentScrollPos) {
-                setTop(0);
-            } else {
-                setTop(-1 * height);
-                setIsOpenSidebar(false);
-            }
-            prevScrollPos = currentScrollPos;
-        }
-    }, []);
+    // useEffect(() => {
+    //     let prevScrollPos = window.pageYOffset;
+    //     window.onscroll = function() {
+    //         const currentScrollPos = window.pageYOffset;
+    //         if (prevScrollPos > currentScrollPos) {
+    //             setTop(0);
+    //         } else {
+    //             setTop(-1 * height);
+    //             setIsOpenSidebar(false);
+    //         }
+    //         prevScrollPos = currentScrollPos;
+    //     }
+    // }, []);
 
     const onMouseEnterHeader = () => {
         setTop(0);
