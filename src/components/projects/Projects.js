@@ -65,6 +65,7 @@ function Projects() {
 
     return (
         <ProjectsWrapper id="projects" totalHeight={totalHeight}>
+            <ImageContent />
             <TextContent
                 id={projectData[slideNumber].id}
                 name={projectData[slideNumber].name} 
@@ -74,7 +75,6 @@ function Projects() {
                 tech={projectData[slideNumber].tech}
                 link={projectData[slideNumber].link}
             />
-            <ImageContent />
         </ProjectsWrapper>
     );
 }

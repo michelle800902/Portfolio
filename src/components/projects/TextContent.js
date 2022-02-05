@@ -43,12 +43,12 @@ const TextContentWrapper = styled.section`
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         width: 60%;
     }
 `;
 const ProjectID = styled.div`
-    padding: 15% 10% 5% 10%;
+    padding: 80px 10% 5% 10%;
     font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;

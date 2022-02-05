@@ -48,7 +48,7 @@ const Title = styled.div`
 `;
 const Toolbar = styled.div`
     display: none;
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         display: flex;
     }
 `;
@@ -95,7 +95,7 @@ const SidebarBtn = styled.div`
     cursor: pointer;
     display: flex;
     z-index: 10;
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         display: none;
     }
 `;
@@ -111,7 +111,7 @@ const Sidebar = styled.div`
     justify-content: space-evenly;
     background-color: var(--header-background-color);
     transition: 0.3s;
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         display: none;
     }
 `;

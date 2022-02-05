@@ -8,10 +8,11 @@ import P1Img2 from '../assets/images/projects/01_CovMo/geo.png';
 import P1Img3 from '../assets/images/projects/01_CovMo/reporting.png';
 import P2Img1 from '../assets/images/projects/02_ETL_Scheduling/graph.png';
 import P2Img2 from '../assets/images/projects/02_ETL_Scheduling/dashboard.png';
-import P3Img1 from '../assets/images/projects/03_Intention_Mining/cluster.png';
-import P3Img2 from '../assets/images/projects/03_Intention_Mining/network.png';
-import P4Img1 from '../assets/images/projects/04_Medical_Knowledge/network.png';
-import P4Img2 from '../assets/images/projects/04_Medical_Knowledge/chord.png';
+import P3Img1 from '../assets/images/projects/03_Intention_Mining/cluster1.png';
+import P3Img2 from '../assets/images/projects/03_Intention_Mining/cluster2.png';
+import P3Img3 from '../assets/images/projects/03_Intention_Mining/network.png';
+import P4Img1 from '../assets/images/projects/04_Medical_Rules/network.png';
+import P4Img2 from '../assets/images/projects/04_Medical_Rules/chord.png';
 import P5Img1 from '../assets/images/projects/05_Healthcare_Map/map1.png';
 import P5Img2 from '../assets/images/projects/05_Healthcare_Map/map2.png';
 import P6Img1 from '../assets/images/projects/06_Epidemic_Map/map1.png';
@@ -107,7 +108,7 @@ export const projectData = [
         desc: 'A large-scale telecom data analytics platform to provide geo-location, network optimization solutions, and mobility insights.',
         type: 'WEB APP',
         role: 'Front-end Engineer @ Groundhog Technologies',
-        tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox'],
+        tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox', 'Highcharts'],
         link: 'https://www.ghtinc.com/covmo/',
         imgs: [P1Img1, P1Img2, P1Img3],
     },
@@ -129,11 +130,11 @@ export const projectData = [
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
         link: '',
-        imgs: [P3Img1, P3Img2],
+        imgs: [P3Img1, P3Img2, P3Img3],
     },
     {
         id: '04',
-        name: 'Medical Knowledge',
+        name: 'Medical Rules',
         desc: 'An innovative data visualization platform to control the mining association rules from the massive medical dataset.',
         type: 'WEB APP',
         role: 'Web Developer Intern @ Delta Electronics',

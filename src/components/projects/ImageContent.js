@@ -8,7 +8,7 @@ const ImageContentWrapper = styled.div`
     width: 40%;
     margin-left: 60%;
     display: none;
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         display: flex;
         flex-flow: column nowrap;
     }
