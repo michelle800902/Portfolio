@@ -27,7 +27,7 @@ function Projects() {
             const homeHeight = homeDOM.offsetHeight;
             const aboutHeight = aboutDOM.offsetHeight;
             const experienceHeight = experienceDOM.offsetHeight;
-            return (homeHeight + aboutHeight + experienceHeight) * 0.95;
+            return (homeHeight + aboutHeight + experienceHeight) * 0.9;
         }
         return 0;
     };
@@ -40,7 +40,7 @@ function Projects() {
         const { scrollTop } = event.srcElement.documentElement;
         if (scrollTop > startTop) {
             const currentNumber = Math.floor((scrollTop - startTop) / windowHeight) + 1;
-            if (scrollTop > (startTop + totalHeight) - (windowHeight * 0.8)) { // last project
+            if (scrollTop > (startTop + totalHeight) - (windowHeight * 0.5)) {
                 setSlideNumber(0);
             } else if (currentNumber < projectData.length - 1) {
                 setSlideNumber(currentNumber);
@@ -65,7 +65,6 @@ function Projects() {
 
     return (
         <ProjectsWrapper id="projects" totalHeight={totalHeight}>
-            <ImageContent />
             <TextContent
                 id={projectData[slideNumber].id}
                 name={projectData[slideNumber].name} 
@@ -76,6 +75,7 @@ function Projects() {
                 link={projectData[slideNumber].link}
                 imgs={projectData[slideNumber].imgs}
             />
+            <ImageContent />
         </ProjectsWrapper>
     );
 }

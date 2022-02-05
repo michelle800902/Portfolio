@@ -43,6 +43,7 @@ const TextContentWrapper = styled.div`
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
+    z-index: 5;
     @media ${device.laptop} {
         width: 60%;
     }
