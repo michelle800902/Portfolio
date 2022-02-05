@@ -48,7 +48,7 @@ const TextContentWrapper = styled.div`
     }
 `;
 const ProjectID = styled.div`
-    padding: 80px 10% 20px 10%;
+    padding: 100px 10% 20px 10%;
     font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;
@@ -113,7 +113,7 @@ const ProjectDesc = styled.div`
     }
 `;
 const ProjectType = styled.div`
-    padding: 20px 10%;
+    padding: 40px 10%;
     font-size: 20px;
     font-family: 'AvenirHeavy';
     pointer-events: none;
@@ -126,32 +126,6 @@ const ProjectType = styled.div`
     @media ${device.desktop} {
         font-size: 48px;
     }
-`;
-const TechTag = styled.div`
-    width: fit-content;
-    height: 28px;
-    line-height: 28px;
-    padding: 0 12px;
-    margin: 0px 8px 8px 0px;
-    border-radius: 16px;
-    font-weight: bold;
-    font-family: 'AvenirBook';
-    white-space: nowrap;
-    background-color: var(--white);
-    color: var(--pink);
-    opacity: 0.8;
-`;
-let TechListFadeIn = styled.div``;
-const TechListFadeInClear = styled.div``;
-const TechListFadeInAnimate = styled.div`
-    padding: 16px 0;
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    opacity: 0;
-    animation: ${fadeIn} 1s linear forwards;
-    animation-delay: 0.5s;
-    pointer-events: none;
 `;
 let BlockTextReveal = styled.span``;
 const BlockTextRevealClear = styled.span``;
@@ -173,7 +147,7 @@ const BlockTextRevealAnimate = styled.span`
         animation-delay: 0s;
     }
 `;
-const LinkButton = styled.div`
+const LinkIcon = styled.div`
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -189,6 +163,30 @@ const LinkButton = styled.div`
     @media ${device.desktop} {
         font-size: 48px;
     }
+`;
+const ProjectTechTags = styled.div`
+    padding: 16px 0;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    opacity: 0;
+    animation: ${fadeIn} 1s linear forwards;
+    animation-delay: 0.5s;
+    pointer-events: none;
+`;
+const TechTag = styled.div`
+    width: fit-content;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+    margin: 0px 8px 8px 0px;
+    border-radius: 16px;
+    font-weight: bold;
+    font-family: 'AvenirBook';
+    white-space: nowrap;
+    background-color: var(--white);
+    color: var(--pink);
+    opacity: 0.8;
 `;
 const ProjectImages = styled.div`
     display: grid;
@@ -222,11 +220,9 @@ function TextContent(props) {
     let timer;
     if (!refresh) {
         BlockTextReveal = BlockTextRevealClear;
-        TechListFadeIn = TechListFadeInClear;
         clearTimeout(timer);
         timer = setTimeout(() => {
             BlockTextReveal = BlockTextRevealAnimate;
-            TechListFadeIn = TechListFadeInAnimate;
             setRefresh(true);
         });
     }
@@ -259,9 +255,9 @@ function TextContent(props) {
                     {
                         hoverOnName && props.link 
                         && (
-                            <LinkButton>
+                            <LinkIcon>
                                 <FontAwesomeIcon icon={faArrowRight} />
-                            </LinkButton>
+                            </LinkIcon>
                         )
                     }
                 </ProjectName>
@@ -275,11 +271,11 @@ function TextContent(props) {
                         {props.desc}
                     </BlockTextReveal>
                 </ProjectDesc>
-                <TechListFadeIn>
+                <ProjectTechTags>
                     {props.tech.map((techStr, i) => (
                         <TechTag key={i}>{techStr}</TechTag>
                     ))}
-                </TechListFadeIn>
+                </ProjectTechTags>
                 <ProjectImages num={props.imgs.length}>
                     {
                         props.imgs.map((src, i) => (
