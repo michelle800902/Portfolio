@@ -24,6 +24,7 @@ import P7Img3 from '../assets/images/projects/07_Fashion_Style/dressup.png';
 import P8Img1 from '../assets/images/projects/08_Space_Shooter/entry.png';
 import P8Img2 from '../assets/images/projects/08_Space_Shooter/scene.png';
 import P8Img3 from '../assets/images/projects/08_Space_Shooter/win.png';
+import ResumePDF from './Michelle_Chen_Resume.pdf';
 
 export const navbarData = [
     {
@@ -193,3 +194,10 @@ export const projectData = [
         imgs: [],
     },
 ];
+
+export const contactData = {
+    github: 'https://github.com/michelle800902',
+    linkedin: 'https://www.linkedin.com/in/chenyenjung/',
+    email: 'michelle800902@gmail.com',
+    resume: ResumePDF,
+};

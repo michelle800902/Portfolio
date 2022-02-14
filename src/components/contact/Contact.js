@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 import device from '../../assets/responsive/breakpoints';
+import { contactData } from '../../data/index';
 import './wave.css';
 
 const ContactWrapper = styled.div`
@@ -75,6 +76,13 @@ const ContactItems = styled.div`
         margin-right: 48px;
     }
 `;
+const Link = styled.a`
+    text-decoration: none;
+    color: var(--text-color);
+    &:hover {
+        color: var(--title-color);
+    }
+`;
 
 function Contact() {
     const [scrollPercent, setScrollPercent] = useState(0);
@@ -103,12 +111,21 @@ function Contact() {
                 CONTACT
             </Title>
             <Description>
-                Hello! Please get in touch with me if any new opportunities. I'd love to hear from you!
+                Hello! Please get in touch with me if any Front-end Engineer opportunities. I'd love to hear from you!
                 <ContactItems>
                     <LaptopSVG width={200} height={200} />
-                    <FontAwesomeIcon icon={faGithub} size="2x" />
-                    <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                    <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                    <Link href={contactData.github} target="_blank">
+                        <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </Link>
+                    <Link href={contactData.linkedin} target="_blank">
+                        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                    </Link>
+                    <Link href={`mailto:${contactData.email}`}>
+                        <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                    </Link>
+                    <Link href={contactData.resume} target="_blank">
+                        <FontAwesomeIcon icon={faFilePdf} size="2x" />
+                    </Link>
                 </ContactItems>
             </Description>
         </ContactWrapper>
