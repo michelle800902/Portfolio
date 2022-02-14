@@ -117,12 +117,18 @@ const Sidebar = styled.div`
 `;
 
 function Header() {
+    const isDaytime = () => {
+        const currentHour = new Date().getHours();
+        return (currentHour >= 6 && currentHour < 18);
+    };
+
     const height = 60;
     const [top, setTop] = useState(0);
-    const [isLightTheme, setIsLightTheme] = useState(true);
+    const [isLightTheme, setIsLightTheme] = useState(isDaytime());
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
     const [focusedItemId, setFocusedItemId] = useState('');
 
+    // Hide header when scrolling up and show header when scrolling down
     // useEffect(() => {
     //     let prevScrollPos = window.pageYOffset;
     //     window.onscroll = function() {
