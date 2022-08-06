@@ -196,7 +196,7 @@ export const projectData = [
 ];
 
 export const contactData = {
-    github: 'https://github.com/michelle800902',
+    github: 'https://github.com/michellechens',
     linkedin: 'https://www.linkedin.com/in/chenyenjung/',
     email: 'michelle800902@gmail.com',
     resume: ResumePDF,
