@@ -3,9 +3,8 @@ import CathayImg from '../assets/images/experience/cathay.png';
 import DeltaImg from '../assets/images/experience/delta.png';
 import NCCUImg from '../assets/images/experience/nccu.png';
 import TTUImg from '../assets/images/experience/ttu.png';
-import P1Img1 from '../assets/images/projects/01_CovMo/callwindow.png';
-import P1Img2 from '../assets/images/projects/01_CovMo/geo.png';
-import P1Img3 from '../assets/images/projects/01_CovMo/reporting.png';
+import P1Img1 from '../assets/images/projects/01_CovMo/geo.png';
+import P1Img2 from '../assets/images/projects/01_CovMo/covmo.png';
 import P2Img1 from '../assets/images/projects/02_ETL_Scheduling/graph.png';
 import P2Img2 from '../assets/images/projects/02_ETL_Scheduling/dashboard.png';
 import P3Img1 from '../assets/images/projects/03_Intention_Mining/cluster1.png';
@@ -111,7 +110,7 @@ export const projectData = [
         role: 'Front-end Engineer @ Groundhog Technologies',
         tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox', 'Highcharts'],
         link: 'https://www.ghtinc.com/covmo/',
-        imgs: [P1Img1, P1Img2, P1Img3],
+        imgs: [P1Img1, P1Img2],
     },
     {
         id: '02',
