@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.88ed4ae5.chunk.css",
-    "main.js": "/portfolio/static/js/main.c6e7b565.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.c6e7b565.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.87d273b3.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.87d273b3.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.b46b3287.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.b46b3287.js.map",
     "static/css/2.2e99a83d.chunk.css": "/portfolio/static/css/2.2e99a83d.chunk.css",
@@ -16,10 +16,10 @@
     "static/js/2.e1252c91.chunk.js.LICENSE.txt": "/portfolio/static/js/2.e1252c91.chunk.js.LICENSE.txt",
     "static/media/index.css": "/portfolio/static/media/Valencia.982aa301.ttf",
     "static/media/Michelle_Chen_Resume.99044dae.pdf": "/portfolio/static/media/Michelle_Chen_Resume.99044dae.pdf",
-    "static/media/callwindow.15f7e97a.png": "/portfolio/static/media/callwindow.15f7e97a.png",
     "static/media/chord.144c80d3.png": "/portfolio/static/media/chord.144c80d3.png",
     "static/media/cluster1.3accca34.png": "/portfolio/static/media/cluster1.3accca34.png",
     "static/media/cluster2.04b708e9.png": "/portfolio/static/media/cluster2.04b708e9.png",
+    "static/media/covmo.945d135b.png": "/portfolio/static/media/covmo.945d135b.png",
     "static/media/dashboard.72e0760a.png": "/portfolio/static/media/dashboard.72e0760a.png",
     "static/media/dressup.6283b176.png": "/portfolio/static/media/dressup.6283b176.png",
     "static/media/entry.da2b57f0.png": "/portfolio/static/media/entry.da2b57f0.png",
@@ -38,7 +38,6 @@
     "static/media/network.f37a1424.png": "/portfolio/static/media/network.f37a1424.png",
     "static/media/option.fe300cd4.png": "/portfolio/static/media/option.fe300cd4.png",
     "static/media/planet.fd6f4469.svg": "/portfolio/static/media/planet.fd6f4469.svg",
-    "static/media/reporting.57adc059.png": "/portfolio/static/media/reporting.57adc059.png",
     "static/media/scene.4ffc5518.png": "/portfolio/static/media/scene.4ffc5518.png",
     "static/media/sun.665b4267.svg": "/portfolio/static/media/sun.665b4267.svg",
     "static/media/ttu.2510257f.png": "/portfolio/static/media/ttu.2510257f.png",
@@ -49,6 +48,6 @@
     "static/css/2.2e99a83d.chunk.css",
     "static/js/2.e1252c91.chunk.js",
     "static/css/main.88ed4ae5.chunk.css",
-    "static/js/main.c6e7b565.chunk.js"
+    "static/js/main.87d273b3.chunk.js"
   ]
 }
