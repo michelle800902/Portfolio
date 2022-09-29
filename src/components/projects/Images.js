@@ -39,13 +39,13 @@ function Images(props) {
     
     let scrollParam = 24;
     let scrollPercent = props.scrollPercent;
-    const calcScrollPercent = () => {
+    (function calcScrollPercent() {
         const heighttoBeReducedinVH = (props.boxHeight * props.projectIndex) - 100;
         const scrollOffset = (props.screenHeight * heighttoBeReducedinVH) / 100;
         const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) - ((props.projectIndex - 1) * 2);
         scrollPercent -= scrollOffsetInPercent;
-    };
-    calcScrollPercent();
+    })();
+    // calcScrollPercent();
 
     const renderImage = (src, i) => {
         if (i) {
@@ -71,7 +71,7 @@ function Images(props) {
                 props.imgs.map(renderImage)
             }
         </ImagesWrapper>
-    )
+    );
 }
 
 Images.propTypes = {

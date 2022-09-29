@@ -92,7 +92,7 @@ function Reveal({ text, fontFam, timeDelay }) {
             </TextToReveal>
             <WhiteBlock />
         </Stage>
-      );
+    );
 }
 
 Reveal.propTypes = {

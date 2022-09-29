@@ -60,7 +60,7 @@ function Home() {
                 />
             </Description>
         </HomeWrapper>
-      );
+    );
 }
 
 export default Home;

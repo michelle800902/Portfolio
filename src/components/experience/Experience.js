@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import device from '../../assets/responsive/breakpoints';
@@ -68,14 +69,14 @@ function Experience() {
 
     useEffect(() => {
         updateIconSize();
-    }, [])
+    }, []);
 
     useEffect(() => {
         window.addEventListener('resize', updateIconSize)
         return () => {
             window.removeEventListener('resize', updateIconSize);
-        }
-    })
+        };
+    });
 
     const renderTimelineElement = (data, i) => {
         return (

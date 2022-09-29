@@ -40,7 +40,8 @@ function Projects() {
         const { scrollTop } = event.srcElement.documentElement;
         if (scrollTop > startTop) {
             const currentNumber = Math.floor((scrollTop - startTop) / windowHeight) + 1;
-            if (scrollTop > (startTop + totalHeight) - (windowHeight * 0.5)) {
+            const endTop = (startTop + totalHeight) - (windowHeight * 0.5);
+            if (scrollTop > endTop) {
                 setSlideNumber(0);
             } else if (currentNumber < projectData.length - 1) {
                 setSlideNumber(currentNumber);

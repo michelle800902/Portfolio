@@ -78,7 +78,7 @@ function ImageContent() {
                 />
             </ImagesBox>
         ) : null;
-    }
+    };
 
     return (
         <ImageContentWrapper id="image-content">

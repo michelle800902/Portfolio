@@ -23,7 +23,7 @@ import P7Img3 from '../assets/images/projects/07_Fashion_Style/dressup.png';
 import P8Img1 from '../assets/images/projects/08_Space_Shooter/entry.png';
 import P8Img2 from '../assets/images/projects/08_Space_Shooter/scene.png';
 import P8Img3 from '../assets/images/projects/08_Space_Shooter/win.png';
-import ResumePDF from './Michelle_Chen_Resume.pdf';
+// import ResumePDF from './Michelle_Chen_Resume.pdf';
 
 export const navbarData = [
     {
