@@ -40,18 +40,17 @@ function Images(props) {
     let scrollParam = 24;
     let scrollPercent = props.scrollPercent;
     (function calcScrollPercent() {
-        const heighttoBeReducedinVH = (props.boxHeight * props.projectIndex) - 100;
-        const scrollOffset = (props.screenHeight * heighttoBeReducedinVH) / 100;
+        const heightToBeReducedInVH = (props.boxHeight * props.projectIndex) - 100;
+        const scrollOffset = (props.screenHeight * heightToBeReducedInVH) / 100;
         const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) - ((props.projectIndex - 1) * 2);
         scrollPercent -= scrollOffsetInPercent;
     })();
-    // calcScrollPercent();
 
     const renderImage = (src, i) => {
         if (i) {
             scrollParam /= 2;
         }
-        return (
+        return src ? (
             <Image
                 key={i}
                 src={src}
@@ -62,7 +61,7 @@ function Images(props) {
                 scroll={scrollPercent * scrollParam} 
                 alt={`project${props.projectIndex}_${i}`}
             />
-        );
+        ) : null;
     };
 
     return (

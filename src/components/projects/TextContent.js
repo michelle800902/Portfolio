@@ -209,22 +209,22 @@ const Image = styled.img`
 `;
 
 function TextContent(props) {
-    const [refresh, setRefresh] = useState(true);
+    const [refresh, setRefresh] = useState(false);
     const [hoverOnName, setHoverOnName] = useState(false);
 
     useEffect(() => {
         if (props.id) {
-            setRefresh(false);
+            setRefresh(true);
         }
     }, [props.id]);
 
     let timer;
-    if (!refresh) {
+    if (refresh) {
         BlockTextReveal = BlockTextRevealClear;
         clearTimeout(timer);
         timer = setTimeout(() => {
             BlockTextReveal = BlockTextRevealAnimate;
-            setRefresh(true);
+            setRefresh(false);
         });
     }
 
@@ -232,7 +232,7 @@ function TextContent(props) {
         window.open(props.link);
     };
 
-    return refresh && props.id && (
+    return !refresh && props.id && (
         <TextContentWrapper>
             <ProjectID>
                 <BlockTextReveal inline>
@@ -279,13 +279,13 @@ function TextContent(props) {
                 </ProjectTechTags>
                 <ProjectImages num={props.imgs.length}>
                     {
-                        props.imgs.map((src, i) => (
+                        props.imgs.map((src, i) => src ? (
                             <Image
                                 key={`img_${props.id}_${i}`}
                                 alt={`img_${props.id}_${i}`}
                                 src={src}
                             />
-                        ))
+                        ) : null)
                     }
                 </ProjectImages>
             </ProjectDetails>

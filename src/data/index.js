@@ -3,8 +3,7 @@ import CathayImg from '../assets/images/experience/cathay.png';
 import DeltaImg from '../assets/images/experience/delta.png';
 import NCCUImg from '../assets/images/experience/nccu.png';
 import TTUImg from '../assets/images/experience/ttu.png';
-import P1Img1 from '../assets/images/projects/01_CovMo/geo.png';
-import P1Img2 from '../assets/images/projects/01_CovMo/covmo.png';
+import P1Img1 from '../assets/images/projects/01_CovMo/covmo.png';
 import P2Img1 from '../assets/images/projects/02_ETL_Scheduling/graph.png';
 import P2Img2 from '../assets/images/projects/02_ETL_Scheduling/dashboard.png';
 import P3Img1 from '../assets/images/projects/03_Intention_Mining/cluster1.png';
@@ -110,7 +109,7 @@ export const projectData = [
         role: 'Front-end Engineer @ Groundhog Technologies',
         tech: ['TypeScript', 'React Hooks', 'Redux', 'Styled-Components', 'MapBox', 'Highcharts'],
         link: 'https://www.ghtinc.com/covmo/',
-        imgs: [P1Img1, P1Img2],
+        imgs: [null, P1Img1, null],
     },
     {
         id: '02',
@@ -120,7 +119,7 @@ export const projectData = [
         role: 'Data Engineer @ Cathay Financial Holdings',
         tech: ['JavaScript', 'D3', 'Bootstrap'],
         link: '',
-        imgs: [P2Img1, P2Img2],
+        imgs: [P2Img1, P2Img2, null],
     },
     {
         id: '03',
@@ -140,7 +139,7 @@ export const projectData = [
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3'],
         link: '',
-        imgs: [P4Img1, P4Img2],
+        imgs: [P4Img1, P4Img2, null],
     },
     {
         id: '05',
@@ -150,7 +149,7 @@ export const projectData = [
         role: 'Web Developer Intern @ Delta Electronics',
         tech: ['JavaScript', 'D3', 'jQuery', 'PHP', 'SQL', 'LeafLet'],
         link: '',
-        imgs: [P5Img1, P5Img2],
+        imgs: [P5Img1, P5Img2, null],
     },
     {
         id: '06',

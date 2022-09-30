@@ -27,7 +27,7 @@ function Projects() {
             const homeHeight = homeDOM.offsetHeight;
             const aboutHeight = aboutDOM.offsetHeight;
             const experienceHeight = experienceDOM.offsetHeight;
-            return (homeHeight + aboutHeight + experienceHeight) * 0.95;
+            return (homeHeight + aboutHeight + experienceHeight) * 0.9;
         }
         return 0;
     };
