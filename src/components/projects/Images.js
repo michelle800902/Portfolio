@@ -30,7 +30,7 @@ function Images(props) {
     useEffect(() => {
         if (props.screenHeight && props.contentWidth) {
             const divisor = (1000 / props.contentWidth) * 4;
-            const midHeight = -1 * Math.round(props.screenHeight / divisor);
+            const midHeight = Math.round(props.screenHeight / divisor) * -1;
             const midWidth = Math.round(props.contentWidth / 15);
             setBottomArr([midHeight - Math.round(props.contentWidth / 8), midHeight, midHeight + Math.round(props.contentWidth / 12)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);

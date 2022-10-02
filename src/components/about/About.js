@@ -11,11 +11,14 @@ const AboutWrapper = styled.div`
     overflow: hidden;
     background-color: var(--background-two);
 `;
-const Title = styled.div`
+const Title = styled.div.attrs(({ scroll }) => ({
+    style: {
+        transform: `translateX(${scroll}%)`,
+    },
+}))`
     position: absolute;
     top: 10%;
     left: -30%;
-    transform: translateX(${props => props.scrollPercent * 6}%);
     transition: transform 0.5s ease-out;
     font-size: 60px;
     font-family: 'AvenirHeavy';
@@ -100,7 +103,7 @@ function About() {
 
     return (
         <AboutWrapper id="about">
-            <Title scrollPercent={scrollPercent}>
+            <Title scroll={scrollPercent * 6}>
                 ABOUT ME
             </Title>
             <Description>

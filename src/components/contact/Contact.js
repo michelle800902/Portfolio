@@ -14,11 +14,14 @@ const ContactWrapper = styled.div`
     position: relative;
     overflow: hidden;
 `;
-const Title = styled.div`
+const Title = styled.div.attrs(({ scroll }) => ({
+    style: {
+        transform: `translateX(-${scroll}%)`,
+    },
+}))`
     position: absolute;
     top: 10%;
     right: -95%;
-    transform: translateX(-${props => props.scrollPercent * 6}%);
     transition: transform 0.5s ease-out;
     font-size: 60px;
     font-family: 'AvenirHeavy';
@@ -107,7 +110,7 @@ function Contact() {
 
     return (
         <ContactWrapper id="contact">
-            <Title scrollPercent={scrollPercent}>
+            <Title scroll={scrollPercent * 6}>
                 CONTACT
             </Title>
             <Description>

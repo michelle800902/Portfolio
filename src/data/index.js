@@ -175,7 +175,7 @@ export const projectData = [
         desc: 'A clothing recommendation system that recommends products using styles and popularity learned from online fashion data.',
         type: 'WEB APP',
         role: 'Postgraduate @ NCCU CS',
-        tech: ['JavaScript', 'Python', 'Django', 'PostgresDB'],
+        tech: ['JavaScript', 'Python', 'Django', 'PostgresDB', 'Deep Learning'],
         link: '',
         imgs: [P7Img1, P7Img2, P7Img3],
     },
