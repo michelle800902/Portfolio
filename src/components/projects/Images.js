@@ -21,8 +21,8 @@ const Image = styled.img.attrs(({ scroll }) => ({
 `;
 
 function Images(props) {
-    const rightArr = [4, 2, 6];
     const zIndexArr = [1, 3, 2];
+    const rightArr = [4, 2, 6];
 
     const [bottomArr, setBottomArr] = useState([-200, -120, -60]);
     const [heightArr, setHeightArr] = useState([38, 42, 36]);
@@ -30,9 +30,9 @@ function Images(props) {
     useEffect(() => {
         if (props.screenHeight && props.contentWidth) {
             const divisor = (1000 / props.contentWidth) * 4;
-            const midHeight = -(props.screenHeight / divisor);
-            const midWidth = props.contentWidth / 15;
-            setBottomArr([midHeight - (props.contentWidth / 8), midHeight, midHeight + (props.contentWidth / 12)]);
+            const midHeight = -1 * Math.round(props.screenHeight / divisor);
+            const midWidth = Math.round(props.contentWidth / 15);
+            setBottomArr([midHeight - Math.round(props.contentWidth / 8), midHeight, midHeight + Math.round(props.contentWidth / 12)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
         }
     }, [props.screenHeight, props.contentWidth]);
@@ -54,10 +54,10 @@ function Images(props) {
             <Image
                 key={i}
                 src={src}
+                zIndex={zIndexArr[i]}
                 right={rightArr[i]}
                 bottom={bottomArr[i]}
                 height={heightArr[i]}
-                zIndex={zIndexArr[i]}
                 scroll={scrollPercent * scrollParam} 
                 alt={`project${props.projectIndex}_${i}`}
             />
