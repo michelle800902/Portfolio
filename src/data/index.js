@@ -1,3 +1,4 @@
+import GraphenImg from '../assets/images/experience/graphen.png';
 import GroundhogImg from '../assets/images/experience/groundhog.png';
 import CathayImg from '../assets/images/experience/cathay.png';
 import DeltaImg from '../assets/images/experience/delta.png';
@@ -53,6 +54,13 @@ export const navbarData = [
 ];
 
 export const experienceData = [
+    {
+        date: 'Apr 2022 - Present',
+        title: 'Frontend Software Engineer',
+        company: 'Graphen | Taipei, Taiwan',
+        desc: '',
+        icon: GraphenImg,
+    },
     {
         date: 'Dec 2018 - Sep 2021',
         title: 'Frontend Engineer',
