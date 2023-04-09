@@ -1,6 +1,6 @@
-# portfolio
+# Portfolio Website
 
-![](https://i.imgur.com/rLwUeI3.png)
+![](https://i.imgur.com/XNgNnU1.png)
 
 ## Introduction
 
