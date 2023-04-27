@@ -20,7 +20,8 @@ const Image = styled.img.attrs(({ scroll }) => ({
     z-index: ${props => props.zIndex};
 `;
 
-function Images(props) {
+function Images({ projectIdx, imgs, contentWidth, screenHeight, scrollHeight, scrollPercent }) {
+    const boxHeight = 140;
     const zIndexArr = [1, 3, 2];
     const rightArr = [4, 2, 6];
 
@@ -28,27 +29,27 @@ function Images(props) {
     const [heightArr, setHeightArr] = useState([38, 42, 36]);
 
     useEffect(() => {
-        if (props.screenHeight && props.contentWidth) {
-            const divisor = (1000 / props.contentWidth) * 4;
-            const midHeight = Math.round(props.screenHeight / divisor) * -1;
-            const midWidth = Math.round(props.contentWidth / 15);
-            setBottomArr([midHeight - Math.round(props.contentWidth / 8), midHeight, midHeight + Math.round(props.contentWidth / 12)]);
+        if (screenHeight && contentWidth) {
+            const divisor = (1000 / contentWidth) * 4;
+            const midHeight = Math.round(screenHeight / divisor) * -1;
+            const midWidth = Math.round(contentWidth / 15);
+            setBottomArr([midHeight - Math.round(contentWidth / 8), midHeight, midHeight + Math.round(contentWidth / 12)]);
             setHeightArr([midWidth - 4, midWidth, midWidth - 5]);
         }
-    }, [props.screenHeight, props.contentWidth]);
+    }, [screenHeight, contentWidth]);
     
-    let scrollParam = 24;
-    let scrollPercent = props.scrollPercent;
+    let currScrollParam = 24;
+    let currScrollPercent = scrollPercent;
     (function calcScrollPercent() {
-        const heightToBeReducedInVH = (props.boxHeight * props.projectIndex) - 100;
-        const scrollOffset = (props.screenHeight * heightToBeReducedInVH) / 100;
-        const scrollOffsetInPercent = (scrollOffset * 100 / props.scrollHeight) - ((props.projectIndex - 1) * 2);
-        scrollPercent -= scrollOffsetInPercent;
+        const heightToBeReducedInVH = (boxHeight * projectIdx) - 100;
+        const scrollOffset = (screenHeight * heightToBeReducedInVH) / 100;
+        const scrollOffsetInPercent = (scrollOffset * 100 / scrollHeight) - ((projectIdx - 1) * 2);
+        currScrollPercent -= scrollOffsetInPercent;
     })();
 
     const renderImage = (src, i) => {
         if (i) {
-            scrollParam /= 2;
+            currScrollParam /= 2;
         }
         return src ? (
             <Image
@@ -58,8 +59,8 @@ function Images(props) {
                 right={rightArr[i]}
                 bottom={bottomArr[i]}
                 height={heightArr[i]}
-                scroll={scrollPercent * scrollParam} 
-                alt={`project${props.projectIndex}_${i}`}
+                scroll={currScrollPercent * currScrollParam} 
+                alt={`project${projectIdx}_${i}`}
             />
         ) : null;
     };
@@ -67,16 +68,16 @@ function Images(props) {
     return (
         <ImagesWrapper>
             {
-                props.imgs.map(renderImage)
+                imgs.map(renderImage)
             }
         </ImagesWrapper>
     );
 }
 
 Images.propTypes = {
-    projectIndex: PropTypes.number.isRequired,
+    projectIdx: PropTypes.number.isRequired,
     imgs: PropTypes.array.isRequired,
-    boxHeight: PropTypes.number.isRequired,
+    contentWidth: PropTypes.number.isRequired,
     screenHeight: PropTypes.number.isRequired,
     scrollHeight: PropTypes.number.isRequired,
     scrollPercent: PropTypes.number.isRequired,

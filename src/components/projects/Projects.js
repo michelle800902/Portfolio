@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { projectData } from '../../data/index';
@@ -6,18 +7,31 @@ import ImageContent from './ImageContent';
 
 const ProjectsWrapper = styled.div`
     width: 100%;
-    height: ${props => props.totalHeight}px;
+    height: ${props => props.height}px;
     display: flex;
     flex-flow: row nowrap;
     background-color: var(--background-two);
 `;
 
 function Projects() {
+    // Insert empty data into projectData array to not render if scrolled outside
+    const emptyItem = {
+        id: '',
+        name: '',
+        desc: '',
+        type: '',
+        role: '',
+        tech: [],
+        link: '',
+        imgs: [],
+    };
+    const projectItems = [emptyItem, ...projectData, emptyItem];
+
     const windowHeight = window.innerHeight;
-    const totalHeight = windowHeight * (projectData.length - 1);
+    const totalHeight = windowHeight * (projectItems.length - 1);
 
     const [startTop, setStartTop] = useState(0);
-    const [slideNumber, setSlideNumber] = useState(0);
+    const [projectIdx, setProjectIdx] = useState(0);
 
     const getStartTop = () => {
         const homeDOM = document.getElementById('home');
@@ -39,20 +53,20 @@ function Projects() {
     const handleScroll = (event) => {
         const { scrollTop } = event.srcElement.documentElement;
         if (scrollTop > startTop) {
-            const currentNumber = Math.floor((scrollTop - startTop) / windowHeight) + 1;
+            const offset = Math.floor((scrollTop - startTop) / windowHeight) + 1;
             const endTop = (startTop + totalHeight) - (windowHeight * 0.5);
             if (scrollTop > endTop) {
-                setSlideNumber(0);
-            } else if (currentNumber < projectData.length - 1) {
-                setSlideNumber(currentNumber);
+                setProjectIdx(0);
+            } else if (offset < projectItems.length - 1) {
+                setProjectIdx(offset);
             }
         } else {
-            setSlideNumber(0);
+            setProjectIdx(0);
         }
     };
 
     useEffect(() => {
-        setStartTop(getStartTop());
+        handleResize();
     }, []);
 
     useEffect(() => {
@@ -65,18 +79,9 @@ function Projects() {
     });
 
     return (
-        <ProjectsWrapper id="projects" totalHeight={totalHeight}>
-            <TextContent
-                id={projectData[slideNumber].id}
-                name={projectData[slideNumber].name} 
-                desc={projectData[slideNumber].desc}
-                type={projectData[slideNumber].type}
-                role={projectData[slideNumber].role}
-                tech={projectData[slideNumber].tech}
-                link={projectData[slideNumber].link}
-                imgs={projectData[slideNumber].imgs}
-            />
-            <ImageContent />
+        <ProjectsWrapper id="projects" height={totalHeight}>
+            <TextContent projectItem={projectItems[projectIdx]} />
+            <ImageContent projectItems={projectItems} />
         </ProjectsWrapper>
     );
 }

@@ -100,16 +100,6 @@ export const experienceData = [
 
 export const projectData = [
     {
-        id: '',
-        name: '',
-        desc: '',
-        type: '',
-        role: '',
-        tech: [],
-        link: '',
-        imgs: [],
-    },
-    {
         id: '01',
         name: 'CovMo™',
         desc: 'A large-scale telecom data analytics platform to provide geo-location, network optimization solutions, and mobility insights.',
@@ -188,16 +178,6 @@ export const projectData = [
         tech: ['C#', 'Unity'],
         link: 'http://www.cs.nccu.edu.tw/~g10320/',
         imgs: [P8Img1, P8Img2, P8Img3],
-    },
-    {
-        id: '',
-        name: '',
-        desc: '',
-        type: '',
-        role: '',
-        tech: [],
-        link: '',
-        imgs: [],
     },
 ];
 

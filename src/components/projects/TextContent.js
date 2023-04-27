@@ -132,7 +132,7 @@ let BlockTextReveal = styled.span``;
 const BlockTextRevealClear = styled.span``;
 const BlockTextRevealAnimate = styled.span`
     position: relative;
-    display: ${props => (props.inline ? 'inline' : 'block')};
+    display: ${props => props.inline ? 'inline' : 'block'};
     animation: ${appearText} 0.5s linear forwards;
     animation-delay: 0.5s;
     color: transparent;
@@ -208,15 +208,17 @@ const Image = styled.img`
     border-radius: 6px;
 `;
 
-function TextContent(props) {
+function TextContent({ projectItem }) {
+    const { id, name, desc, type, role, tech, link, imgs } = projectItem;
+
     const [refresh, setRefresh] = useState(false);
     const [hoverOnName, setHoverOnName] = useState(false);
 
     useEffect(() => {
-        if (props.id) {
+        if (id) {
             setRefresh(true);
         }
-    }, [props.id]);
+    }, [id]);
 
     let timer;
     if (refresh) {
@@ -229,14 +231,14 @@ function TextContent(props) {
     }
 
     const onClickLink = () => {
-        window.open(props.link);
+        window.open(link);
     };
 
-    return !refresh && props.id && (
+    return !refresh && id && (
         <TextContentWrapper>
             <ProjectID>
                 <BlockTextReveal inline>
-                    {props.id}
+                    {id}
                 </BlockTextReveal>
             </ProjectID>
             <ProjectDetails>
@@ -248,13 +250,13 @@ function TextContent(props) {
                         onClick={onClickLink}
                         style={{
                             whiteSpace: 'nowrap',
-                            cursor: props.link ? 'pointer' : 'default',
+                            cursor: link ? 'pointer' : 'default',
                         }}
                     >
-                        {props.name}
+                        {name}
                     </BlockTextReveal>
                     {
-                        hoverOnName && props.link 
+                        hoverOnName && link 
                         && (
                             <LinkIcon>
                                 <FontAwesomeIcon icon={faArrowRight} />
@@ -264,25 +266,27 @@ function TextContent(props) {
                 </ProjectName>
                 <ProjectRole>
                     <BlockTextReveal inline>
-                        {props.role}
+                        {role}
                     </BlockTextReveal>
                 </ProjectRole>
                 <ProjectDesc>
                     <BlockTextReveal inline={false}>
-                        {props.desc}
+                        {desc}
                     </BlockTextReveal>
                 </ProjectDesc>
                 <ProjectTechTags>
-                    {props.tech.map((techStr, i) => (
-                        <TechTag key={i}>{techStr}</TechTag>
-                    ))}
-                </ProjectTechTags>
-                <ProjectImages num={props.imgs.length}>
                     {
-                        props.imgs.map((src, i) => src ? (
+                        tech.map((str, i) => (
+                            <TechTag key={i}>{str}</TechTag>
+                        ))
+                    }
+                </ProjectTechTags>
+                <ProjectImages num={imgs.length}>
+                    {
+                        imgs.map((src, i) => src ? (
                             <Image
-                                key={`img_${props.id}_${i}`}
-                                alt={`img_${props.id}_${i}`}
+                                key={`img_${id}_${i}`}
+                                alt={`img_${id}_${i}`}
                                 src={src}
                             />
                         ) : null)
@@ -291,7 +295,7 @@ function TextContent(props) {
             </ProjectDetails>
             <ProjectType>
                 <BlockTextReveal inline>
-                    {props.type}
+                    {type}
                 </BlockTextReveal>
             </ProjectType>
         </TextContentWrapper>
@@ -299,14 +303,16 @@ function TextContent(props) {
 }
 
 TextContent.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
-    tech: PropTypes.array.isRequired,
-    link: PropTypes.string.isRequired,
-    imgs: PropTypes.array.isRequired,
-}
+    projectItem: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
+        tech: PropTypes.array.isRequired,
+        link: PropTypes.string.isRequired,
+        imgs: PropTypes.array.isRequired,
+    }).isRequired,
+};
 
 export default TextContent;

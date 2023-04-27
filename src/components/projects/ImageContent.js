@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import device from '../../assets/responsive/breakpoints';
-import { projectData } from '../../data/index';
 import Images from './Images';
 
 const ImageContentWrapper = styled.div`
@@ -18,8 +19,7 @@ const ImagesBox = styled.div`
     position: relative;
 `;
 
-function ImageContent() {
-    const boxHeight = 140;
+function ImageContent({ projectItems }) {
     const [contentWidth, setContentWidth] = useState(0);
     const [screenHeight, setScreenHeight] = useState(0);
     const [scrollHeight, setScrollHeight] = useState(0);
@@ -37,9 +37,9 @@ function ImageContent() {
         const { body, documentElement } = window.document;
         const sd = Math.max(body.scrollTop, documentElement.scrollTop);
         const sp = (sd / (documentElement.scrollHeight - documentElement.clientHeight) * 100);
-        const minlimit = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
-        const maxlimit = (documentElement.clientHeight * 1500) / documentElement.scrollHeight;
-        if (sp >= minlimit && sp <= maxlimit) {
+        const minLimit = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
+        const maxLimit = (documentElement.clientHeight * 1500) / documentElement.scrollHeight;
+        if (sp >= minLimit && sp <= maxLimit) {
             setScrollPercent(sp);
         }
     };
@@ -49,7 +49,7 @@ function ImageContent() {
     };
 
     useEffect(() => {
-        setContentWidth(getContentWidth());
+        handleResize();
     }, []);
 
     useEffect(() => {
@@ -68,10 +68,9 @@ function ImageContent() {
         return imgs.length ? (
             <ImagesBox key={i} id={`imagesBox_${i}`}>
                 <Images
-                    projectIndex={i}
+                    projectIdx={i}
                     imgs={imgs}
                     contentWidth={contentWidth}
-                    boxHeight={boxHeight}
                     screenHeight={screenHeight}
                     scrollHeight={scrollHeight}
                     scrollPercent={scrollPercent}
@@ -83,10 +82,23 @@ function ImageContent() {
     return (
         <ImageContentWrapper id="image-content">
             {
-                projectData.map(renderProjectImages)
+                projectItems.map(renderProjectImages)
             }
         </ImageContentWrapper>
     );
 }
+
+ImageContent.propTypes = {
+    projectItems: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
+        tech: PropTypes.array.isRequired,
+        link: PropTypes.string.isRequired,
+        imgs: PropTypes.array.isRequired,
+    })).isRequired,
+};
 
 export default ImageContent;
