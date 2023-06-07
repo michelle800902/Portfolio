@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faJsSquare, faNode, faReact, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faPython, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faJsSquare, faNode, faReact, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faPython, faGitAlt, faDocker } from '@fortawesome/free-brands-svg-icons';
 import device from '../../assets/responsive/breakpoints';
 
 const AboutWrapper = styled.div`
@@ -68,9 +68,10 @@ const Description = styled.div`
         font-size: 60px;
     }
 `;
-const DescriptionSpan = styled.span`
+const Paragraph = styled.p`
     width: 100%;
     margin: 6px 0;
+    text-indent: 60px;
 `;
 const SkillSet = styled.div`
     width: 100%;
@@ -107,12 +108,10 @@ function About() {
                 ABOUT ME
             </Title>
             <Description>
-                <DescriptionSpan>
-                    Front-end Engineer who has 3+ years of experience in large-scale data product development.
-                </DescriptionSpan>
-                <DescriptionSpan>
-                    Self-motivated problem solver that passionates about software technologies and keeps learning new skills.
-                </DescriptionSpan>
+                <Paragraph>
+                    Experienced Frontend Software Engineer with over 5 years of expertise in web application development, dedicated to building user-friendly interfaces using modern web technologies.
+                    I possess strong programming abilities and deeply passionate about front-end engineering as well as constantly strive to acquire new skills.
+                </Paragraph>
                 <SkillSet>
                     <FontAwesomeIcon icon={faJsSquare} size="2x" />
                     <FontAwesomeIcon icon={faNode} size="2x" />
@@ -124,6 +123,7 @@ function About() {
                     <FontAwesomeIcon icon={faBootstrap} size="2x" />
                     <FontAwesomeIcon icon={faPython} size="2x" />
                     <FontAwesomeIcon icon={faGitAlt} size="2x" />
+                    <FontAwesomeIcon icon={faDocker} size="2x" />
                 </SkillSet>
             </Description>
         </AboutWrapper>
