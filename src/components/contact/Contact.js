@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, /* faFilePdf */ } from '@fortawesome/free-solid-svg-icons';
 import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 import device from '../../assets/responsive/breakpoints';
 import { contactData } from '../../data/index';
@@ -126,9 +126,11 @@ function Contact() {
                     <Link href={`mailto:${contactData.email}`}>
                         <FontAwesomeIcon icon={faEnvelope} size="2x" />
                     </Link>
-                    <Link href={contactData.resume} target="_blank">
-                        <FontAwesomeIcon icon={faFilePdf} size="2x" />
-                    </Link>
+                    {/* {
+                        <Link href={contactData.resume} target="_blank">
+                            <FontAwesomeIcon icon={faFilePdf} size="2x" />
+                        </Link>
+                    } */}
                 </ContactItems>
             </Description>
         </ContactWrapper>
