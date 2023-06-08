@@ -64,8 +64,7 @@ const NavbarItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: ${props => props.focus ? 'bold' : 'unset'};
-    &:hover {
+    &:hover, &.active {
         font-weight: bold;
     }
     a {
@@ -126,7 +125,7 @@ function Header() {
     const [top, setTop] = useState(0);
     const [isLightTheme, setIsLightTheme] = useState(isDaytime());
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
-    const [focusedItemId, setFocusedItemId] = useState('');
+    const [activeItemId, setActiveItemId] = useState('');
 
     useEffect(() => {
         // Hide header when scrolling up and show header when scrolling down
@@ -156,37 +155,36 @@ function Header() {
     };
 
     const onClickNavbarItem = (itemId) => {
-        setFocusedItemId(itemId);
+        setActiveItemId(itemId);
     };
 
     const onChangeTheme = () => {
         setIsLightTheme(!isLightTheme);
     };
 
-    const renderNavbarAndThemeToggle = (direction) => {
-        return (
-            <>
-                <Navbar id={`navbar-${direction}`} direction={direction}>
-                    {
-                        navbarData.map((item) => (
-                            <NavbarItem
-                                key={item.id}
-                                direction={direction}
-                                focus={focusedItemId === item.id}
-                                onClick={() => onClickNavbarItem(item.id)}
-                            >
-                                <a href={item.href}>{item.name}</a>
-                            </NavbarItem>
-                        ))
-                    }
-                </Navbar>
-                <ThemeToggle
-                    isLightTheme={isLightTheme}
-                    onChangeTheme={onChangeTheme}
-                />
-            </>
-        )
-    };
+    const renderNavbar = (direction) => (
+        <Navbar id={`navbar-${direction}`} direction={direction}>
+            {
+                navbarData.map((item) => (
+                    <NavbarItem
+                        key={item.id}
+                        direction={direction}
+                        className={`navbar-item ${activeItemId === item.id ? 'active' : ''}`}
+                        onClick={() => onClickNavbarItem(item.id)}
+                    >
+                        <a href={item.href}>{item.name}</a>
+                    </NavbarItem>
+                ))
+            }
+        </Navbar>
+    );
+
+    const renderThemeToggle = () => (
+        <ThemeToggle
+            isLightTheme={isLightTheme}
+            onChangeTheme={onChangeTheme}
+        />
+    );
 
     return (
         <>
@@ -197,16 +195,20 @@ function Header() {
                     <Title>Portfolio</Title>
                 </Logo>
                 <Toolbar>
-                    {
-                        renderNavbarAndThemeToggle('row')
-                    }
+                    {renderNavbar('row')}
+                    {renderThemeToggle()}
                 </Toolbar>
                 <SidebarBtn onClick={onClickSidebarIcon}>
                     <FontAwesomeIcon icon={isOpenSidebar ? faXmark : faBars} />
                 </SidebarBtn>
                 <Sidebar isOpen={isOpenSidebar}>
                     {
-                        isOpenSidebar && renderNavbarAndThemeToggle('column')
+                        isOpenSidebar && (
+                            <>
+                                {renderNavbar('column')}
+                                {renderThemeToggle()}
+                            </>
+                        )
                     }
                 </Sidebar>
             </HeaderWrapper>
