@@ -53,6 +53,12 @@ export const navbarData = [
     },
 ];
 
+export const aboutData = `
+    Experienced Frontend Software Engineer with over 5 years of expertise in web application development,
+    dedicated to building user-friendly interfaces using modern web technologies.
+    I possess strong programming abilities and am deeply passionate about front-end engineering as well as constantly strive to acquire new skills.
+`;
+
 export const experienceData = [
     {
         date: 'Apr 2022 - Present',

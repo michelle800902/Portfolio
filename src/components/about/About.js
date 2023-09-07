@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import device from '../../assets/responsive/breakpoints';
+import { aboutData } from '../../data/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJsSquare, faNode, faReact, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faPython, faGitAlt, faDocker } from '@fortawesome/free-brands-svg-icons';
-import device from '../../assets/responsive/breakpoints';
 
 const AboutWrapper = styled.div`
     width: 100%;
@@ -109,8 +110,7 @@ function About() {
             </Title>
             <Description>
                 <Paragraph>
-                    Experienced Frontend Software Engineer with over 5 years of expertise in web application development, dedicated to building user-friendly interfaces using modern web technologies.
-                    I possess strong programming abilities and deeply passionate about front-end engineering as well as constantly strive to acquire new skills.
+                    {aboutData}
                 </Paragraph>
                 <SkillSet>
                     <FontAwesomeIcon icon={faJsSquare} size="2x" />

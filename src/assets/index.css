@@ -1,29 +1,29 @@
 @font-face {
-font-family: 'AvenirLight';
-src: url('./fonts/Avenir/Avenir-Light-07.ttf');
+    font-family: 'AvenirLight';
+    src: url('./fonts/Avenir/Avenir-Light-07.ttf');
 }
 
 @font-face {
-font-family: 'AvenirRoman';
-src: url('./fonts/Avenir/Avenir-Roman-12.ttf');
+    font-family: 'AvenirRoman';
+    src: url('./fonts/Avenir/Avenir-Roman-12.ttf');
 }
 
 @font-face {
-font-family: 'AvenirBook';
-src: url('./fonts/Avenir/Avenir-Book-01.ttf');
+    font-family: 'AvenirBook';
+    src: url('./fonts/Avenir/Avenir-Book-01.ttf');
 }
 
 @font-face {
-font-family: 'AvenirMedium';
-src: url('./fonts/Avenir/Avenir-Medium-09.ttf');
+    font-family: 'AvenirMedium';
+    src: url('./fonts/Avenir/Avenir-Medium-09.ttf');
 }
 
 @font-face {
-font-family: 'AvenirHeavy';
-src: url('./fonts/Avenir/Avenir-Heavy-05.ttf');
+    font-family: 'AvenirHeavy';
+    src: url('./fonts/Avenir/Avenir-Heavy-05.ttf');
 }
 
 @font-face {
-font-family: 'Valencia';
-src: url('./fonts/Valencia/Valencia.ttf');
+    font-family: 'Valencia';
+    src: url('./fonts/Valencia/Valencia.ttf');
 }
