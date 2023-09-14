@@ -64,7 +64,7 @@ export const experienceData = [
         date: 'Apr 2022 - Present',
         title: 'Frontend Software Engineer',
         company: 'Graphen | Taipei, Taiwan',
-        desc: '',
+        desc: 'Developed the frontend of AML System, Brand Website, and AI Products.',
         icon: GraphenImg,
     },
     {
