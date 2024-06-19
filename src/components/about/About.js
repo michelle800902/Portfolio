@@ -9,6 +9,8 @@ const AboutWrapper = styled.div`
     width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     background-color: var(--background-two);
 `;
@@ -41,46 +43,37 @@ const Title = styled.div.attrs(({ scroll }) => ({
     }
 `;
 const Description = styled.div`
-    display: grid;
-    padding-left: 25%;
-    padding-right: 5%;
-    transform: translateY(60%);
+    position: absolute;
+    right: 5%;
+    width: 70%;
+    margin-top: 10%;
     font-size: 16px;
     font-family: 'AvenirLight';
     color: var(--text-color);
     @media ${device.mobileL} {
-        transform: translateY(70%);
         font-size: 20px;
     }
     @media ${device.tablet} {
-        transform: translateY(80%);
         font-size: 24px;
     }
     @media ${device.laptop} {
-        transform: translateY(90%);
         font-size: 28px;
     }
     @media ${device.laptopL} {
-        transform: translateY(95%);
         font-size: 32px;
     }
     @media ${device.desktop} {
-        transform: translateY(100%);
         font-size: 60px;
     }
 `;
 const Paragraph = styled.p`
-    width: 100%;
-    margin: 6px 0;
-    text-indent: 60px;
+    text-indent: 4rem;
 `;
 const SkillSet = styled.div`
     width: 100%;
-    margin-top: 24px;
-    display: block;
-    svg {
-        margin-right: 24px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 `;
 
 function About() {
@@ -113,17 +106,17 @@ function About() {
                     {aboutData}
                 </Paragraph>
                 <SkillSet>
-                    <FontAwesomeIcon icon={faJsSquare} size="2x" />
-                    <FontAwesomeIcon icon={faNode} size="2x" />
                     <FontAwesomeIcon icon={faReact} size="2x" />
                     <FontAwesomeIcon icon={faVuejs} size="2x" />
+                    <FontAwesomeIcon icon={faNode} size="2x" />
+                    <FontAwesomeIcon icon={faJsSquare} size="2x" />
                     <FontAwesomeIcon icon={faHtml5} size="2x" />
                     <FontAwesomeIcon icon={faCss3Alt} size="2x" />
                     <FontAwesomeIcon icon={faSass} size="2x" />
-                    <FontAwesomeIcon icon={faBootstrap} size="2x" />
                     <FontAwesomeIcon icon={faPython} size="2x" />
                     <FontAwesomeIcon icon={faGitAlt} size="2x" />
-                    <FontAwesomeIcon icon={faDocker} size="2x" />
+                    {/* <FontAwesomeIcon icon={faBootstrap} size="2x" /> */}
+                    {/* <FontAwesomeIcon icon={faDocker} size="2x" /> */}
                 </SkillSet>
             </Description>
         </AboutWrapper>

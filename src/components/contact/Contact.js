@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, /* faFilePdf */ } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { ReactComponent as LaptopSVG } from '../../assets/images/laptop.svg';
 import device from '../../assets/responsive/breakpoints';
 import { contactData } from '../../data/index';
@@ -12,6 +12,8 @@ const ContactWrapper = styled.div`
     width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 `;
 const Title = styled.div.attrs(({ scroll }) => ({
@@ -21,7 +23,7 @@ const Title = styled.div.attrs(({ scroll }) => ({
 }))`
     position: absolute;
     top: 10%;
-    right: -95%;
+    right: -100%;
     transition: transform 0.5s ease-out;
     font-size: 60px;
     font-family: 'AvenirHeavy';
@@ -43,31 +45,26 @@ const Title = styled.div.attrs(({ scroll }) => ({
     }
 `;
 const Description = styled.div`
-    display: grid;
-    margin-left: 5%;
-    margin-right: 30%;
-    transform: translateY(60%);
+    position: absolute;
+    left: 5%;
+    width: 70%;
+    margin-top: 10%;
     font-size: 16px;
     font-family: 'AvenirLight';
     color: var(--text-color);
     @media ${device.mobileL} {
-        transform: translateY(70%);
         font-size: 20px;
     }
     @media ${device.tablet} {
-        transform: translateY(80%);
         font-size: 24px;
     }
     @media ${device.laptop} {
-        transform: translateY(90%);
         font-size: 28px;
     }
     @media ${device.laptopL} {
-        transform: translateY(95%);
         font-size: 32px;
     }
     @media ${device.desktop} {
-        transform: translateY(100%);
         font-size: 60px;
     }
 `;
@@ -75,9 +72,8 @@ const ContactItems = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    svg {
-        margin-right: 48px;
-    }
+    flex-wrap: nowrap;
+    gap: 2rem;
 `;
 const Link = styled.a`
     text-decoration: none;
@@ -126,11 +122,11 @@ function Contact() {
                     <Link href={`mailto:${contactData.email}`}>
                         <FontAwesomeIcon icon={faEnvelope} size="2x" />
                     </Link>
-                    {/* {
+                    {/*
                         <Link href={contactData.resume} target="_blank">
                             <FontAwesomeIcon icon={faFilePdf} size="2x" />
                         </Link>
-                    } */}
+                    */}
                 </ContactItems>
             </Description>
         </ContactWrapper>
